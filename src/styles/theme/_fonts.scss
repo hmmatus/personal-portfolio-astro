@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Bevas Neue';
+  src: url('/src/assets/fonts/BebasNeue-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+$font-stack: 'Bevas Neue', sans-serif;
+$font-size-base: 16px;
+$font-size-body-mobile: 16px;
+$font-size-body-desktop: 18px;
+$font-size-h1-mobile: 57px;
+$font-size-h1-desktop: 101px;
+$font-size-h2-mobile: 43px;
+$font-size-h2-desktop: 76px;
+
+$font-size-body-responsive: clamp(#{$font-size-body-mobile}, 1em, #{$font-size-body-desktop});
+$font-size-h1-responsive: clamp(#{$font-size-h1-mobile}, 3.5625rem, #{$font-size-h1-desktop});
+$font-size-h2-responsive: clamp(#{$font-size-h2-mobile}, 2.6875rem, #{$font-size-h2-desktop});

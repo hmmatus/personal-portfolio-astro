@@ -1,0 +1,32 @@
+@use '../../styles/theme/main.scss' as main;
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 clamp(16px, 2vw, 60px);
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  margin: 0rem 0.4rem;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+nav ul li a {
+  letter-spacing: 1px;
+}
+
+.header-logo {
+  font-size: clamp(28px, 1.75em, 32px);
+  color: main.$light-gray;
+}
+
+.menuButton {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
