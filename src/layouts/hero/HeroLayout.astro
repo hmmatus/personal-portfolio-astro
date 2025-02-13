@@ -1,0 +1,23 @@
+---
+import styles from "./HeroLayout.module.scss";
+import { ContactButton } from "../../components";
+
+const onContactPressed = () => {
+  console.log("Contact me");
+};
+---
+
+<div class={styles.container}>
+  <div class={styles["information"]}>
+    <h1>HI, I AM HECTOR MATUS.</h1>
+    <p>
+      I am a software engineer with a passion for building web applications.
+    </p>
+    <div class="flex-row gap-2">
+      <ContactButton label="CONTACT ME" onClick={onContactPressed} />
+    </div>
+  </div>
+  <div class={styles["image"]}>
+    <img src="/src/assets/images/profile-1.png" alt="Hector Matus" />
+  </div>
+</div>
