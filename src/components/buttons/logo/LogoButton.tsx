@@ -1,7 +1,16 @@
-export const LogoButton = () => {
+import type { ButtonHTMLAttributes } from "react";
+import styles from "./LogoButton.module.scss";
+export interface LogoButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
+}
+export const LogoButton = ({ children, ...props }: LogoButtonProps) => {
   return (
-    <button>
-      <img src="../../../assets/icons/circle.svg" />
+    <button
+      {...props}
+      className={`${props.className} ${styles["logo-button"]}`}
+    >
+      {children}
     </button>
   );
 };

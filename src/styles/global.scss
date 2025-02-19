@@ -1,5 +1,5 @@
 @use './theme/main.scss' as main;
-@forward 'tailwindcss';
+@import 'tailwindcss';
 
 *,
 *::before,

@@ -1,6 +1,6 @@
 ---
 import styles from "./HeroLayout.module.scss";
-import { ContactButton } from "../../components";
+import { ContactButton, ContactSection } from "../../components";
 
 const onContactPressed = () => {
   console.log("Contact me");
@@ -8,14 +8,12 @@ const onContactPressed = () => {
 ---
 
 <div class={styles.container}>
-  <div class={styles["information"]}>
+  <div class={styles["hero-information"]}>
     <h1>HI, I AM HECTOR MATUS.</h1>
-    <p>
+    <p class={styles["hero-description"]}>
       I am a software engineer with a passion for building web applications.
     </p>
-    <div class="flex-row gap-2">
-      <ContactButton label="CONTACT ME" onClick={onContactPressed} />
-    </div>
+    <ContactSection client:load onContactPressed={onContactPressed} />
   </div>
   <div class={styles["image"]}>
     <img src="/src/assets/images/profile-1.png" alt="Hector Matus" />

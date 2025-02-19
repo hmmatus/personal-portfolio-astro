@@ -1,0 +1,8 @@
+@use "../../../styles/theme/main.scss" as main;
+
+.logo-button {
+  background-color: main.$primary-background;
+  width: 54;
+  height: 54;
+  border-radius: 100%;
+}

@@ -1,5 +1,5 @@
 @use "../../../styles/theme/main.scss" as main;
-button {
+.button {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -10,8 +10,11 @@ button {
   background-color: main.$secondary;
   color: main.$secondary-text;
 }
-
-.icon {
-  width: 20px;
-  height: 20px;
+.button .label {
+  margin-right: 8px;
 }
+
+.contact-icon {
+  color: main.$secondary-text;
+}
+  
