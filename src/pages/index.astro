@@ -12,7 +12,9 @@ import "@styles/global.scss";
     <title>Hector Matus Portfolio</title>
   </head>
   <body>
-    <Header />
-    <HeroLayout />
+    <Header client:only />
+    <div style="margin-top: 96px;">
+      <HeroLayout />
+    </div>
   </body>
 </html>

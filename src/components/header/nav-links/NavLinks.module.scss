@@ -1,0 +1,13 @@
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.desktop {
+  flex-direction: row;
+}
+
+.mobile {
+  flex-direction: column;
+}
