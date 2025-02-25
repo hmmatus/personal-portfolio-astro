@@ -1,0 +1,6 @@
+@use "../../../../../styles/theme/main.scss" as main;
+.form-hyperlink {
+  border-bottom: 1px solid main.$secondary;
+  color: main.$primary-text;
+  margin-left: 4px;
+}

@@ -4,8 +4,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: clamp(163px,175px,187px);
-  height: clamp(48px,51px,54px);
+  width: clamp(163px, 175px, 187px);
+  height: clamp(48px, 51px, 54px);
   border-radius: 100px;
   background-color: main.$secondary;
   color: main.$secondary-text;
@@ -15,9 +15,19 @@
 }
 .button .label {
   margin-right: 8px;
+  color: main.$secondary-text;
 }
 
 .contact-icon {
   color: main.$secondary-text;
 }
-  
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 54px;
+  height: 54px;
+  fill: main.$secondary;
+  background-color: main.$primary-background;
+}

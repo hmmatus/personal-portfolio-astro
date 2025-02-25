@@ -42,3 +42,11 @@
   object-fit: cover;
   border-radius: 8px;
 }
+
+.form-section-container {
+  padding: 0 18px;
+  margin-top: 64px;
+  @media screen and (min-width: 1024px) {
+    padding: 0 108px;
+  }
+}

@@ -5,6 +5,7 @@ import {
   ContactSection,
   Divider,
   ProjectsSection,
+  FormSection,
 } from "../../components";
 const onContactPressed = () => {
   console.log("Contact me");
@@ -27,5 +28,9 @@ const onContactPressed = () => {
   <Divider />
   <div class={styles["projects-section-container"]}>
     <ProjectsSection />
+  </div>
+  <Divider />
+  <div class={styles["form-section-container"]}>
+    <FormSection client:load />
   </div>
 </div>
