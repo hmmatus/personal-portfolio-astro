@@ -1,0 +1,40 @@
+@use "../../../../../styles/theme/main.scss" as main;
+.project-container {
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.project-image-container,
+.project-information-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.project-image-container {
+  border-radius: 12px 12px 0 0;
+  background-color: main.$secondary-background;
+  @media screen and (min-width: 768px) {
+    border-radius: 12px;
+  }
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  padding: 0 12px;
+  @media screen and (min-width: 768px) {
+    padding: 0 12px 24px 12px;
+  }
+}

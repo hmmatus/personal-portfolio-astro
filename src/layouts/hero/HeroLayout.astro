@@ -1,21 +1,31 @@
 ---
 import styles from "./HeroLayout.module.scss";
-import { ContactButton, ContactSection } from "../../components";
-
+import {
+  ContactButton,
+  ContactSection,
+  Divider,
+  ProjectsSection,
+} from "../../components";
 const onContactPressed = () => {
   console.log("Contact me");
 };
 ---
 
 <div class={styles.container}>
-  <div class={styles["hero-information"]}>
-    <h1>HI, I AM HECTOR MATUS.</h1>
-    <p class={styles["hero-description"]}>
-      I am a software engineer with a passion for building web applications.
-    </p>
-    <ContactSection client:load onContactPressed={onContactPressed} />
+  <div class={styles["hero-section-container"]}>
+    <div class={styles["hero-information"]}>
+      <h1>HI, I AM HECTOR MATUS.</h1>
+      <p class={styles["hero-description"]}>
+        I am a software engineer with a passion for building web applications.
+      </p>
+      <ContactSection client:load onContactPressed={onContactPressed} />
+    </div>
+    <div class={styles["image"]}>
+      <img src="/src/assets/images/profile-1.png" alt="Hector Matus" />
+    </div>
   </div>
-  <div class={styles["image"]}>
-    <img src="/src/assets/images/profile-1.png" alt="Hector Matus" />
+  <Divider />
+  <div class={styles["projects-section-container"]}>
+    <ProjectsSection />
   </div>
 </div>

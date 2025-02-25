@@ -1,5 +1,6 @@
+@use "../../styles/theme/main.scss" as main;
+
 .divider {
   width: 100%;
-  
-
+  border: 1px solid main.$border;
 }

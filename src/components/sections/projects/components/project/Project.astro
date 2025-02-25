@@ -1,0 +1,24 @@
+---
+export interface Props {
+  project: ProjectI;
+}
+import type { ProjectI } from "src/types/project";
+import styles from "./Project.module.scss";
+import { Image } from "astro:assets";
+import { Tag } from "@components/tag";
+const { project } = Astro.props;
+const { title, image, description, tags } = project;
+---
+
+<div class={styles["project-container"]}>
+  <div class={styles["project-image-container"]}>
+    <div class={styles["tags-container"]}>
+      {tags.map((tag) => <Tag label={tag} />)}
+    </div>
+    <Image class={styles["project-image"]} src={image} alt="Image background" />
+  </div>
+  <div class={styles["project-information-container"]}>
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </div>
+</div>

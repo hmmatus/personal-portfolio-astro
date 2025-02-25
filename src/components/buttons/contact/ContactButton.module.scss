@@ -9,6 +9,9 @@
   border-radius: 100px;
   background-color: main.$secondary;
   color: main.$secondary-text;
+  :hover {
+    cursor: pointer;
+  }
 }
 .button .label {
   margin-right: 8px;

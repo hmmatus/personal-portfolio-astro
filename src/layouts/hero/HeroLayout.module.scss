@@ -1,12 +1,20 @@
 .container {
+  width: 100%;
+  height: clamp(700px,100vh,748px);
+  margin-top: 96px;
+}
+.hero-section-container {
   display: flex;
   flex: 1;
   flex-direction: column;
-  width: 100%;
-  height: clamp(700px,100vh,748px);
+  margin: 0 0 24px 0;
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }
+}
+
+.projects-section-container {
+  margin: 12px;
 }
 
 .hero-information {
