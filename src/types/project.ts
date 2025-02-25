@@ -2,15 +2,15 @@ export interface ProjectI {
   title: string;
   description: string;
   image: ImageMetadata;
-  hiperlinks: HiperLink[];
+  hyperlinks: HyperLink[];
   projectInformation: ProjectInformation[];
   tags: string[];
 }
 
-export interface HiperLink {
+export interface HyperLink {
   label: string;
   url: string;
-  icon: string;
+  icon?: string;
 }
 
 export interface ProjectInformation {

@@ -2,7 +2,8 @@
 .project-container {
   display: flex;
   flex-direction: column;
-  @media screen and (min-width: 768px) {
+  gap: 48px;
+  @media screen and (min-width: 1024px) {
     flex-direction: row;
   }
 }
@@ -38,3 +39,22 @@
     padding: 0 12px 24px 12px;
   }
 }
+
+.project-information-specs {
+  margin-top: 32px;
+}
+
+.project-hyperlinks-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 12,
+}
+
+.title {
+  font-size: main.$font-size-medium-responsive;
+  margin-bottom: 16px;
+}
+
+

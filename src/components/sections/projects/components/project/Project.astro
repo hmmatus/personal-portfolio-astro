@@ -6,8 +6,11 @@ import type { ProjectI } from "src/types/project";
 import styles from "./Project.module.scss";
 import { Image } from "astro:assets";
 import { Tag } from "@components/tag";
+import InfoLabel from "../infoLabel/InfoLabel.astro";
+import { HyperLinkLabel } from "../hyperLinkLabel/HyperLinkLabel";
 const { project } = Astro.props;
-const { title, image, description, tags } = project;
+const { title, image, description, tags, projectInformation, hyperlinks } =
+  project;
 ---
 
 <div class={styles["project-container"]}>
@@ -18,7 +21,28 @@ const { title, image, description, tags } = project;
     <Image class={styles["project-image"]} src={image} alt="Image background" />
   </div>
   <div class={styles["project-information-container"]}>
-    <h3>{title}</h3>
+    <span class={styles.title}>{title}</span>
     <p>{description}</p>
+    <div class={styles["project-information-specs"]}>
+      <InfoLabel title="PROJECT INFO" description="" />
+      {
+        projectInformation.map((info) => (
+          <InfoLabel title={info.label} description={info.value} />
+        ))
+      }
+    </div>
+    <div class={styles["project-hyperlinks-container"]}>
+      {
+        hyperlinks.map(({ label, url, icon }, index) => (
+          <HyperLinkLabel
+            client:load
+            icon={icon}
+            key={`${index}`}
+            label={label}
+            url={url}
+          />
+        ))
+      }
+    </div>
   </div>
 </div>
