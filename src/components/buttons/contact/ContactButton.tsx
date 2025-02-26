@@ -7,7 +7,7 @@ interface ContactButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 export const ContactButton = ({ label, ...rest }: ContactButtonProps) => {
   return (
-    <button className={`${rest.className} ${styles.button}`} {...rest}>
+    <button className={`${styles.button} ${rest.className}`} {...rest}>
       <p className={styles.label}>{label}</p>
       <Circle className={styles["contact-icon"]} />
     </button>

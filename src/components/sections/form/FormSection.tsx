@@ -21,7 +21,7 @@ export const FormSection = () => {
     window.open(url, "_blank");
   };
   return (
-    <section className={styles["form-section"]}>
+    <section id="form-section" className={styles["form-section"]}>
       <div className={styles["form-section-header"]}>
         <h2>LET'S CONNECT</h2>
         <div className={styles["form-hyperlink-container"]}>

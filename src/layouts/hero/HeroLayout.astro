@@ -7,9 +7,6 @@ import {
   ProjectsSection,
   FormSection,
 } from "../../components";
-const onContactPressed = () => {
-  console.log("Contact me");
-};
 ---
 
 <div class={styles.container}>
@@ -19,7 +16,7 @@ const onContactPressed = () => {
       <p class={styles["hero-description"]}>
         I am a software engineer with a passion for building web applications.
       </p>
-      <ContactSection client:load onContactPressed={onContactPressed} />
+      <ContactSection client:load />
     </div>
     <div class={styles["image"]}>
       <img src="/src/assets/images/profile-1.png" alt="Hector Matus" />
