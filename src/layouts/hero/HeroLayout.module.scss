@@ -1,7 +1,6 @@
 .container {
   width: 100%;
   height: clamp(700px,100vh,748px);
-  margin-top: 96px;
 }
 .hero-section-container {
   display: flex;
@@ -47,6 +46,6 @@
   padding: 0 18px;
   margin-top: 64px;
   @media screen and (min-width: 1024px) {
-    padding: 0 108px;
+    padding: 0 64px 32px 64px;
   }
 }

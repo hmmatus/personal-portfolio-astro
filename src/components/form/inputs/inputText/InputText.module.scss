@@ -1,0 +1,26 @@
+@use "../../../../styles/theme/main.scss" as main;
+.input-text-container {
+  display: flex;
+  flex-direction: column;
+}
+.input-label {
+  color: main.$primary-light-text;
+  font-size: main.$font-size-body-responsive;
+}
+
+.input-text,
+.input-textarea {
+  background-color: main.$secondary-background;
+  color: main.$primary-text;
+  height: 46px;
+}
+.input-textarea {
+  height: 148px;
+  @media screen and (max-width: 1024px) {
+    height: 190px;
+  }
+}
+
+.input-error-message {
+  color: main.$error;
+}
