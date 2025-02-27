@@ -1,0 +1,23 @@
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+  }
+}
+.form-section-header, .form-section-body {
+  flex: 1,
+}
+.form-hyperlink-container {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.connect-section-container {
+  margin-top: 40px;
+}
+
+.form-section-input {
+  margin-bottom: 24px;
+}

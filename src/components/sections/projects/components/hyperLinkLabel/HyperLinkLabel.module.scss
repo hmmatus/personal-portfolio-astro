@@ -1,0 +1,12 @@
+@use "../../../../../styles/theme/main" as main;
+.hyperlink-label {
+  display: flex;
+  border-bottom: 2px solid main.$secondary;
+  color: main.$secondary;
+  :hover {
+    cursor: pointer;
+  }
+}
+.logo {
+  margin-left: 4px;
+}

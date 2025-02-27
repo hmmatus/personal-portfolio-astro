@@ -1,6 +1,7 @@
 ---
 import HeroLayout from "../layouts/hero/HeroLayout.astro";
-import { Header } from "../components";
+import { Header, Footer } from "../components";
+import "@styles/global.scss";
 ---
 
 <!doctype html>
@@ -9,10 +10,10 @@ import { Header } from "../components";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hector Matus Portfolio</title>
-    <link rel="stylesheet" href="/src/styles/global.scss" />
   </head>
   <body>
-    <Header />
+    <Header client:only />
     <HeroLayout />
+    <Footer />
   </body>
 </html>

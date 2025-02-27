@@ -1,0 +1,33 @@
+---
+import styles from "./HeroLayout.module.scss";
+import {
+  ContactButton,
+  ContactSection,
+  Divider,
+  ProjectsSection,
+  FormSection,
+} from "../../components";
+---
+
+<div class={styles.container}>
+  <div class={styles["hero-section-container"]}>
+    <div class={styles["hero-information"]}>
+      <h1>HI, I AM HECTOR MATUS.</h1>
+      <p class={styles["hero-description"]}>
+        I am a software engineer with a passion for building web applications.
+      </p>
+      <ContactSection client:load />
+    </div>
+    <div class={styles["image"]}>
+      <img src="/src/assets/images/profile-1.png" alt="Hector Matus" />
+    </div>
+  </div>
+  <Divider />
+  <div class={styles["projects-section-container"]}>
+    <ProjectsSection />
+  </div>
+  <Divider />
+  <div class={styles["form-section-container"]}>
+    <FormSection client:load />
+  </div>
+</div>

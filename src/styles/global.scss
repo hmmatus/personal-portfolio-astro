@@ -1,5 +1,5 @@
 @use './theme/main.scss' as main;
-@forward 'tailwindcss';
+@use 'tailwindcss';
 
 *,
 *::before,
@@ -27,7 +27,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 1rem 0;
+  margin: 0;
   font-weight: 600;
 }
 
@@ -41,6 +41,7 @@ h2 {
 
 p {
   font-size: main.$font-size-body-responsive;
+  color: main.$primary-light-text;
 }
 
 // Remove all styles from a tag

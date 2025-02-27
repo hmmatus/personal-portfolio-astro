@@ -1,5 +1,22 @@
+import React, { useEffect, useState } from "react";
 import styles from "./Header.module.scss";
+import { NavLinks } from "./nav-links/NavLinks";
+import Menu from "../../assets/icons/menu.svg?react"; // Based on solution https://doray.me/articles/use-svgs-as-react-components-in-astro-MNUvh
+import { Drawer } from "./drawer/Drawer";
+
 export const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const isMobile = window.innerWidth < 768;
+
+  const onPressDrawer = () => {
+    console.log("Drawer pressed");
+    setIsOpen(!isOpen);
+  };
+  useEffect(() => {
+    if (!isMobile) {
+      setIsOpen(false);
+    }
+  }, [isMobile]);
   return (
     <header>
       <h2>
@@ -7,20 +24,13 @@ export const Header = () => {
           Hector Matus
         </a>
       </h2>
-
-      <nav>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/about">About</a>
-          </li>
-          <li>
-            <a href="/contact">Contact</a>
-          </li>
-        </ul>
-      </nav>
+      {!isMobile && <NavLinks isMobile={false} />}
+      {isMobile && (
+        <button className={"cursor-pointer"} onClick={onPressDrawer}>
+          <Menu />
+        </button>
+      )}
+      {isMobile && <Drawer isOpen={isOpen} />}
     </header>
   );
 };

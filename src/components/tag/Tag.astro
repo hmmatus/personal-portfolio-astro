@@ -1,0 +1,11 @@
+---
+type Props = {
+  label: string;
+};
+import styles from "./Tag.module.scss";
+const { label } = Astro.props;
+---
+
+<div class={styles["tag"]}>
+  <p>{label}</p>
+</div>

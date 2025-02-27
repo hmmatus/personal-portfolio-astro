@@ -1,0 +1,6 @@
+@use "../../styles/theme/main.scss" as main;
+.tag {
+  background-color: main.$primary-background;
+  padding: 8px 16px;
+  border-radius: 20px;
+}

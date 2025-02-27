@@ -1,0 +1,8 @@
+@use "../../../../../styles/theme/main.scss" as main;
+.info-label-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid main.$border;
+  padding: 12px;
+}

@@ -1,0 +1,13 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+}
+import styles from "./InfoLabel.module.scss";
+const { title, description } = Astro.props;
+---
+
+<div class={styles["info-label-container"]}>
+  <h3>{title}</h3>
+  <p>{description}</p>
+</div>
