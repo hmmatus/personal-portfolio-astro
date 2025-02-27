@@ -20,6 +20,32 @@ export const FormSection = () => {
   const openLink = (url: string) => {
     window.open(url, "_blank");
   };
+  const onSubmit = async (data: FormData) => {
+    try {
+      const options = {
+        from: EMAIL,
+        to: EMAIL,
+        subject: data.subject,
+        message: data.message,
+      };
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(options),
+      });
+
+      if (response.ok) {
+        alert("Message sent successfully!");
+      } else {
+        alert("Failed to send message.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred while sending the message.");
+    }
+  };
   return (
     <section id="form-section" className={styles["form-section"]}>
       <div className={styles["form-section-header"]}>
@@ -65,7 +91,7 @@ export const FormSection = () => {
           onChange={(e) => setValue("message", e.target.value)}
           containerClassName={styles["form-section-input"]}
         />
-        <CustomButton>SUBMIT</CustomButton>
+        <CustomButton onClick={handleSubmit(onSubmit)}>SUBMIT</CustomButton>
       </div>
     </section>
   );

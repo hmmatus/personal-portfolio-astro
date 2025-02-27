@@ -1,14 +1,12 @@
 import React from "react";
-import { Image } from "astro:assets";
 import styles from "./HyperLinkLabel.module.scss";
 export interface Props {
-  key: string;
   label: string;
   url: string;
   icon?: string;
 }
 
-export const HyperLinkLabel: React.FC<Props> = ({ label, url, icon, key }) => {
+export const HyperLinkLabel: React.FC<Props> = ({ label, url, icon }) => {
   const onClick = () => {
     window.open(url, "_blank");
   };
