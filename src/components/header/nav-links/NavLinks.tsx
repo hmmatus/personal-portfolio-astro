@@ -17,7 +17,7 @@ export const NavLinks = ({ isMobile }: NavLinksProps) => {
           <a href="/about">About</a>
         </li>
         <li>
-          <a href="/contact">Contact</a>
+          <a href="/#form-section">Contact</a>
         </li>
       </ul>
     </nav>

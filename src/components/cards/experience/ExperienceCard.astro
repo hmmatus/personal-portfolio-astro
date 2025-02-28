@@ -1,0 +1,21 @@
+---
+import type { ExperienceI } from "../../../types/experience";
+import styles from "./ExperienceCard.module.scss";
+export interface Props {
+  item: ExperienceI;
+  className?: string;
+}
+const { item, className } = Astro.props;
+const { title, company, description, startDate, endDate } = item;
+---
+
+<div class={`${styles["experience-card"]} ${className}`}>
+  <div class={styles["flex-row-between"]}>
+    <span class={styles["experience-title"]}>
+      {title}
+    </span>
+    <p>{`${startDate} - ${endDate}`}</p>
+  </div>
+  <span class={styles["experience-subtitle"]}>{company}</span>
+  <p>{description}</p>
+</div>

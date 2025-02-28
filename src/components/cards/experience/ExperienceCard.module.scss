@@ -1,0 +1,18 @@
+@use "../../../styles/theme/main.scss" as main;
+
+.experience-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.flex-row-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.experience-title {}
+
+.experience-subtitle {
+  color: main.$secondary;
+}
