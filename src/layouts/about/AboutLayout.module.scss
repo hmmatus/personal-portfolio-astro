@@ -1,0 +1,56 @@
+@use "../../styles/theme/main.scss" as main;
+
+.row-between {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-top: 100px;
+}
+
+.about-info-container {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  gap: 12px;
+  margin: 24px 0 12px 0;
+
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+    padding: 12px 64px;
+  }
+}
+
+.about-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  row-gap: 12px;
+}
+
+.about-info-title {
+  font-size: main.$font-size-medium-responsive;
+}
+
+.about-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.experience-container {
+  row-gap: 24px;
+}
+
+.form-section-container {
+  padding: 0 18px;
+  margin-top: 64px;
+
+  @media screen and (min-width: 1024px) {
+    padding: 0 64px 32px 64px;
+  }
+}
