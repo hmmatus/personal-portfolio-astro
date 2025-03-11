@@ -2,10 +2,10 @@
 import { ContactSection, FormSection } from "@components/sections";
 import styles from "./AboutLayout.module.scss";
 import { Divider } from "@components/divider";
-import { capabililitiesData } from "../../conts/capabilities-data";
 import { Tag } from "@components/tag";
 import ExperienceCard from "@components/cards/experience/ExperienceCard.astro";
-import experienceData from "../../data/experience.json";
+import aboutData from "@data/about-data.json";
+const { capabilities, about, experience } = aboutData;
 ---
 
 <main class={styles.container}>
@@ -15,22 +15,10 @@ import experienceData from "../../data/experience.json";
     </div>
     <div class={styles["about-info"]}>
       <span class={styles["about-info-title"]}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam
+        {about.title}
       </span>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at
-        scelerisque libero. Curabitur malesuada pharetra nunc, at elementum
-        ligula consequat rhoncus. Proin id luctus purus, placerat ullamcorper
-        purus. Vestibulum nisl purus, aliquam nec diam nec, consequat
-        consectetur quam. Ut nec neque eu nisi pulvinar fermentum ac non libero.
-        Donec tincidunt finibus rhoncus. Morbi ac faucibus elit, ac rutrum arcu.
-        Fusce ac tincidunt ligula, mattis vestibulum augue. Nam finibus quis
-        magna at pulvinar. Praesent pellentesque, lacus id pharetra volutpat,
-        enim sem consequat tortor, nec egestas nunc ligula cursus leo. Nulla eu
-        erat sed lectus sollicitudin lobortis. Nunc et fermentum lorem, eu
-        tincidunt mi.
+        {about.description}
       </p>
       <ContactSection client:load />
     </div>
@@ -42,14 +30,10 @@ import experienceData from "../../data/experience.json";
     </div>
     <div class={styles["about-info"]}>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at
-        scelerisque libero. Curabitur malesuada pharetra nunc, at elementum
-        ligula consequat rhoncus. Proin id luctus purus, placerat ullamcorper
-        purus. Vestibulum nisl purus, aliquam nec diam nec, consequat
-        consectetur quam. Ut nec neque eu nisi pulvinar fermentum ac non libero.
+        {capabilities.description}
       </p>
       <div class={styles["about-tags-container"]}>
-        {capabililitiesData.map((tag) => <Tag label={tag} />)}
+        {capabilities.capabilitiesList.map((tag) => <Tag label={tag} />)}
       </div>
     </div>
   </div>
@@ -59,11 +43,7 @@ import experienceData from "../../data/experience.json";
       <h2>MY EXPERIENCE</h2>
     </div>
     <div class={`${styles["about-info"]} ${styles["experience-container"]}`}>
-      {
-        experienceData.experienceList.map((item) => (
-          <ExperienceCard item={item} />
-        ))
-      }
+      {experience.experienceList.map((item) => <ExperienceCard item={item} />)}
     </div>
   </div>
   <Divider />

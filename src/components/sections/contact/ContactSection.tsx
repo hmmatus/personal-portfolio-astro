@@ -2,7 +2,7 @@ import { ContactButton, ContactIconButton } from "@components/buttons";
 import GithubIcon from "../../../assets/icons/github.svg?react";
 import LinkedInIcon from "../../../assets/icons/linkedin.svg?react";
 import styles from "./ContactSection.module.scss";
-import { GITHUB, LINKEDIN } from "src/conts";
+import { GITHUB, LINKEDIN } from "src/consts/social-media-links";
 
 export const ContactSection = () => {
   const openUrl = (url: string) => {
