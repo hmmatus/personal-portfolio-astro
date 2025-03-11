@@ -3,7 +3,7 @@
   display: flex;
   border-bottom: 2px solid main.$secondary;
   color: main.$secondary;
-  :hover {
+  &:hover {
     cursor: pointer;
   }
 }
