@@ -5,9 +5,16 @@ import react from "@astrojs/react";
 import svgr from 'vite-plugin-svgr';
 import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
+import node from "@astrojs/node";
+
+let adapter = vercel();
+
+if (process.argv[3] === "--node" || process.argv[4] === "--node") {
+  adapter = node({ mode: "standalone" });
+}
 export default defineConfig({
   output: 'server',
-  adapter: vercel(),
+  adapter,
   integrations: [react()],
   experimental: {
     svg: true,
