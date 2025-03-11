@@ -13,7 +13,8 @@
       "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"],
       "@consts/*": ["src/consts/*"],
-      "@types/*": ["src/types/*"]
+      "@types/*": ["src/types/*"],
+      "@data/*": ["src/data/*"]
     }
   }
 }

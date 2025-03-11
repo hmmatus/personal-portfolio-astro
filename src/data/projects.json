@@ -1,0 +1,62 @@
+{
+  "projectsList": [
+    {
+      "title": "Pizpiretos",
+      "description": "Pizpiretos is a mobile app that allows pets to find their soulmates. It is a social network for pets. The app is built with React Native and the backend is built with NestJs. The app uses sockets to provide real-time updates. The app also uses Firebase for authentication and storage.",
+      "image": "/images/projects/pizpiretos.png",
+      "hyperlinks": [
+        {
+          "label": "Live Demo",
+          "url": "https://expo.dev/accounts/hmmatus/projects/pizpiretos-app/builds"
+        },
+        {
+          "label": "Github app",
+          "url": "https://github.com/hmmatus/pizpiretos-app"
+        },
+        {
+          "label": "Github backend",
+          "url": "https://github.com/hmmatus/pizpiretos-gateway"
+        }
+      ],
+      "projectInformation": [
+        {
+          "label": "Year",
+          "value": "2024"
+        },
+        {
+          "label": "Role",
+          "value": "Frontend Developer"
+        }
+      ],
+      "tags": [
+        "React Native",
+        "React Native Paeper",
+        "NestJs",
+        "Sockets",
+        "Firebase"
+      ]
+    },
+    {
+      "title": "Banking App",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed rhoncus quam. Sed ex felis, blandit nec mollis eget, imperdiet at orci. Ut a volutpat tellus. Maecenas ex augue, pretium et porta sed, ullamcorper porta sem. Phasellus eget turpis at arcu porttitor molestie ut sed risus. Aliquam erat volutpat. Quisque convallis mattis orci ac porttitor. Aliquam blandit lectus ligula, consectetur elementum tortor interdum quis. Suspendisse potenti. Nullam ac ante non nisl egestas vehicula. Nulla id facilisis enim, auctor vulputate turpis. Sed rutrum eu massa vel feugiat. Fusce eu quam ipsum. Sed pulvinar aliquet tellus a lacinia. Vivamus at egestas eros.",
+      "image": "/images/projects/bankingapp.png",
+      "hyperlinks": [
+        {
+          "label": "Github",
+          "url": "https://github.com/hmmatus/BankingApp"
+        }
+      ],
+      "projectInformation": [
+        {
+          "label": "Year",
+          "value": "2024"
+        },
+        {
+          "label": "Role",
+          "value": "Frontend Developer"
+        }
+      ],
+      "tags": ["React Native", "React Native Paper", "Firebase"]
+    }
+  ]
+}

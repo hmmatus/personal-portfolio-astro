@@ -1,7 +1,7 @@
 export interface ProjectI {
   title: string;
   description: string;
-  image: ImageMetadata;
+  image: string;
   hyperlinks: HyperLink[];
   projectInformation: ProjectInformation[];
   tags: string[];
