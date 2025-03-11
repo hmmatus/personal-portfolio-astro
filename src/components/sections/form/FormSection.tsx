@@ -1,4 +1,4 @@
-import { EMAIL, RESUME } from "src/conts";
+import { EMAIL, RESUME } from "src/consts/social-media-links";
 import { ConnectSection, FormHyperlink } from "./components";
 import styles from "./FormSection.module.scss";
 import { InputText, InputTextField } from "@components/form";
