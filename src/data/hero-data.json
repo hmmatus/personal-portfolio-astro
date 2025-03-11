@@ -1,4 +1,6 @@
 {
+  "title": "HI, I AM HECTOR MATUS.",
+  "description": "I am a software engineer with a passion for building applications.",
   "projectsList": [
     {
       "title": "Pizpiretos",
@@ -25,7 +27,7 @@
         },
         {
           "label": "Role",
-          "value": "Frontend Developer"
+          "value": "Full stack Developer"
         }
       ],
       "tags": [
@@ -38,7 +40,7 @@
     },
     {
       "title": "Banking App",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed rhoncus quam. Sed ex felis, blandit nec mollis eget, imperdiet at orci. Ut a volutpat tellus. Maecenas ex augue, pretium et porta sed, ullamcorper porta sem. Phasellus eget turpis at arcu porttitor molestie ut sed risus. Aliquam erat volutpat. Quisque convallis mattis orci ac porttitor. Aliquam blandit lectus ligula, consectetur elementum tortor interdum quis. Suspendisse potenti. Nullam ac ante non nisl egestas vehicula. Nulla id facilisis enim, auctor vulputate turpis. Sed rutrum eu massa vel feugiat. Fusce eu quam ipsum. Sed pulvinar aliquet tellus a lacinia. Vivamus at egestas eros.",
+      "description": "Banking app is a mobile app that allows users to manage their bank accounts. The app is built with React Native.",
       "image": "/images/projects/bankingapp.png",
       "hyperlinks": [
         {
@@ -50,10 +52,6 @@
         {
           "label": "Year",
           "value": "2024"
-        },
-        {
-          "label": "Role",
-          "value": "Frontend Developer"
         }
       ],
       "tags": ["React Native", "React Native Paper", "Firebase"]

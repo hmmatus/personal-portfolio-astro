@@ -1,8 +1,11 @@
 ---
+export type Props = {
+  projectsList: ProjectI[];
+};
 import type { ProjectI } from "src/types/project";
 import { Project } from "./components";
 import styles from "./ProjectsSection.module.scss";
-import projectsData from "@data/projects.json";
+const { projectsList } = Astro.props;
 ---
 
 <section class={styles["projects-section-container"]} id="projects">
@@ -12,10 +15,6 @@ import projectsData from "@data/projects.json";
     front-end development.
   </p>
   <div class={styles["projects-list-container"]}>
-    {
-      projectsData.projectsList.map((project) => (
-        <Project project={project as unknown as ProjectI} />
-      ))
-    }
+    {projectsList.map((project) => <Project project={project} />)}
   </div>
 </section>

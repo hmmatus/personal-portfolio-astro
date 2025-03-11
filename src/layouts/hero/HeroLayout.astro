@@ -1,20 +1,21 @@
 ---
 import styles from "./HeroLayout.module.scss";
 import {
-  ContactButton,
   ContactSection,
   Divider,
   ProjectsSection,
   FormSection,
 } from "../../components";
+import heroData from "@data/hero-data.json";
+const { title, description, projectsList } = heroData;
 ---
 
 <div class={styles.container}>
   <div class={styles["hero-section-container"]}>
     <div class={styles["hero-information"]}>
-      <h1>HI, I AM HECTOR MATUS.</h1>
+      <h1>{title}</h1>
       <p class={styles["hero-description"]}>
-        I am a software engineer with a passion for building web applications.
+        {description}
       </p>
       <ContactSection client:load />
     </div>
@@ -24,7 +25,7 @@ import {
   </div>
   <Divider />
   <div class={styles["projects-section-container"]}>
-    <ProjectsSection />
+    <ProjectsSection projectsList={projectsList} />
   </div>
   <Divider />
   <div class={styles["form-section-container"]}>

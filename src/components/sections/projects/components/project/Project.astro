@@ -23,7 +23,7 @@ const { title, image, description, tags, projectInformation, hyperlinks } =
     <span class={styles.title}>{title}</span>
     <p>{description}</p>
     <div class={styles["project-information-specs"]}>
-      <InfoLabel title="PROJECT INFO" description="test" />
+      <InfoLabel title="PROJECT INFO" description="" />
       {
         projectInformation.map((info) => (
           <InfoLabel title={info.label} description={info.value} />
