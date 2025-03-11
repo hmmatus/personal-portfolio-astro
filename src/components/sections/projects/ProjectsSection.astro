@@ -2,7 +2,7 @@
 import type { ProjectI } from "src/types/project";
 import { Project } from "./components";
 import styles from "./ProjectsSection.module.scss";
-import { projectsData } from "../../../conts";
+import projectsData from "@data/projects.json";
 ---
 
 <section class={styles["projects-section-container"]} id="projects">
@@ -12,6 +12,10 @@ import { projectsData } from "../../../conts";
     front-end development.
   </p>
   <div class={styles["projects-list-container"]}>
-    {projectsData.map((project: ProjectI) => <Project project={project} />)}
+    {
+      projectsData.projectsList.map((project) => (
+        <Project project={project as unknown as ProjectI} />
+      ))
+    }
   </div>
 </section>
