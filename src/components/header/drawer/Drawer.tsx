@@ -2,15 +2,16 @@ import { NavLinks } from "../nav-links/NavLinks";
 import styles from "./Drawer.module.scss";
 type DrawerProps = {
   isOpen: boolean;
+  onClick?: () => void;
 };
-export const Drawer = ({ isOpen }: DrawerProps) => {
+export const Drawer = ({ isOpen, onClick }: DrawerProps) => {
   return (
     <div
-      className={`${styles["drawer-container"]} ${
-        isOpen ? styles.open : styles.close
-      }`}
+      className={`${styles["overlay"]} ${isOpen ? styles.open : styles.close}`}
     >
-      <NavLinks isMobile={true} />
+      <div className={`${styles["drawer"]}`}>
+        <NavLinks isMobile={true} onClick={onClick} />
+      </div>
     </div>
   );
 };

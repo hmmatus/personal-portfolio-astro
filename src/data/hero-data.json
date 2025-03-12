@@ -10,14 +10,6 @@
         {
           "label": "Live Demo",
           "url": "https://expo.dev/accounts/hmmatus/projects/pizpiretos-app/builds"
-        },
-        {
-          "label": "Github app",
-          "url": "https://github.com/hmmatus/pizpiretos-app"
-        },
-        {
-          "label": "Github backend",
-          "url": "https://github.com/hmmatus/pizpiretos-gateway"
         }
       ],
       "projectInformation": [
