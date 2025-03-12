@@ -1,8 +1,9 @@
 import styles from "./NavLinks.module.scss";
 type NavLinksProps = {
   isMobile: boolean;
+  onClick?: () => void;
 };
-export const NavLinks = ({ isMobile }: NavLinksProps) => {
+export const NavLinks = ({ isMobile, onClick }: NavLinksProps) => {
   return (
     <nav>
       <ul
@@ -11,13 +12,19 @@ export const NavLinks = ({ isMobile }: NavLinksProps) => {
         }`}
       >
         <li>
-          <a href="/">Home</a>
+          <a href="/" onClick={onClick}>
+            Home
+          </a>
         </li>
         <li>
-          <a href="/about">About</a>
+          <a href="/about" onClick={onClick}>
+            About
+          </a>
         </li>
         <li>
-          <a href="/#form-section">Contact</a>
+          <a href="#form-section" onClick={onClick}>
+            Contact
+          </a>
         </li>
       </ul>
     </nav>

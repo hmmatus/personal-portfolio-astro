@@ -9,8 +9,10 @@ export const Header = () => {
   const isMobile = window.innerWidth < 768;
 
   const onPressDrawer = () => {
-    console.log("Drawer pressed");
     setIsOpen(!isOpen);
+  };
+  const onClickNavs = () => {
+    setIsOpen(false);
   };
   useEffect(() => {
     if (!isMobile) {
@@ -30,7 +32,7 @@ export const Header = () => {
           <Menu />
         </button>
       )}
-      {isMobile && <Drawer isOpen={isOpen} />}
+      {isMobile && <Drawer isOpen={isOpen} onClick={onClickNavs} />}
     </header>
   );
 };
