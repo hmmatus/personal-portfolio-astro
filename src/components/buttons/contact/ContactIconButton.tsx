@@ -1,19 +1,13 @@
 import styles from "./ContactButton.module.scss";
+
+export interface ContactIconButtonProps
+  extends React.HTMLAttributes<HTMLButtonElement> {}
 export const ContactIconButton = ({
   children,
-  onClick,
-}: {
-  children: React.ReactNode;
-  onClick: () => void;
-}) => {
+  ...rest
+}: React.HTMLAttributes<HTMLButtonElement>) => {
   return (
-    <button
-      onClick={() => {
-        console.log("clicked");
-        onClick();
-      }}
-      className={styles["icon-button"]}
-    >
+    <button className={styles["icon-button"]} {...rest}>
       {children}
     </button>
   );

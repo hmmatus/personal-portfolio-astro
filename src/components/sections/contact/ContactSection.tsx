@@ -13,11 +13,21 @@ export const ContactSection = () => {
   };
   return (
     <div className={styles["contact-section"]}>
-      <ContactButton label="CONTACT ME" onClick={onContactPressed} />
-      <ContactIconButton onClick={() => openUrl(LINKEDIN)}>
+      <ContactButton
+        aria-label="Contact me"
+        label="CONTACT ME"
+        onClick={onContactPressed}
+      />
+      <ContactIconButton
+        aria-label="Linkedin profile"
+        onClick={() => openUrl(LINKEDIN)}
+      >
         <LinkedInIcon className={styles["logo-icon"]} />
       </ContactIconButton>
-      <ContactIconButton onClick={() => openUrl(GITHUB)}>
+      <ContactIconButton
+        aria-label="Github profile"
+        onClick={() => openUrl(GITHUB)}
+      >
         <GithubIcon className={styles["logo-icon"]} />
       </ContactIconButton>
     </div>

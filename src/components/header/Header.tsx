@@ -28,7 +28,11 @@ export const Header = () => {
       </h2>
       {!isMobile && <NavLinks isMobile={false} />}
       {isMobile && (
-        <button className={"cursor-pointer"} onClick={onPressDrawer}>
+        <button
+          aria-label="Drawer menu"
+          className={"cursor-pointer"}
+          onClick={onPressDrawer}
+        >
           <Menu />
         </button>
       )}

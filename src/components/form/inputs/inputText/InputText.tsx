@@ -10,12 +10,15 @@ export const InputText: React.FC<InputTextProps> = ({
   label,
   containerClassName,
   errorMessage,
+  id,
   ...rest
 }) => {
   return (
     <div className={`${styles["input-text-container"]} ${containerClassName}`}>
-      <span className={styles["input-label"]}>{label}</span>
-      <input className={styles["input-text"]} type="text" {...rest} />
+      <label htmlFor={id} className={styles["input-label"]}>
+        {label}
+      </label>
+      <input id={id} className={styles["input-text"]} type="text" {...rest} />
       <span className={styles["input-error-message"]}>{errorMessage}</span>
     </div>
   );
