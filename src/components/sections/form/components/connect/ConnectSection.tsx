@@ -9,10 +9,16 @@ export const ConnectSection = () => {
   };
   return (
     <div className={styles["connect-section"]}>
-      <ContactIconButton onClick={() => openUrl(LINKEDIN)}>
+      <ContactIconButton
+        aria-label="Linkedin profile"
+        onClick={() => openUrl(LINKEDIN)}
+      >
         <LinkedInIcon className={styles["logo-icon"]} />
       </ContactIconButton>
-      <ContactIconButton onClick={() => openUrl(GITHUB)}>
+      <ContactIconButton
+        aria-label="Github profile"
+        onClick={() => openUrl(GITHUB)}
+      >
         <GithubIcon className={styles["logo-icon"]} />
       </ContactIconButton>
     </div>

@@ -25,7 +25,7 @@ export const FormSection = () => {
       const options = {
         from: EMAIL,
         to: EMAIL,
-        subject: data.subject,
+        subject: `${data.email} - ${data.subject}`,
         message: data.message,
       };
       const response = await fetch("/api/send-email", {
@@ -67,6 +67,7 @@ export const FormSection = () => {
       </div>
       <div className={styles["form-section-body"]}>
         <InputText
+          id="name"
           label={"Name"}
           {...register("name")}
           onChange={(e) => setValue("name", e.target.value)}
@@ -74,18 +75,21 @@ export const FormSection = () => {
           containerClassName={styles["form-section-input"]}
         />
         <InputText
+          id="email"
           label={"Email"}
           {...register("email")}
           onChange={(e) => setValue("email", e.target.value)}
           containerClassName={styles["form-section-input"]}
         />
         <InputText
+          id="subject"
           label={"Subject"}
           {...register("subject")}
           onChange={(e) => setValue("subject", e.target.value)}
           containerClassName={styles["form-section-input"]}
         />
         <InputTextField
+          id="message"
           label={"Message"}
           {...register("message")}
           onChange={(e) => setValue("message", e.target.value)}

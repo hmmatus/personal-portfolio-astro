@@ -5,7 +5,7 @@
     {
       "title": "Pizpiretos",
       "description": "Pizpiretos is a mobile app that allows pets to find their soulmates. It is a social network for pets. The app is built with React Native and the backend is built with NestJs. The app uses sockets to provide real-time updates. The app also uses Firebase for authentication and storage.",
-      "image": "/images/projects/pizpiretos.png",
+      "image": "/images/projects/pizpiretos.webp",
       "hyperlinks": [
         {
           "label": "Live Demo",
@@ -33,7 +33,7 @@
     {
       "title": "Banking App",
       "description": "Banking app is a mobile app that allows users to manage their bank accounts. The app is built with React Native.",
-      "image": "/images/projects/bankingapp.png",
+      "image": "/images/projects/bankingapp.webp",
       "hyperlinks": [
         {
           "label": "Github",
