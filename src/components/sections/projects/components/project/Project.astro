@@ -7,6 +7,7 @@ import styles from "./Project.module.scss";
 import { Tag } from "@components/tag";
 import InfoLabel from "../infoLabel/InfoLabel.astro";
 import { HyperLinkLabel } from "../hyperLinkLabel/HyperLinkLabel";
+import { ImageWithLoader } from "@components/image-loader/ImageLoader";
 const { project } = Astro.props;
 const { title, image, description, tags, projectInformation, hyperlinks } =
   project;
@@ -17,7 +18,12 @@ const { title, image, description, tags, projectInformation, hyperlinks } =
     <div class={styles["tags-container"]}>
       {tags.map((tag) => <Tag label={tag} />)}
     </div>
-    <img class={styles["project-image"]} src={image} alt="Image background" />
+    <ImageWithLoader
+      client:only
+      className={styles["project-image"]}
+      src={image}
+      alt="Image background"
+    />
   </div>
   <div class={styles["project-information-container"]}>
     <span class={styles.title}>{title}</span>
