@@ -1,22 +1,9 @@
 ---
-import { Header } from "@components/header/Header";
-import Footer from "@components/footer/Footer.astro";
 import "@styles/global.scss";
 import AboutLayout from "@layouts/about/AboutLayout.astro";
+import HtmlLayout from "@layouts/html/HtmlLayout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="About page" />
-
-    <title>About page</title>
-  </head>
-  <body>
-    <Header client:only />
-    <AboutLayout />
-    <Footer />
-  </body>
-</html>
+<HtmlLayout title="About page" metaDescription="About page">
+  <AboutLayout />
+</HtmlLayout>
