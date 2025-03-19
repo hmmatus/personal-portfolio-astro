@@ -47,50 +47,6 @@
         }
       ],
       "tags": ["React Native", "React Native Paper", "Firebase"]
-    },
-    {
-      "title": "Github landpage",
-      "description": "Github profile landpage with integration to github api",
-      "image": "/images/projects/githubclon.webp",
-      "projectInformation": [
-        {
-          "label": "Year",
-          "value": "2023"
-        }
-      ],
-      "hyperlinks": [
-        {
-          "label": "Live Demo",
-          "url": "https://github-profile-ten-lilac.vercel.app"
-        },
-        {
-          "label": "Github",
-          "url": "https://github.com/hmmatus/github-profile?tab=readme-ov-file"
-        }
-      ],
-      "tags": ["React", "Next JS"]
-    },
-    {
-      "title": "Github landpage",
-      "description": "Landpage of a coffee shop",
-      "image": "/images/projects/coffeeweb.webp",
-      "projectInformation": [
-        {
-          "label": "Year",
-          "value": "2023"
-        }
-      ],
-      "hyperlinks": [
-        {
-          "label": "Live Demo",
-          "url": "https://coffee-listing.vercel.app"
-        },
-        {
-          "label": "Github",
-          "url": "https://github.com/hmmatus/coffee-listing"
-        }
-      ],
-      "tags": ["React", "Next JS"]
     }
   ]
 }
