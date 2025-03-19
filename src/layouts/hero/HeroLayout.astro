@@ -7,6 +7,7 @@ import {
   FormSection,
 } from "../../components";
 import heroData from "@data/hero-data.json";
+import { ImageWithLoader } from "@components/image-loader/ImageLoader";
 const { title, description, projectsList } = heroData;
 ---
 
@@ -20,7 +21,11 @@ const { title, description, projectsList } = heroData;
       <ContactSection client:load />
     </div>
     <div class={styles["image"]}>
-      <img src="/images/profile/profile.webp" alt="Hector Matus" />
+      <ImageWithLoader
+        loading="eager"
+        src="/images/profile/profile.webp"
+        alt="Hector Matus"
+      />
     </div>
   </div>
   <Divider />
