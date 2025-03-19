@@ -13,24 +13,33 @@ if (process.argv[3] === "--node" || process.argv[4] === "--node") {
   adapter = node({ mode: "standalone" });
 }
 export default defineConfig({
-  output: 'server',
+  output: "server",
   adapter,
   integrations: [react()],
   experimental: {
     svg: true,
   },
-    vite: {
+  vite: {
     plugins: [
       svgr({
-        include: '**/*.svg?react',
+        include: "**/*.svg?react",
         svgrOptions: {
-          plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx'],
+          plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],
           svgoConfig: {
-            plugins: ['preset-default', 'removeTitle', 'removeDesc', 'removeDoctype', 'cleanupIds'],
+            plugins: [
+              "preset-default",
+              "removeTitle",
+              "removeDesc",
+              "removeDoctype",
+              "cleanupIds",
+            ],
           },
         },
       }),
       tailwindcss(),
     ],
+  },
+  devToolbar: {
+    enabled: process.env.NODE_ENV !== "production",
   },
 });
