@@ -51,7 +51,7 @@
     {
       "title": "Github landpage",
       "description": "Github profile landpage with integration to github api",
-      "image": "/images/projects/githubclon.png",
+      "image": "/images/projects/githubclon.webp",
       "projectInformation": [
         {
           "label": "Year",
@@ -73,7 +73,7 @@
     {
       "title": "Github landpage",
       "description": "Landpage of a coffee shop",
-      "image": "/images/projects/coffeeweb.png",
+      "image": "/images/projects/coffeeweb.webp",
       "projectInformation": [
         {
           "label": "Year",
