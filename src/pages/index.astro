@@ -1,23 +1,12 @@
 ---
 import HeroLayout from "../layouts/hero/HeroLayout.astro";
-import { Header, Footer } from "../components";
 import "@styles/global.scss";
+import HtmlLayout from "@layouts/html/HtmlLayout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Hector Matus personal portfolio hero page"
-    />
-    <title>Hector Matus Portfolio</title>
-  </head>
-  <body>
-    <Header client:only />
-    <HeroLayout />
-    <Footer />
-  </body>
-</html>
+<HtmlLayout
+  title="Hector Matus portfolio"
+  metaDescription="Hector Matus portfolio hero section"
+>
+  <HeroLayout />
+</HtmlLayout>
