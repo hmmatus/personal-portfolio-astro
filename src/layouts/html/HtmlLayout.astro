@@ -1,4 +1,5 @@
 ---
+import Analytics from "@vercel/analytics/astro";
 import "@styles/global.scss";
 import { Header, Footer } from "../../components";
 export type Props = {
@@ -20,5 +21,6 @@ const { metaDescription, title } = Astro.props;
     <Header client:only />
     <slot />
     <Footer />
+    <Analytics />
   </body>
 </html>
