@@ -3,24 +3,29 @@ import { ConnectSection, FormHyperlink } from "./components";
 import styles from "./FormSection.module.scss";
 import { InputText, InputTextField } from "@components/form";
 import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { CustomButton } from "@components/buttons";
-type FormData = {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-};
+import { Toaster } from "react-hot-toast";
+import { contactFormSchema, type ContactFormData } from "@schemas/contact-form";
+import { showSuccessToast, showErrorToast } from "@utils/react/toast";
+import { TOAST_MESSAGES } from "@consts/toast-messages";
+
 export const FormSection = () => {
   const {
     register,
-    setValue,
     handleSubmit,
-    formState: { errors },
-  } = useForm<FormData>();
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+    mode: "onSubmit", // Only validate on submit
+  });
+
   const openLink = (url: string) => {
     window.open(url, "_blank");
   };
-  const onSubmit = async (data: FormData) => {
+
+  const onSubmit = async (data: ContactFormData) => {
     try {
       const options = {
         from: EMAIL,
@@ -28,6 +33,7 @@ export const FormSection = () => {
         subject: `${data.email} - ${data.subject}`,
         message: data.message,
       };
+
       const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
@@ -37,17 +43,36 @@ export const FormSection = () => {
       });
 
       if (response.ok) {
-        alert("Message sent successfully!");
+        showSuccessToast(TOAST_MESSAGES.FORM_SUCCESS);
+        reset(); // Clear the form after successful submission
       } else {
-        alert("Failed to send message.");
+        throw response.text();
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("An error occurred while sending the message.");
+      showErrorToast(TOAST_MESSAGES.FORM_NETWORK_ERROR, {
+        duration: 5000, // Longer duration for network errors
+      });
     }
   };
+
   return (
     <section id="form-section" className={styles["form-section"]}>
+      <Toaster
+        position="top-center"
+        gutter={8}
+        toastOptions={{
+          duration: 4000,
+          style: {
+            background: "#363636",
+            color: "#fff",
+            borderRadius: "8px",
+            padding: "12px 16px",
+            fontSize: "14px",
+            fontWeight: "500",
+          },
+        }}
+      />
       <div className={styles["form-section-header"]}>
         <h2>LET'S CONNECT</h2>
         <div className={styles["form-hyperlink-container"]}>
@@ -65,38 +90,42 @@ export const FormSection = () => {
           <ConnectSection />
         </div>
       </div>
-      <div className={styles["form-section-body"]}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className={styles["form-section-body"]}
+      >
         <InputText
           id="name"
           label={"Name"}
           {...register("name")}
-          onChange={(e) => setValue("name", e.target.value)}
-          errorMessage=""
+          errorMessage={errors.name?.message || ""}
           containerClassName={styles["form-section-input"]}
         />
         <InputText
           id="email"
           label={"Email"}
           {...register("email")}
-          onChange={(e) => setValue("email", e.target.value)}
+          errorMessage={errors.email?.message || ""}
           containerClassName={styles["form-section-input"]}
         />
         <InputText
           id="subject"
           label={"Subject"}
           {...register("subject")}
-          onChange={(e) => setValue("subject", e.target.value)}
+          errorMessage={errors.subject?.message || ""}
           containerClassName={styles["form-section-input"]}
         />
         <InputTextField
           id="message"
           label={"Message"}
           {...register("message")}
-          onChange={(e) => setValue("message", e.target.value)}
+          errorMessage={errors.message?.message || ""}
           containerClassName={styles["form-section-input"]}
         />
-        <CustomButton onClick={handleSubmit(onSubmit)}>SUBMIT</CustomButton>
-      </div>
+        <CustomButton type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "SENDING..." : "SUBMIT"}
+        </CustomButton>
+      </form>
     </section>
   );
 };
