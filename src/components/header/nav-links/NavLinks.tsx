@@ -4,6 +4,12 @@ type NavLinksProps = {
   onClick?: () => void;
 };
 export const NavLinks = ({ isMobile, onClick }: NavLinksProps) => {
+  const handleHomeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (onClick) onClick();
+  };
+
   return (
     <nav>
       <ul
@@ -12,12 +18,12 @@ export const NavLinks = ({ isMobile, onClick }: NavLinksProps) => {
         }`}
       >
         <li>
-          <a href="/" onClick={onClick}>
+          <a href="/" onClick={handleHomeClick}>
             Home
           </a>
         </li>
         <li>
-          <a href="/about" onClick={onClick}>
+          <a href="#about-section" onClick={onClick}>
             About
           </a>
         </li>

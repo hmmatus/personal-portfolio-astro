@@ -9,6 +9,9 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: 'Bevas Neue', sans-serif;
   font-size: main.$font-size-base;
