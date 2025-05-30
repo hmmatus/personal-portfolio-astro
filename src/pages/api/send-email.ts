@@ -4,8 +4,8 @@ import sendgrid, {
 } from "@sendgrid/mail";
 import type { APIRoute } from "astro";
 import type { EmailProps } from "src/types/email";
-const { PUBLIC_SENDGRID_API_KEY } = import.meta.env;
-sendgrid.setApiKey(PUBLIC_SENDGRID_API_KEY);
+const { SENDGRID_API_KEY } = import.meta.env;
+sendgrid.setApiKey(SENDGRID_API_KEY);
 export const POST: APIRoute = async ({ params, request }) => {
   const body = await request.json();
   const { from, to, subject, message } = body as EmailProps;
