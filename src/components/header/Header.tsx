@@ -6,6 +6,7 @@ import { Drawer } from "./drawer/Drawer";
 import { LanguagePicker } from "../language-picker/LanguagePicker";
 import { useTranslations } from "../../i18n/utils";
 import { ui } from "../../i18n/ui";
+import { useIsMobile } from "../../utils/react/useWindowSize";
 
 interface HeaderProps {
   currentLang?: string;
@@ -17,7 +18,7 @@ export const Header: React.FC<HeaderProps> = ({
   currentPath = "/",
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const isMobile = window.innerWidth < 768;
+  const isMobile = useIsMobile(768);
   const t = useTranslations(currentLang as keyof typeof ui);
 
   const translations = {
@@ -29,14 +30,17 @@ export const Header: React.FC<HeaderProps> = ({
   const onPressDrawer = () => {
     setIsOpen(!isOpen);
   };
+
   const onClickNavs = () => {
     setIsOpen(false);
   };
+
+  // Cerrar el drawer cuando se cambia a desktop
   useEffect(() => {
-    if (!isMobile) {
+    if (!isMobile && isOpen) {
       setIsOpen(false);
     }
-  }, [isMobile]);
+  }, [isMobile, isOpen]);
 
   return (
     <header className={styles.headerContainer}>
@@ -51,7 +55,7 @@ export const Header: React.FC<HeaderProps> = ({
         {isMobile && (
           <button
             aria-label="Drawer menu"
-            className={"cursor-pointer"}
+            className={styles.menuButton}
             onClick={onPressDrawer}
           >
             <Menu />
