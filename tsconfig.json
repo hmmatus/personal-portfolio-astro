@@ -14,7 +14,9 @@
       "@styles/*": ["src/styles/*"],
       "@consts/*": ["src/consts/*"],
       "@types/*": ["src/types/*"],
-      "@data/*": ["src/data/*"]
+      "@data/*": ["src/data/*"],
+      "@schemas/*": ["src/schemas/*"],
+      "@utils/*": ["src/utils/*"]
     }
   }
 }

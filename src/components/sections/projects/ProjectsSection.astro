@@ -5,14 +5,17 @@ export type Props = {
 import type { ProjectI } from "src/types/project";
 import { Project } from "./components";
 import styles from "./ProjectsSection.module.scss";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
 const { projectsList } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class={styles["projects-section-container"]} id="projects">
-  <h2>Featured Projects</h2>
+  <h2>{t("projects.title")}</h2>
   <p>
-    Here are some of the selected projects that showcase my passion for
-    front-end development.
+    {t("projects.description")}
   </p>
   <div class={styles["projects-list-container"]}>
     {projectsList.map((project) => <Project project={project} />)}

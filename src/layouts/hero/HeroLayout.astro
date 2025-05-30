@@ -6,17 +6,30 @@ import {
   ProjectsSection,
   FormSection,
 } from "../../components";
-import heroData from "@data/hero-data.json";
+import {
+  heroData,
+  getProjectsWithTranslations,
+  getExperienceWithTranslations,
+} from "@data/i18n-data";
 import { ImageWithLoader } from "@components/image-loader/ImageLoader";
-const { title, description, projectsList } = heroData;
+import { Tag } from "@components/tag";
+import ExperienceCard from "@components/cards/experience/ExperienceCard.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const { capabilities } = heroData;
+const projectsList = getProjectsWithTranslations(lang);
+const experienceList = getExperienceWithTranslations(lang);
 ---
 
 <main class={styles.container}>
   <div class={styles["hero-section-container"]}>
     <div class={styles["hero-information"]}>
-      <h1>{title}</h1>
+      <h1>{t("hero.title")}</h1>
       <p class={styles["hero-description"]}>
-        {description}
+        {t("hero.description")}
       </p>
       <ContactSection client:load />
     </div>
@@ -33,7 +46,32 @@ const { title, description, projectsList } = heroData;
     <ProjectsSection projectsList={projectsList} />
   </div>
   <Divider />
-  <div class={styles["form-section-container"]}>
-    <FormSection client:load />
+  <div id="about-section" class={styles["about-section-container"]}>
+    <div class={styles["about-info-container"]}>
+      <div class={styles["about-info"]}>
+        <h2>{t("capabilities.title").toUpperCase()}</h2>
+      </div>
+      <div class={styles["about-info"]}>
+        <p>
+          {t("capabilities.description")}
+        </p>
+        <div class={styles["about-tags-container"]}>
+          {capabilities.capabilitiesList.map((tag) => <Tag label={tag} />)}
+        </div>
+      </div>
+    </div>
+    <Divider />
+    <div class={styles["about-info-container"]}>
+      <div class={styles["about-info"]}>
+        <h2>{t("experience.title").toUpperCase()}</h2>
+      </div>
+      <div class={`${styles["about-info"]} ${styles["experience-container"]}`}>
+        {experienceList.map((item) => <ExperienceCard item={item} />)}
+      </div>
+    </div>
+  </div>
+  <Divider />
+  <div id="form-section" class={styles["form-section-container"]}>
+    <FormSection client:load currentLang={lang} />
   </div>
 </main>

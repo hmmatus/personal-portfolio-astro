@@ -1,3 +1,4 @@
+@use "../../styles/theme/main.scss" as main;
 .container {
   width: 100%;
   margin-top: 100px;
@@ -49,6 +50,40 @@
   }
 }
 
+// About section styles
+.about-section-container {
+  margin: 64px 0;
+}
+
+.about-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 0 12px 0;
+
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+    padding: 12px 64px;
+  }
+}
+
+.about-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  row-gap: 12px;
+}
+
+.about-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  gap: 10px;
+}
+
+.experience-container {
+  row-gap: 24px;
+}
 .form-section-container {
   padding: 0 18px;
   margin-top: 64px;

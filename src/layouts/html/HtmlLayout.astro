@@ -2,15 +2,19 @@
 import Analytics from "@vercel/analytics/astro";
 import "@styles/global.scss";
 import { Header, Footer } from "../../components";
+import { getLangFromUrl } from "../../i18n/utils";
+
 export type Props = {
   metaDescription: string;
   title: string;
 };
+
 const { metaDescription, title } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +22,7 @@ const { metaDescription, title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <Header client:only />
+    <Header client:only currentLang={lang} currentPath={Astro.url.pathname} />
     <slot />
     <Footer />
     <Analytics />

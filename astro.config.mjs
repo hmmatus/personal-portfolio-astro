@@ -16,6 +16,13 @@ export default defineConfig({
   output: "server",
   adapter,
   integrations: [react()],
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "es"],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  },
   experimental: {
     svg: true,
   },

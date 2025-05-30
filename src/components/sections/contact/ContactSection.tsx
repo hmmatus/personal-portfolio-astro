@@ -9,7 +9,10 @@ export const ContactSection = () => {
     window.open(url, "_blank", "noreferrer");
   };
   const onContactPressed = () => {
-    window.location.replace("/#form-section");
+    const formSection = document.getElementById("form-section");
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: "smooth" });
+    }
   };
   return (
     <div className={styles["contact-section"]}>
