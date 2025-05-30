@@ -8,7 +8,7 @@ export const onRequest = defineMiddleware((context, next) => {
 
   // Check if the pathname starts with a language code
   const pathnameIsMissingLocale = supportedLanguages.every(
-    (locale) => !pathname.includes(locale)
+    (locale) => !pathname.startsWith(`/${locale}`)
   );
 
   // If the pathname doesn't start with a language code and it's not the root
