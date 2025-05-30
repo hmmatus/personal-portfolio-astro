@@ -1,7 +1,10 @@
 import type { ProjectI } from "../types/project";
 import type { ExperienceI } from "../types/experience";
 import { useTranslations } from "../i18n/utils";
-import type { ui } from "../i18n/ui";
+import type { ui, defaultLang } from "../i18n/ui";
+
+// Type alias for translation keys
+type TranslationKey = keyof (typeof ui)[typeof defaultLang];
 
 export const heroData = {
   projectsList: [
@@ -94,42 +97,38 @@ export const heroData = {
 };
 
 // Utility functions to convert i18n data to component-expected types
-export function getProjectsWithTranslations(lang: keyof typeof ui): ProjectI[] {
+export function getProjectsWithTranslations<L extends keyof typeof ui>(
+  lang: L
+): ProjectI[] {
   const t = useTranslations(lang);
 
   return heroData.projectsList.map((project) => ({
-    title: t(`projects.${project.id}.title` as keyof (typeof ui)[typeof lang]),
-    description: t(
-      `projects.${project.id}.description` as keyof (typeof ui)[typeof lang]
-    ),
+    title: t(`projects.${project.id}.title` as TranslationKey),
+    description: t(`projects.${project.id}.description` as TranslationKey),
     image: project.image,
     tags: project.tags,
     hyperlinks: project.hyperlinks.map((link) => ({
-      label: t(link.labelKey as keyof (typeof ui)[typeof lang]),
+      label: t(link.labelKey as TranslationKey),
       url: link.url,
     })),
     projectInformation: project.projectInformation.map((info) => ({
-      label: t(info.labelKey as keyof (typeof ui)[typeof lang]),
+      label: t(info.labelKey as TranslationKey),
       value: info.valueKey
-        ? t(info.valueKey as keyof (typeof ui)[typeof lang])
+        ? t(info.valueKey as TranslationKey)
         : info.value || "",
     })),
   }));
 }
 
-export function getExperienceWithTranslations(
-  lang: keyof typeof ui
+export function getExperienceWithTranslations<L extends keyof typeof ui>(
+  lang: L
 ): ExperienceI[] {
   const t = useTranslations(lang);
 
   return heroData.experience.experienceList.map((exp) => ({
-    title: t(`experience.${exp.id}.title` as keyof (typeof ui)[typeof lang]),
-    company: t(
-      `experience.${exp.id}.company` as keyof (typeof ui)[typeof lang]
-    ),
-    description: t(
-      `experience.${exp.id}.description` as keyof (typeof ui)[typeof lang]
-    ),
+    title: t(`experience.${exp.id}.title` as TranslationKey),
+    company: t(`experience.${exp.id}.company` as TranslationKey),
+    description: t(`experience.${exp.id}.description` as TranslationKey),
     startDate: exp.startDate,
     endDate: exp.endDate,
   }));

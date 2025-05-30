@@ -1,5 +1,6 @@
 import React from "react";
 import { languages } from "../../i18n/ui";
+import { supportedLanguages } from "src/i18n/utils";
 
 interface LanguagePickerProps {
   currentLang: string;
@@ -17,8 +18,8 @@ export const LanguagePicker: React.FC<LanguagePickerProps> = ({
 
     // Remove current language from path if it exists
     let path = currentPath;
-    if (path.startsWith("/es") || path.startsWith("/en")) {
-      path = path.substring(3) || "/";
+    if (supportedLanguages.includes(path)) {
+      path = path.replace(`/${currentLang}`, "") || "/";
     }
 
     // Add new language prefix (except for default language 'en')

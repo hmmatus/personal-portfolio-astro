@@ -8,7 +8,6 @@ export const createContactFormSchema = (
   return z.object({
     name: z
       .string()
-      .min(1, t("form.validation.name.required"))
       .min(2, t("form.validation.name.min"))
       .max(50, t("form.validation.name.max")),
     email: z
