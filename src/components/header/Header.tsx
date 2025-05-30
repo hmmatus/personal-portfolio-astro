@@ -3,10 +3,28 @@ import styles from "./Header.module.scss";
 import { NavLinks } from "./nav-links/NavLinks";
 import Menu from "../../assets/icons/menu.svg?react"; // Based on solution https://doray.me/articles/use-svgs-as-react-components-in-astro-MNUvh
 import { Drawer } from "./drawer/Drawer";
+import { LanguagePicker } from "../language-picker/LanguagePicker";
+import { useTranslations } from "../../i18n/utils";
+import { ui } from "../../i18n/ui";
 
-export const Header = () => {
+interface HeaderProps {
+  currentLang?: string;
+  currentPath?: string;
+}
+
+export const Header: React.FC<HeaderProps> = ({
+  currentLang = "en",
+  currentPath = "/",
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = window.innerWidth < 768;
+  const t = useTranslations(currentLang as keyof typeof ui);
+
+  const translations = {
+    home: t("nav.home"),
+    about: t("nav.about"),
+    contact: t("nav.contact"),
+  };
 
   const onPressDrawer = () => {
     setIsOpen(!isOpen);
@@ -19,24 +37,34 @@ export const Header = () => {
       setIsOpen(false);
     }
   }, [isMobile]);
+
   return (
-    <header>
+    <header className={styles.headerContainer}>
       <h2>
         <a className={styles["header-logo"]} href="/">
           Hector Matus
         </a>
       </h2>
-      {!isMobile && <NavLinks isMobile={false} />}
+      <div className={styles.headerRight}>
+        {!isMobile && <NavLinks isMobile={false} translations={translations} />}
+        <LanguagePicker currentLang={currentLang} currentPath={currentPath} />
+        {isMobile && (
+          <button
+            aria-label="Drawer menu"
+            className={"cursor-pointer"}
+            onClick={onPressDrawer}
+          >
+            <Menu />
+          </button>
+        )}
+      </div>
       {isMobile && (
-        <button
-          aria-label="Drawer menu"
-          className={"cursor-pointer"}
-          onClick={onPressDrawer}
-        >
-          <Menu />
-        </button>
+        <Drawer
+          isOpen={isOpen}
+          onClick={onClickNavs}
+          translations={translations}
+        />
       )}
-      {isMobile && <Drawer isOpen={isOpen} onClick={onClickNavs} />}
     </header>
   );
 };

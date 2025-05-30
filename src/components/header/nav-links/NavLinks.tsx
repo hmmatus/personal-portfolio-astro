@@ -1,9 +1,20 @@
 import styles from "./NavLinks.module.scss";
+
 type NavLinksProps = {
   isMobile: boolean;
   onClick?: () => void;
+  translations: {
+    home: string;
+    about: string;
+    contact: string;
+  };
 };
-export const NavLinks = ({ isMobile, onClick }: NavLinksProps) => {
+
+export const NavLinks = ({
+  isMobile,
+  onClick,
+  translations,
+}: NavLinksProps) => {
   const handleHomeClick = (e: React.MouseEvent) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -19,17 +30,17 @@ export const NavLinks = ({ isMobile, onClick }: NavLinksProps) => {
       >
         <li>
           <a href="/" onClick={handleHomeClick}>
-            Home
+            {translations.home}
           </a>
         </li>
         <li>
           <a href="#about-section" onClick={onClick}>
-            About
+            {translations.about}
           </a>
         </li>
         <li>
           <a href="#form-section" onClick={onClick}>
-            Contact
+            {translations.contact}
           </a>
         </li>
       </ul>

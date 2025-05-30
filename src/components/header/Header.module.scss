@@ -1,17 +1,23 @@
 @use "../../styles/theme/main.scss" as main;
 
-header {
+.headerContainer {
   display: flex;
   width: 100%;
   height: 96px;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding: 0 clamp(16px, 2vw, 60px);
   background-color: main.$primary-background;
   top: 0;
   position: fixed;
 }
 
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 nav ul {
   display: flex;
 }
@@ -34,4 +40,10 @@ nav ul li a {
 .menuButton {
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .headerRight {
+    gap: 0.5rem;
+  }
 }
