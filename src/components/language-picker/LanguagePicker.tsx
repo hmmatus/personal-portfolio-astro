@@ -18,12 +18,20 @@ export const LanguagePicker: React.FC<LanguagePickerProps> = ({
 
     // Remove current language from path if it exists
     let path = currentPath;
-    if (supportedLanguages.includes(path)) {
-      path = path.replace(`/${currentLang}`, "") || "/";
+
+    // Check if path starts with any supported language prefix
+    const pathSegments = path.split("/").filter(Boolean); // Remove empty strings from split
+    const firstSegment = pathSegments[0];
+
+    if (firstSegment && supportedLanguages.includes(firstSegment)) {
+      // Remove the language prefix: "/es/" -> "/" or "/es/about" -> "/about"
+      path = "/" + pathSegments.slice(1).join("/");
+      if (path === "/") path = "/"; // Keep root path as "/"
     }
 
     // Add new language prefix (except for default language 'en')
-    const newPath = newLang === "en" ? path : `/${newLang}${path}`;
+    const newPath =
+      newLang === "en" ? path : `/${newLang}${path === "/" ? "" : path}`;
     window.location.href = newPath;
   };
 
