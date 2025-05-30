@@ -72,6 +72,6 @@ const experienceList = getExperienceWithTranslations(lang);
   </div>
   <Divider />
   <div id="form-section" class={styles["form-section-container"]}>
-    <FormSection client:load />
+    <FormSection client:load currentLang={lang} />
   </div>
 </main>

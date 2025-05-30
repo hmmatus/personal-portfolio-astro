@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { EMAIL, RESUME } from "src/consts/social-media-links";
 import { ConnectSection, FormHyperlink } from "./components";
 import styles from "./FormSection.module.scss";
@@ -6,11 +7,24 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CustomButton } from "@components/buttons";
 import { Toaster } from "react-hot-toast";
-import { contactFormSchema, type ContactFormData } from "@schemas/contact-form";
+import {
+  createContactFormSchema,
+  type ContactFormData,
+} from "@schemas/contact-form";
 import { showSuccessToast, showErrorToast } from "@utils/react/toast";
-import { TOAST_MESSAGES } from "@consts/toast-messages";
+import { useTranslations } from "../../../i18n/utils";
+import { ui } from "../../../i18n/ui";
 
-export const FormSection = () => {
+interface FormSectionProps {
+  currentLang?: string;
+}
+
+export const FormSection: React.FC<FormSectionProps> = ({
+  currentLang = "en",
+}) => {
+  const t = useTranslations(currentLang as keyof typeof ui);
+  const contactFormSchema = createContactFormSchema(t);
+
   const {
     register,
     handleSubmit,
@@ -43,14 +57,14 @@ export const FormSection = () => {
       });
 
       if (response.ok) {
-        showSuccessToast(TOAST_MESSAGES.FORM_SUCCESS);
+        showSuccessToast(t("toast.form.success"));
         reset(); // Clear the form after successful submission
       } else {
         throw response.text();
       }
     } catch (error) {
       console.error("Error:", error);
-      showErrorToast(TOAST_MESSAGES.FORM_NETWORK_ERROR, {
+      showErrorToast(t("toast.form.network.error"), {
         duration: 5000, // Longer duration for network errors
       });
     }
@@ -74,17 +88,20 @@ export const FormSection = () => {
         }}
       />
       <div className={styles["form-section-header"]}>
-        <h2>LET'S CONNECT</h2>
+        <h2>{t("form.title")}</h2>
         <div className={styles["form-hyperlink-container"]}>
-          <p>Say hello at </p>
+          <p>{t("form.greeting")} </p>
           <FormHyperlink
             label={EMAIL}
             onClick={() => openLink(`mailto:${EMAIL}`)}
           />
         </div>
         <div className={styles["form-hyperlink-container"]}>
-          <p>For more info, here's my </p>
-          <FormHyperlink label="resume" onClick={() => openLink(RESUME)} />
+          <p>{t("form.resume")} </p>
+          <FormHyperlink
+            label={t("form.resume.link")}
+            onClick={() => openLink(RESUME)}
+          />
         </div>
         <div className={styles["connect-section-container"]}>
           <ConnectSection />
@@ -96,34 +113,34 @@ export const FormSection = () => {
       >
         <InputText
           id="name"
-          label={"Name"}
+          label={t("form.name.label")}
           {...register("name")}
           errorMessage={errors.name?.message || ""}
           containerClassName={styles["form-section-input"]}
         />
         <InputText
           id="email"
-          label={"Email"}
+          label={t("form.email.label")}
           {...register("email")}
           errorMessage={errors.email?.message || ""}
           containerClassName={styles["form-section-input"]}
         />
         <InputText
           id="subject"
-          label={"Subject"}
+          label={t("form.subject.label")}
           {...register("subject")}
           errorMessage={errors.subject?.message || ""}
           containerClassName={styles["form-section-input"]}
         />
         <InputTextField
           id="message"
-          label={"Message"}
+          label={t("form.message.label")}
           {...register("message")}
           errorMessage={errors.message?.message || ""}
           containerClassName={styles["form-section-input"]}
         />
         <CustomButton type="submit" disabled={isSubmitting}>
-          {isSubmitting ? "SENDING..." : "SUBMIT"}
+          {isSubmitting ? t("form.submitting") : t("form.submit")}
         </CustomButton>
       </form>
     </section>

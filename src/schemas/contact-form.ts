@@ -1,6 +1,34 @@
 import { z } from "zod";
+import { ui, defaultLang } from "../i18n/ui";
 
-// Contact form validation schema
+// Contact form validation schema generator that accepts translations
+export const createContactFormSchema = (
+  t: (key: keyof (typeof ui)[typeof defaultLang]) => string
+) => {
+  return z.object({
+    name: z
+      .string()
+      .min(1, t("form.validation.name.required"))
+      .min(2, t("form.validation.name.min"))
+      .max(50, t("form.validation.name.max")),
+    email: z
+      .string()
+      .min(1, t("form.validation.email.required"))
+      .email(t("form.validation.email.invalid")),
+    subject: z
+      .string()
+      .min(1, t("form.validation.subject.required"))
+      .min(5, t("form.validation.subject.min"))
+      .max(100, t("form.validation.subject.max")),
+    message: z
+      .string()
+      .min(1, t("form.validation.message.required"))
+      .min(10, t("form.validation.message.min"))
+      .max(1000, t("form.validation.message.max")),
+  });
+};
+
+// Static schema for backward compatibility (English by default)
 export const contactFormSchema = z.object({
   name: z
     .string()

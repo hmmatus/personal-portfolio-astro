@@ -19,6 +19,37 @@ export const ui = {
     "nav.projects": "Projects",
     "nav.contact": "Contact",
 
+    // Form section
+    "form.title": "LET'S CONNECT",
+    "form.greeting": "Say hello at",
+    "form.resume": "For more info, here's my",
+    "form.resume.link": "resume",
+    "form.name.label": "Name",
+    "form.email.label": "Email",
+    "form.subject.label": "Subject",
+    "form.message.label": "Message",
+    "form.submit": "SUBMIT",
+    "form.submitting": "SENDING...",
+
+    // Form validation messages
+    "form.validation.name.required": "Name is required",
+    "form.validation.name.min": "Name must be at least 2 characters",
+    "form.validation.name.max": "Name must be less than 50 characters",
+    "form.validation.email.required": "Email is required",
+    "form.validation.email.invalid": "Please enter a valid email address",
+    "form.validation.subject.required": "Subject is required",
+    "form.validation.subject.min": "Subject must be at least 5 characters",
+    "form.validation.subject.max": "Subject must be less than 100 characters",
+    "form.validation.message.required": "Message is required",
+    "form.validation.message.min": "Message must be at least 10 characters",
+    "form.validation.message.max": "Message must be less than 1000 characters",
+
+    // Toast messages
+    "toast.form.success": "Message sent successfully! 🎉",
+    "toast.form.error": "Failed to send message. Please try again.",
+    "toast.form.network.error":
+      "An error occurred while sending the message. Please check your connection and try again.",
+
     // Projects
     "projects.title": "Projects",
     "projects.description":
@@ -74,6 +105,42 @@ export const ui = {
     "nav.about": "Acerca de",
     "nav.projects": "Proyectos",
     "nav.contact": "Contacto",
+
+    // Form section
+    "form.title": "CONECTEMOS",
+    "form.greeting": "Saluda en",
+    "form.resume": "Para más información, aquí está mi",
+    "form.resume.link": "currículum",
+    "form.name.label": "Nombre",
+    "form.email.label": "Correo electrónico",
+    "form.subject.label": "Asunto",
+    "form.message.label": "Mensaje",
+    "form.submit": "ENVIAR",
+    "form.submitting": "ENVIANDO...",
+
+    // Form validation messages
+    "form.validation.name.required": "El nombre es requerido",
+    "form.validation.name.min": "El nombre debe tener al menos 2 caracteres",
+    "form.validation.name.max": "El nombre debe tener menos de 50 caracteres",
+    "form.validation.email.required": "El correo electrónico es requerido",
+    "form.validation.email.invalid":
+      "Por favor ingresa una dirección de correo válida",
+    "form.validation.subject.required": "El asunto es requerido",
+    "form.validation.subject.min": "El asunto debe tener al menos 5 caracteres",
+    "form.validation.subject.max":
+      "El asunto debe tener menos de 100 caracteres",
+    "form.validation.message.required": "El mensaje es requerido",
+    "form.validation.message.min":
+      "El mensaje debe tener al menos 10 caracteres",
+    "form.validation.message.max":
+      "El mensaje debe tener menos de 1000 caracteres",
+
+    // Toast messages
+    "toast.form.success": "¡Mensaje enviado exitosamente! 🎉",
+    "toast.form.error":
+      "Error al enviar el mensaje. Por favor intenta de nuevo.",
+    "toast.form.network.error":
+      "Ocurrió un error al enviar el mensaje. Por favor verifica tu conexión e intenta de nuevo.",
 
     // Projects
     "projects.title": "Proyectos",
