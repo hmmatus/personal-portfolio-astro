@@ -20,6 +20,19 @@ const lang = getLangFromUrl(Astro.url);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={metaDescription} />
     <title>{title}</title>
+    <!-- Font preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Syne (display) + DM Mono (labels/code) via Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Cabinet Grotesk (body) via Fontshare -->
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@300,400,500,700,800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <Header client:only currentLang={lang} currentPath={Astro.url.pathname} />
