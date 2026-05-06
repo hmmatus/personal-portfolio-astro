@@ -85,3 +85,8 @@ main {
     opacity: 0.35;
   }
 }
+
+:focus-visible {
+  outline: 2px solid main.$indigo;
+  outline-offset: 2px;
+}

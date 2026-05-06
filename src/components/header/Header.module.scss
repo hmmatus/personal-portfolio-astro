@@ -8,7 +8,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 clamp(16px, 2vw, 60px);
-  background-color: rgba(9, 9, 11, 0.94);
+  background-color: main.$black-glass;
   backdrop-filter: blur(16px);
   top: 0;
   position: fixed;
@@ -22,30 +22,32 @@
   gap: 1rem;
 }
 
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+.headerContainer {
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
-nav ul li {
-  margin: 0 0.4rem;
-  align-items: center;
-  padding: 0.5rem;
-}
+  nav ul li {
+    margin: 0 0.4rem;
+    align-items: center;
+    padding: 0.5rem;
+  }
 
-nav ul li a {
-  font-family: main.$font-mono;
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: main.$text-dim;
-  text-decoration: none;
-  transition: color 0.2s;
+  nav ul li a {
+    font-family: main.$font-mono;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: main.$text-muted;
+    text-decoration: none;
+    transition: color 0.2s;
 
-  &:hover {
-    color: main.$indigo;
+    &:hover {
+      color: main.$indigo;
+    }
   }
 }
 

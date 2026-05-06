@@ -18,8 +18,8 @@
   height: 36px;
   fill: main.$text-muted;
   transition: fill 0.2s;
+}
 
-  &:hover {
-    fill: main.$indigo;
-  }
+.icon-button:hover .logo-icon {
+  fill: main.$indigo;
 }
