@@ -8,11 +8,12 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 clamp(16px, 2vw, 60px);
-  background-color: main.$primary-background;
+  background-color: rgba(9, 9, 11, 0.94);
+  backdrop-filter: blur(16px);
   top: 0;
   position: fixed;
   z-index: 1000;
-    border-bottom: 1px solid main.$border;
+  border-bottom: 1px solid main.$black-4;
 }
 
 .headerRight {
@@ -24,67 +25,78 @@
 nav ul {
   display: flex;
   list-style: none;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li {
-  margin: 0rem 0.4rem;
+  margin: 0 0.4rem;
   align-items: center;
   padding: 0.5rem;
 }
 
 nav ul li a {
-  letter-spacing: 1px;
-  color: main.$primary-text;
-    text-decoration: none;
-    transition: color 0.2s ease;
+  font-family: main.$font-mono;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: main.$text-dim;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: main.$indigo;
+  }
 }
 
 .header-logo {
-  font-size: clamp(28px, 1.75em, 32px);
-  color: main.$light-gray;
+  font-family: main.$font-display;
+  font-size: clamp(18px, 1.5em, 22px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: main.$white;
   text-decoration: none;
-    transition: color 0.2s ease;
-  
-    &:hover {
-      color: main.$secondary;
-    }
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: main.$indigo;
+  }
 }
 
 .menuButton {
   display: flex;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    border: none;
-  font-size: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
   cursor: pointer;
   padding: 0.5rem;
-    color: main.$primary-text;
-    transition: color 0.2s ease;
-  
-    &:hover {
-      color: main.$secondary;
-    }
-  
-    svg {
-      width: 24px;
-      height: 24px;
-    }
+  color: main.$text-muted;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: main.$indigo;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 @media (max-width: 768px) {
   .headerContainer {
-      padding: 0 clamp(12px, 4vw, 20px);
-      height: 80px;
-    }
+    padding: 0 clamp(12px, 4vw, 20px);
+    height: 80px;
+  }
+
   .headerRight {
     gap: 0.5rem;
   }
-.header-logo {
-  font-size: clamp(24px, 5vw, 28px);
-}
+
+  .header-logo {
+    font-size: clamp(16px, 5vw, 20px);
+  }
 }
 
 @media (max-width: 480px) {
