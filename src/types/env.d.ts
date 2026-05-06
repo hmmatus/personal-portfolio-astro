@@ -1,5 +1,5 @@
 interface ImportMetaEnv {
-  readonly SENDGRID_API_KEY: string;
+  readonly RESEND_TOKEN: string;
 }
 
 interface ImportMeta {
