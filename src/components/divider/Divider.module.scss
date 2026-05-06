@@ -2,5 +2,7 @@
 
 .divider {
   width: 100%;
-  border: 1px solid main.$border;
+  height: 1px;
+  border: none;
+  background-color: main.$black-4;
 }
