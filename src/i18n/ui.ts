@@ -54,6 +54,9 @@ export const ui = {
     "projects.title": "Projects",
     "projects.description":
       "Here are some of the selected projects that showcase my passion for front-end development.",
+    "projects.muellerapp.title": "Mueller App",
+    "projects.muellerapp.description":
+      "Mueller is a website to connect with people and deliver tech solutions.",
     "projects.pizpiretos.title": "Pizpiretos",
     "projects.pizpiretos.description":
       "Pizpiretos is a mobile app that allows pets to find their soulmates. It is a social network for pets. The app is built with React Native and the backend is built with NestJs. The app uses sockets to provide real-time updates. The app also uses Firebase for authentication and storage.",
@@ -152,6 +155,9 @@ export const ui = {
     "projects.bankingapp.title": "Aplicación Bancaria",
     "projects.bankingapp.description":
       "La aplicación bancaria es una aplicación móvil que permite a los usuarios gestionar sus cuentas bancarias. La aplicación está construida con React Native.",
+    "projects.muellerapp.title": "Mueller App",
+    "projects.muellerapp.description":
+      "Mueller es un sitio web para conectar con personas y entregar soluciones tecnológicas.",
     "projects.live-demo": "Demo en Vivo",
     "projects.github": "Github",
     "projects.year": "Año",

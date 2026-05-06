@@ -9,6 +9,33 @@ type TranslationKey = keyof (typeof ui)[typeof defaultLang];
 export const heroData = {
   projectsList: [
     {
+      id: "muellerapp",
+      image: "/images/projects/mueller_app.png",
+      hyperlinks: [
+        {
+          labelKey: "projects.live-demo",
+          url: "https://mueller-react-6gfgm0g4x.vercel.app/",
+        },
+      ],
+      projectInformation: [
+        {
+          labelKey: "projects.year",
+          value: "2026",
+        },
+        {
+          labelKey: "projects.role",
+          valueKey: "projects.full-stack-developer",
+        },
+      ],
+      tags: [
+        "React Native",
+        "React Native Paper",
+        "NestJS",
+        "Sockets",
+        "Firebase",
+      ],
+    },
+    {
       id: "pizpiretos",
       image: "/images/projects/pizpiretos.webp",
       hyperlinks: [
