@@ -1,17 +1,25 @@
 @use "../../../styles/theme/main.scss" as main;
+
 .contact-section {
   display: flex;
   flex-direction: row;
-  gap: 0 clamp(4px,1rem,10px);
+  align-items: center;
+  gap: 0 clamp(4px, 1rem, 10px);
 }
+
 .icon-button {
   background: none;
   border: none;
   cursor: pointer;
 }
+
 .contact-section .logo-icon {
-  width: 54px;
-  height: 54px;
-  fill: main.$secondary;
-  background-color: main.$primary-background;
+  width: 36px;
+  height: 36px;
+  fill: main.$text-muted;
+  transition: fill 0.2s;
+
+  &:hover {
+    fill: main.$indigo;
+  }
 }
