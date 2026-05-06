@@ -1,0 +1,33 @@
+@use "../../styles/theme/main.scss" as main;
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.select {
+  background: transparent;
+  border: 1px solid main.$black-4;
+  border-radius: 3px;
+  padding: 6px 10px;
+  color: main.$text-muted;
+  font-family: main.$font-mono;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+
+  &:hover {
+    border-color: main.$indigo;
+    color: main.$indigo;
+    background-color: main.$indigo-glow;
+  }
+
+  option {
+    background: main.$black-3;
+    color: main.$white;
+    font-family: main.$font-mono;
+    text-transform: uppercase;
+  }
+}
