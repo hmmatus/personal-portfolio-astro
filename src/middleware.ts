@@ -13,7 +13,7 @@ export const onRequest = defineMiddleware((context, next) => {
 
   // If the pathname doesn't start with a language code and it's not the root
   // redirect to the default language
-  if (pathnameIsMissingLocale && pathname !== "/") {
+  if (pathnameIsMissingLocale && pathname !== "/" && !pathname.startsWith("/api/")) {
     return context.redirect(`/${defaultLang}${pathname}`);
   }
 
