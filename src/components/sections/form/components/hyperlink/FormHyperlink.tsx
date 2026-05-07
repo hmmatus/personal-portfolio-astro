@@ -1,12 +1,19 @@
 import styles from "./FormHyperlink.module.scss";
+
 type Props = {
   label: string;
-  onClick: () => void;
+  href: string;
 };
-export const FormHyperlink: React.FC<Props> = ({ label, onClick }) => {
+
+export const FormHyperlink: React.FC<Props> = ({ label, href }) => {
   return (
-    <p className={styles["form-hyperlink"]} onClick={onClick}>
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer noopener"
+      className={styles["form-hyperlink"]}
+    >
       {label}
-    </p>
+    </a>
   );
 };

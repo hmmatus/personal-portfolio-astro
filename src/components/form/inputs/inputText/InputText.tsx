@@ -18,7 +18,12 @@ export const InputText: React.FC<InputTextProps> = ({
       <label htmlFor={id} className={styles["input-label"]}>
         {label}
       </label>
-      <input id={id} className={styles["input-text"]} type="text" {...rest} />
+      <input
+        type="text"
+        id={id}
+        className={styles["input-text"]}
+        {...rest}
+      />
       <span className={styles["input-error-message"]}>{errorMessage}</span>
     </div>
   );

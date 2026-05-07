@@ -1,4 +1,5 @@
 @use "../../../styles/theme/main.scss" as main;
+
 .overlay {
   position: fixed;
   top: 0;
@@ -11,23 +12,32 @@
   display: flex;
   justify-content: center;
   width: 100%;
-    height: 100%;
+  height: 100%;
   position: fixed;
-  box-shadow: 5px 0px 18px rgb(0, 0, 0, 0);
   background-color: main.$primary-background;
   color: main.$primary-text;
 }
 
 .open {
   display: flex;
-    opacity: 1;
+  opacity: 1;
+  visibility: visible;
   transform: translateX(0);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
 }
 
 .close {
-  display: hidden;
-    opacity: 0;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
   transform: translateX(-100%);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out, visibility 0s linear 0.3s;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: visibility 0s;
+  }
 }

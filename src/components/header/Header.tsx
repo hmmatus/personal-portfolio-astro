@@ -44,11 +44,9 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className={styles.headerContainer}>
-      <h2>
-        <a className={styles["header-logo"]} href="/">
-          Hector Matus
-        </a>
-      </h2>
+      <a className={styles["header-logo"]} href="/">
+        Hector Matus
+      </a>
       <div className={styles.headerRight}>
         {!isMobile && <NavLinks isMobile={false} translations={translations} />}
         <LanguagePicker currentLang={currentLang} currentPath={currentPath} />
@@ -58,7 +56,7 @@ export const Header: React.FC<HeaderProps> = ({
             className={styles.menuButton}
             onClick={onPressDrawer}
           >
-            <Menu />
+            <Menu aria-hidden="true" />
           </button>
         )}
       </div>

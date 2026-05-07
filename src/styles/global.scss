@@ -12,6 +12,7 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
@@ -24,7 +25,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 100vh;
+  min-height: 100dvh;
 }
 
 h1,
@@ -89,4 +90,24 @@ main {
 :focus-visible {
   outline: 2px solid main.$indigo;
   outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: 16px;
+  background: main.$indigo;
+  color: main.$black;
+  font-family: main.$font-mono;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 0 0 3px 3px;
+  z-index: 9999;
+  transition: top 0.2s;
+
+  &:focus {
+    top: 0;
+  }
 }
