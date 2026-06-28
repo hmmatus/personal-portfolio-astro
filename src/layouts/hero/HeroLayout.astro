@@ -1,17 +1,17 @@
 ---
 import styles from "./HeroLayout.module.scss";
 import {
-  ContactSection,
   Divider,
   ProjectsSection,
   FormSection,
+  HeroSection,
+  AboutMeSection,
 } from "../../components";
 import {
   heroData,
   getProjectsWithTranslations,
   getExperienceWithTranslations,
 } from "@data/i18n-data";
-import { ImageWithLoader } from "@components/image-loader/ImageLoader";
 import { Tag } from "@components/tag";
 import ExperienceCard from "@components/cards/experience/ExperienceCard.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
@@ -23,36 +23,26 @@ const { capabilities } = heroData;
 const projectsList = getProjectsWithTranslations(lang);
 const experienceList = getExperienceWithTranslations(lang);
 
-const CORE_SKILLS = new Set(["Javascript", "Typescript", "React", "React Native"]);
+const CORE_SKILLS = new Set([
+  "Javascript",
+  "Typescript",
+  "React",
+  "React Native",
+]);
 ---
 
 <main id="main-content" class={styles.container}>
-  <div class={styles["hero-section-container"]}>
-    <div class={styles["hero-information"]}>
-      <div class="section-label">Full Stack Developer · El Salvador 🇸🇻</div>
-      <h1>{t("hero.title")}</h1>
-      <p class={styles["hero-description"]}>
-        {t("hero.description")}
-      </p>
-      <ContactSection client:load />
-    </div>
-    <div class={styles["image"]}>
-      <ImageWithLoader
-        loading="eager"
-        src="/images/profile/profile.webp"
-        alt="Hector Matus"
-      />
-    </div>
-  </div>
+  <HeroSection />
+  <AboutMeSection />
   <Divider />
   <div class={styles["projects-section-container"]}>
     <ProjectsSection projectsList={projectsList} />
   </div>
   <Divider />
-  <div id="about-section" class={styles["about-section-container"]}>
+  <div id="skills-section" class={styles["skills-section-container"]}>
     <div class={styles["about-info-container"]}>
       <div class={styles["about-info"]}>
-        <div class="section-label">01 — Capabilities</div>
+        <div class="section-label">02 — Capabilities</div>
         <h2>{t("capabilities.title").toUpperCase()}</h2>
       </div>
       <div class={styles["about-info"]}>
@@ -60,16 +50,18 @@ const CORE_SKILLS = new Set(["Javascript", "Typescript", "React", "React Native"
           {t("capabilities.description")}
         </p>
         <div class={styles["about-tags-container"]}>
-          {capabilities.capabilitiesList.map((tag) => (
-            <Tag label={tag} core={CORE_SKILLS.has(tag)} />
-          ))}
+          {
+            capabilities.capabilitiesList.map((tag) => (
+              <Tag label={tag} core={CORE_SKILLS.has(tag)} />
+            ))
+          }
         </div>
       </div>
     </div>
     <Divider />
     <div class={styles["about-info-container"]}>
       <div class={styles["about-info"]}>
-        <div class="section-label">02 — Experience</div>
+        <div class="section-label">03 — Experience</div>
         <h2>{t("experience.title").toUpperCase()}</h2>
       </div>
       <div class={`${styles["about-info"]} ${styles["experience-container"]}`}>

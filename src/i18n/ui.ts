@@ -9,9 +9,17 @@ export const showDefaultLang = false;
 export const ui = {
   en: {
     // Hero section
-    "hero.title": "HI, I AM HECTOR MATUS.",
-    "hero.description":
+    "hero.seo.title":
+      "Building Software That Scales and Integrates with AI",
+    "hero.seo.subtitle":
+      "Full stack developer with 5+ years crafting performant web and mobile experiences from El Salvador.",
+    "hero.seo.cta": "About Me",
+
+    // About section
+    "about.title": "HI, I AM HECTOR MATUS.",
+    "about.description":
       "Full stack developer with 5+ years of experience specialized in React and React Native. I've worked with 10+ applications mobile and web. Improving code quality and efficiency with CI/CD implementations. Expert in optimization of performance and deliver of scalable solutions.",
+    "about.label": "Full Stack Developer · El Salvador 🇸🇻",
 
     // Navigation
     "nav.home": "Home",
@@ -99,9 +107,17 @@ export const ui = {
   },
   es: {
     // Hero section
-    "hero.title": "HOLA, SOY HECTOR MATUS.",
-    "hero.description":
+    "hero.seo.title":
+      "Construyendo Software Escalable que se Integra con IA",
+    "hero.seo.subtitle":
+      "Desarrollador full stack con más de 5 años creando experiencias web y móviles de alto rendimiento desde El Salvador.",
+    "hero.seo.cta": "Acerca de mí",
+
+    // About section
+    "about.title": "HOLA, SOY HECTOR MATUS.",
+    "about.description":
       "Desarrollador full stack con más de 5 años de experiencia especializado en React y React Native. He trabajado con más de 10 aplicaciones móviles y web. Mejorando la calidad del código y eficiencia con implementaciones de CI/CD. Experto en optimización de rendimiento y entrega de soluciones escalables.",
+    "about.label": "Desarrollador Full Stack · El Salvador 🇸🇻",
 
     // Navigation
     "nav.home": "Inicio",

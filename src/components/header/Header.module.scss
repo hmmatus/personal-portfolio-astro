@@ -3,11 +3,10 @@
 .headerContainer {
   display: flex;
   width: 100%;
-  height: 96px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 clamp(16px, 2vw, 60px);
+  padding: 8px clamp(16px, 2vw, 60px);
   background-color: main.$black-glass;
   backdrop-filter: blur(16px);
   top: 0;
@@ -53,7 +52,7 @@
 
 .header-logo {
   font-family: main.$font-display;
-  font-size: clamp(18px, 1.5em, 22px);
+  font-size: clamp(16px, 1.5em, 22px);
   font-weight: 800;
   letter-spacing: -0.03em;
   color: main.$white;

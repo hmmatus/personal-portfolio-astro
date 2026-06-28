@@ -45,7 +45,7 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className={styles.headerContainer}>
       <a className={styles["header-logo"]} href="/">
-        Hector Matus
+        HM
       </a>
       <div className={styles.headerRight}>
         {!isMobile && <NavLinks isMobile={false} translations={translations} />}

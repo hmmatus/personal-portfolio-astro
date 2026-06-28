@@ -7,3 +7,8 @@ declare module "*.svg?react" {
 
   export default ReactComponent;
 }
+
+declare module "*.json" {
+  const value: Record<string, unknown>;
+  export default value;
+}
