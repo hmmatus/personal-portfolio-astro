@@ -6,3 +6,4 @@ export * from "./tag";
 export * from "./form";
 export * from "./footer";
 export * from "./tech-stack-carousel";
+export * from "./carousel";

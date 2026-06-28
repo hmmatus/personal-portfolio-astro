@@ -3,7 +3,7 @@ export type Props = {
   projectsList: ProjectI[];
 };
 import type { ProjectI } from "src/types/project";
-import { Project } from "./components";
+import { ProjectsCarousel } from "./ProjectsCarousel";
 import styles from "./ProjectsSection.module.scss";
 import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 
@@ -18,7 +18,9 @@ const t = useTranslations(lang);
   <p>
     {t("projects.description")}
   </p>
-  <div class={styles["projects-list-container"]}>
-    {projectsList.map((project) => <Project project={project} />)}
-  </div>
+  <ProjectsCarousel
+    client:visible
+    projectsList={projectsList}
+    lang={lang}
+  />
 </section>

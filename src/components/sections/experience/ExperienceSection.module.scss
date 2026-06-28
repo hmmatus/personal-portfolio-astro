@@ -1,0 +1,28 @@
+@use "../../../styles/theme/main.scss" as main;
+
+.container {
+  margin: 64px 0;
+}
+
+.about-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 0 12px 0;
+
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+    padding: 12px 64px;
+  }
+}
+
+.about-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  row-gap: 12px;
+}
+
+.experience-container {
+  row-gap: 24px;
+}

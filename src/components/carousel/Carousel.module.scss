@@ -1,0 +1,113 @@
+@use "../../styles/theme/main.scss" as main;
+
+.carousel {
+  --slide-gap: 16px;
+  --slide-width: 100%;
+  --slide-offset: calc(var(--slide-width) + var(--slide-gap));
+
+  width: 100%;
+
+  @media screen and (min-width: 1024px) {
+    --slide-width: 85%;
+  }
+}
+
+.viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.track {
+  display: flex;
+  gap: var(--slide-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.slide {
+  flex: 0 0 var(--slide-width);
+  min-width: 0;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.navButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid main.$black-4;
+  border-radius: 50%;
+  background: main.$black-3;
+  color: main.$white;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    color 0.2s,
+    opacity 0.2s;
+
+  &:hover:not(:disabled) {
+    background: main.$black-4;
+    border-color: main.$indigo-border;
+    color: main.$indigo-bright;
+  }
+
+  &:focus-visible {
+    outline: 2px solid main.$indigo;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+}
+
+.navIcon {
+  width: 22px;
+  height: 22px;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: main.$black-5;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
+
+  &[data-active="true"] {
+    background: main.$indigo;
+    transform: scale(1.2);
+  }
+
+  &:hover {
+    background: main.$indigo-bright;
+  }
+
+  &:focus-visible {
+    outline: 2px solid main.$indigo;
+    outline-offset: 2px;
+  }
+}

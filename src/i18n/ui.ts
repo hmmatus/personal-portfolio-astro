@@ -80,6 +80,11 @@ export const ui = {
     // Capabilities
     "capabilities.title": "Capabilities",
 
+    // Carousel
+    "carousel.prev": "Previous slide",
+    "carousel.next": "Next slide",
+    "carousel.slideOf": "Slide {current} of {total}",
+
     // Experience
     "experience.title": "Experience",
     "experience.coderland.title": "Full Stack Developer",
@@ -180,6 +185,11 @@ export const ui = {
 
     // Capabilities
     "capabilities.title": "Capacidades",
+
+    // Carousel
+    "carousel.prev": "Diapositiva anterior",
+    "carousel.next": "Siguiente diapositiva",
+    "carousel.slideOf": "Diapositiva {current} de {total}",
 
     // Experience
     "experience.title": "Experiencia",
