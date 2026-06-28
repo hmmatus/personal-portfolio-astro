@@ -1,6 +1,7 @@
 import type { ProjectI } from "@types/project";
 import { ImageWithLoader } from "@components/image-loader/ImageLoader";
 import { HyperLinkLabel } from "@components/sections/projects/components/hyperLinkLabel/HyperLinkLabel";
+import { truncateWords } from "@utils/truncateWords";
 import { ProjectInfoRow } from "./ProjectInfoRow";
 import styles from "./ProjectCard.module.scss";
 
@@ -19,6 +20,7 @@ function ProjectTag({ label }: { label: string }) {
 export function ProjectCard({ project }: ProjectCardPropsI) {
   const { title, image, description, tags, projectInformation, hyperlinks } =
     project;
+  const { displayText, isTruncated } = truncateWords(description);
 
   return (
     <article className={styles.card}>
@@ -39,7 +41,12 @@ export function ProjectCard({ project }: ProjectCardPropsI) {
 
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
-        <p className={styles.description}>{description}</p>
+        <p
+          className={styles.description}
+          title={isTruncated ? description : undefined}
+        >
+          {displayText}
+        </p>
 
         {projectInformation.length > 0 && (
           <div className={styles.specs}>

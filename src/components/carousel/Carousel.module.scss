@@ -28,8 +28,16 @@
 }
 
 .slide {
+  display: flex;
   flex: 0 0 var(--slide-width);
   min-width: 0;
+  align-items: stretch;
+
+  > * {
+    width: 100%;
+    height: var(--carousel-card-height, auto);
+    min-height: var(--carousel-card-height, auto);
+  }
 }
 
 .controls {
