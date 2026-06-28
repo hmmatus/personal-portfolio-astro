@@ -79,8 +79,6 @@ export const ui = {
 
     // Capabilities
     "capabilities.title": "Capabilities",
-    "capabilities.description":
-      "Experience developing web and mobile applications, creation of scalable solutions backend services, creation of CI/CD solutions, code quality tests and optimization of performance. I have experience working with people of different countries and cultures. Also used a lot of tools like Microsoft Teams, Trello, Jira, etc.",
 
     // Experience
     "experience.title": "Experience",
@@ -182,8 +180,6 @@ export const ui = {
 
     // Capabilities
     "capabilities.title": "Capacidades",
-    "capabilities.description":
-      "Experiencia desarrollando aplicaciones web y móviles, creación de servicios backend de soluciones escalables, creación de soluciones CI/CD, pruebas de calidad de código y optimización de rendimiento. Tengo experiencia trabajando con personas de diferentes países y culturas. También he usado muchas herramientas como Microsoft Teams, Trello, Jira, etc.",
 
     // Experience
     "experience.title": "Experiencia",

@@ -3535,6 +3535,11 @@ tar@^7.4.0:
     mkdirp "^3.0.1"
     yallist "^5.0.0"
 
+tech-stack-icons@^3.7.1:
+  version "3.7.1"
+  resolved "https://registry.npmjs.org/tech-stack-icons/-/tech-stack-icons-3.7.1.tgz"
+  integrity sha512-5BAWrYxK75zFVVS2ZQZCttQn0EW5dw8CtvMLYYYHIV1Mqhiog8pxWZtUF8uxXHp3b7l9g+YTkTyv6jQUzrCTMA==
+
 tinyexec@^0.3.2:
   version "0.3.2"
   resolved "https://registry.npmjs.org/tinyexec/-/tinyexec-0.3.2.tgz"

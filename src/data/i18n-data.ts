@@ -80,23 +80,6 @@ export const heroData = {
       tags: ["React Native", "React Native Paper", "Firebase"],
     },
   ],
-  capabilities: {
-    capabilitiesList: [
-      "Javascript",
-      "Typescript",
-      "React",
-      "NextJs",
-      "React Native",
-      "Nestjs",
-      "Express",
-      "SQL",
-      "MongoDB",
-      "Prisma",
-      "Figma",
-      "Azure",
-      "Docker",
-    ],
-  },
   experience: {
     experienceList: [
       {
