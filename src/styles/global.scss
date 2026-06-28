@@ -1,5 +1,6 @@
 // src/styles/global.scss
 @use './theme/main.scss' as main;
+@use './animations/reveal';
 @use 'tailwindcss';
 
 *,

@@ -8,7 +8,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section id="about-section" class={styles["about-section-container"]}>
+<section id="about-section" class={styles["about-section-container"]} data-reveal>
   <div class={styles["about-information"]}>
     <div class="section-label">01 — About</div>
     <h2>{t("about.title")}</h2>

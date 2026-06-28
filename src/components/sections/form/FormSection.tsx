@@ -62,7 +62,7 @@ export const FormSection: React.FC<FormSectionProps> = ({
   };
 
   return (
-    <section id="form-section" className={styles["form-section"]}>
+    <section id="form-section" className={styles["form-section"]} data-reveal>
       <Toaster
         position="top-center"
         gutter={8}

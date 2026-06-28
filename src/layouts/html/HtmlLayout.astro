@@ -2,6 +2,7 @@
 import Analytics from "@vercel/analytics/astro";
 import "@styles/global.scss";
 import { Header, Footer } from "../../components";
+import { RevealObserver } from "../../components/animations/RevealObserver";
 import { getLangFromUrl } from "../../i18n/utils";
 
 export type Props = {
@@ -39,6 +40,7 @@ const lang = getLangFromUrl(Astro.url);
   <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
     <Header client:only currentLang={lang} currentPath={Astro.url.pathname} />
+    <RevealObserver client:idle />
     <slot />
     <Footer />
     <Analytics />
