@@ -1,33 +1,57 @@
 @use "../../../styles/theme/main.scss" as main;
+
+// Primary CTA button (filled indigo)
 .button {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: clamp(163px, 175px, 187px);
-  height: clamp(48px, 51px, 54px);
-  border-radius: 100px;
-  background-color: main.$secondary;
-  color: main.$secondary-text;
-  :hover {
-    cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 3px;
+  border: none;
+  background-color: main.$indigo;
+  color: main.$black;
+  font-family: main.$font-mono;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: main.$indigo-bright;
   }
 }
+
 .button .label {
   margin-right: 8px;
-  color: main.$secondary-text;
+  color: main.$black;
+  font-family: main.$font-mono;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .contact-icon {
-  color: main.$secondary-text;
+  color: main.$black;
+  width: 14px;
+  height: 14px;
 }
 
+// Ghost icon button (social link buttons)
 .icon-button {
-  background: none;
-  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid main.$black-4;
+  border-radius: 3px;
   cursor: pointer;
-  width: 54px;
-  height: 54px;
-  fill: main.$secondary;
-  background-color: main.$primary-background;
+  width: 40px;
+  height: 40px;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: main.$indigo;
+  }
 }

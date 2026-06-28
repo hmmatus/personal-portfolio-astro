@@ -49,24 +49,6 @@
       "tags": ["React Native", "React Native Paper", "Firebase"]
     }
   ],
-  "capabilities": {
-    "description": "Experience developing web and mobile applications, creation of scalable solutions backend services, creation of CI/CD solutions, code quality tests and optimization of performance. I have experience working with people of different countries and cultures. Also used a lot of tools like Microsoft Teams, Trello, Jira, etc.",
-    "capabilitiesList": [
-      "Javascript",
-      "Typescript",
-      "React",
-      "NextJs",
-      "React Native",
-      "Nestjs",
-      "Express",
-      "SQL",
-      "MongoDB",
-      "Prisma",
-      "Figma",
-      "Azure",
-      "Docker"
-    ]
-  },
   "experience": {
     "experienceList": [
       {

@@ -1,9 +1,33 @@
-$primary-background: #000000;
-$secondary-background: #1A1A1A;
-$primary-text: #FFFFFF;
-$primary-light-text: #C7C7C7;
-$secondary-text: #0A0A0A;
-$secondary: #D3E97A;
-$light-gray: #C7C7C7;
-$border: #484848;
-$error: #d90429;
+// src/styles/theme/_colors.scss
+
+// === BLACKS (zinc-based, warm-neutral temperature) ===
+$black:   #09090b;
+$black-2: #111113;
+$black-3: #18181b;
+$black-4: #27272a;
+$black-5: #3f3f46;
+
+// === INDIGO / PERIWINKLE — the single accent ===
+$indigo:       #818cf8;
+$indigo-bright:#a5b4fc;
+$indigo-deep:  #6366f1;
+$indigo-dim:   rgba(129, 140, 248, 0.15);
+$indigo-glow:  rgba(129, 140, 248, 0.08);
+$indigo-border: rgba(129, 140, 248, 0.4);
+$black-glass:   rgba(9, 9, 11, 0.94);
+
+// === TEXT ===
+$white:      #fafafa;
+$text-muted: #a1a1aa;
+$text-dim:   #52525b;
+
+// === LEGACY ALIASES (preserve backward compat with existing component SCSS) ===
+$primary-background:  $black;
+$secondary-background: $black-2;
+$primary-text:        $white;
+$primary-light-text:  $text-muted;
+$secondary-text:      $black;
+$secondary:           $indigo;
+$light-gray:          $text-muted;
+$border:              $black-4;
+$error:               #ef4444;

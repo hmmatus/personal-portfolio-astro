@@ -1,16 +1,32 @@
 @use "../../../styles/theme/main.scss" as main;
 
 .custom-button {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: clamp(163px, 175px, 187px);
-  height: clamp(48px, 51px, 54px);
-  border-radius: 100px;
-  background-color: main.$secondary;
-  color: main.$secondary-text;
+  padding: 10px 24px;
+  border-radius: 3px;
+  border: none;
+  background-color: main.$indigo;
+  color: main.$black;
+  font-family: main.$font-mono;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
   &:hover {
-    cursor: pointer;
+    background-color: main.$indigo-bright;
+  }
+
+  &:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: main.$indigo;
+    }
   }
 }

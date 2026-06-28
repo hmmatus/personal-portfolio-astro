@@ -1,12 +1,24 @@
 @use "../../../../../styles/theme/main" as main;
+
 .hyperlink-label {
-  display: flex;
-  border-bottom: 2px solid main.$secondary;
-  color: main.$secondary;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-bottom: 2px solid main.$indigo;
+  color: main.$indigo;
+  font-family: main.$font-mono;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s, border-color 0.2s;
+
   &:hover {
-    cursor: pointer;
+    color: main.$indigo-bright;
+    border-color: main.$indigo-bright;
   }
 }
+
 .logo {
-  margin-left: 4px;
+  display: block;
 }

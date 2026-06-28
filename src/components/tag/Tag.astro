@@ -1,11 +1,12 @@
 ---
 type Props = {
   label: string;
+  core?: boolean;
 };
 import styles from "./Tag.module.scss";
-const { label } = Astro.props;
+const { label, core = false } = Astro.props;
 ---
 
-<div class={styles["tag"]}>
+<div class={`${styles["tag"]} ${core ? styles["tag--core"] : ""}`}>
   <p>{label}</p>
 </div>

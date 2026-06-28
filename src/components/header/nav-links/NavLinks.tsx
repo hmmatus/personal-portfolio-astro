@@ -16,6 +16,7 @@ export const NavLinks = ({
   translations,
 }: NavLinksProps) => {
   const handleHomeClick = (e: React.MouseEvent) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     e.preventDefault();
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"

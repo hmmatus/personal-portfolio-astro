@@ -1,0 +1,19 @@
+---
+import styles from "./HeroSection.module.scss";
+import { HeroAnimation } from "./HeroAnimation";
+import { HeroCta } from "./HeroCta";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section class={styles["hero-section"]} aria-labelledby="hero-heading">
+  <HeroAnimation client:only="react" />
+  <div class={styles["hero-overlay"]} aria-hidden="true"></div>
+  <div class={styles["hero-content"]}>
+    <h3 id="hero-heading">{t("hero.seo.title")}</h3>
+    <p class={styles["hero-subtitle"]}>{t("hero.seo.subtitle")}</p>
+    <HeroCta label={t("hero.seo.cta")} client:load />
+  </div>
+</section>

@@ -1,0 +1,28 @@
+@use "../../../styles/theme/main.scss" as main;
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid main.$border;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.label {
+  font-family: main.$font-mono;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: main.$text-muted;
+}
+
+.value {
+  font-size: main.$font-size-body;
+  color: main.$white;
+  text-align: right;
+}

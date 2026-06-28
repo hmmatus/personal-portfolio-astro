@@ -1,9 +1,12 @@
 @use "../../../../../styles/theme/main.scss" as main;
+
 .form-hyperlink {
-  border-bottom: 1px solid main.$secondary;
+  border-bottom: 1px solid main.$indigo;
   color: main.$primary-text;
   margin-left: 4px;
+  transition: color 0.2s, border-color 0.2s;
+
   &:hover {
-      cursor: pointer;
-    }
+    color: main.$indigo;
+  }
 }

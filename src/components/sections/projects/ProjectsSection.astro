@@ -3,7 +3,7 @@ export type Props = {
   projectsList: ProjectI[];
 };
 import type { ProjectI } from "src/types/project";
-import { Project } from "./components";
+import { ProjectsCarousel } from "./ProjectsCarousel";
 import styles from "./ProjectsSection.module.scss";
 import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 
@@ -12,12 +12,15 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section class={styles["projects-section-container"]} id="projects">
+<section class={styles["projects-section-container"]} id="projects" data-reveal>
+  <div class="section-label">04 — Projects</div>
   <h2>{t("projects.title")}</h2>
   <p>
     {t("projects.description")}
   </p>
-  <div class={styles["projects-list-container"]}>
-    {projectsList.map((project) => <Project project={project} />)}
-  </div>
+  <ProjectsCarousel
+    client:visible
+    projectsList={projectsList}
+    lang={lang}
+  />
 </section>

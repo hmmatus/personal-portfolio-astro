@@ -1,0 +1,52 @@
+@use "../../../styles/theme/main.scss" as main;
+
+.about-section-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 0 0 24px 0;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.about-information {
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+
+  @media screen and (min-width: 768px) {
+    padding: 5rem;
+  }
+}
+
+.about-description {
+  margin-bottom: 12px;
+}
+
+.about-tagline {
+  font-family: main.$font-mono;
+  font-size: main.$font-size-mono;
+  color: main.$indigo;
+  letter-spacing: 0.06em;
+}
+
+.image {
+  flex: 1;
+  padding: 12px;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+
+  @media screen and (min-width: 1024px) {
+    max-width: 600px;
+    max-height: 700px;
+  }
+}

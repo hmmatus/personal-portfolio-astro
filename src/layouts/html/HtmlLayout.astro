@@ -2,6 +2,7 @@
 import Analytics from "@vercel/analytics/astro";
 import "@styles/global.scss";
 import { Header, Footer } from "../../components";
+import { RevealObserver } from "../../components/animations/RevealObserver";
 import { getLangFromUrl } from "../../i18n/utils";
 
 export type Props = {
@@ -19,10 +20,27 @@ const lang = getLangFromUrl(Astro.url);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={metaDescription} />
+    <meta name="theme-color" content="#09090b" />
     <title>{title}</title>
+    <!-- Font preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <!-- Syne (display) + DM Mono (labels/code) via Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Cabinet Grotesk (body) via Fontshare -->
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@300,400,500,700,800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <Header client:only currentLang={lang} currentPath={Astro.url.pathname} />
+    <RevealObserver client:idle />
     <slot />
     <Footer />
     <Analytics />

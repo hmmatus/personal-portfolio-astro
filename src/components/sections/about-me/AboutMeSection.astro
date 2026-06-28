@@ -1,0 +1,28 @@
+---
+import styles from "./AboutMeSection.module.scss";
+import { ContactSection } from "../contact/ContactSection";
+import { ImageWithLoader } from "@components/image-loader/ImageLoader";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="about-section" class={styles["about-section-container"]} data-reveal>
+  <div class={styles["about-information"]}>
+    <div class="section-label">01 — About</div>
+    <h2>{t("about.title")}</h2>
+    <p class={styles["about-tagline"]}>{t("about.label")}</p>
+    <p class={styles["about-description"]}>
+      {t("about.description")}
+    </p>
+    <ContactSection client:load />
+  </div>
+  <div class={styles.image}>
+    <ImageWithLoader
+      loading="eager"
+      src="/images/profile/profile.webp"
+      alt="Hector Matus"
+    />
+  </div>
+</section>

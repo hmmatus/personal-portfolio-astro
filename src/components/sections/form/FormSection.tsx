@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { EMAIL, RESUME } from "src/consts/social-media-links";
 import { ConnectSection, FormHyperlink } from "./components";
 import styles from "./FormSection.module.scss";
@@ -32,12 +31,8 @@ export const FormSection: React.FC<FormSectionProps> = ({
     formState: { errors, isSubmitting },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
-    mode: "onSubmit", // Only validate on submit
+    mode: "onSubmit",
   });
-
-  const openLink = (url: string) => {
-    window.open(url, "_blank", "noopener,noreferrer");
-  };
 
   const onSubmit = async (data: ContactFormData) => {
     try {
@@ -50,40 +45,37 @@ export const FormSection: React.FC<FormSectionProps> = ({
 
       const response = await fetch("/api/send-email", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(options),
       });
 
       if (response.ok) {
         showSuccessToast(t("toast.form.success"));
-        reset(); // Clear the form after successful submission
+        reset();
       } else {
         throw response.text();
       }
     } catch (error) {
       console.error("Error:", error);
-      showErrorToast(t("toast.form.network.error"), {
-        duration: 5000, // Longer duration for network errors
-      });
+      showErrorToast(t("toast.form.network.error"), { duration: 5000 });
     }
   };
 
   return (
-    <section id="form-section" className={styles["form-section"]}>
+    <section id="form-section" className={styles["form-section"]} data-reveal>
       <Toaster
         position="top-center"
         gutter={8}
         toastOptions={{
           duration: 4000,
           style: {
-            background: "#363636",
-            color: "#fff",
-            borderRadius: "8px",
+            background: "#18181b",
+            color: "#fafafa",
+            border: "1px solid #27272a",
+            borderRadius: "3px",
             padding: "12px 16px",
-            fontSize: "14px",
-            fontWeight: "500",
+            fontSize: "13px",
+            fontFamily: "'DM Mono', monospace",
           },
         }}
       />
@@ -91,17 +83,11 @@ export const FormSection: React.FC<FormSectionProps> = ({
         <h2>{t("form.title")}</h2>
         <div className={styles["form-hyperlink-container"]}>
           <p>{t("form.greeting")} </p>
-          <FormHyperlink
-            label={EMAIL}
-            onClick={() => openLink(`mailto:${EMAIL}`)}
-          />
+          <FormHyperlink label={EMAIL} href={`mailto:${EMAIL}`} />
         </div>
         <div className={styles["form-hyperlink-container"]}>
           <p>{t("form.resume")} </p>
-          <FormHyperlink
-            label={t("form.resume.link")}
-            onClick={() => openLink(RESUME)}
-          />
+          <FormHyperlink label={t("form.resume.link")} href={RESUME} />
         </div>
         <div className={styles["connect-section-container"]}>
           <ConnectSection />
@@ -114,6 +100,7 @@ export const FormSection: React.FC<FormSectionProps> = ({
         <InputText
           id="name"
           label={t("form.name.label")}
+          autoComplete="name"
           {...register("name")}
           errorMessage={errors.name?.message || ""}
           containerClassName={styles["form-section-input"]}
@@ -121,6 +108,10 @@ export const FormSection: React.FC<FormSectionProps> = ({
         <InputText
           id="email"
           label={t("form.email.label")}
+          type="email"
+          autoComplete="email"
+          inputMode="email"
+          spellCheck={false}
           {...register("email")}
           errorMessage={errors.email?.message || ""}
           containerClassName={styles["form-section-input"]}
@@ -128,6 +119,7 @@ export const FormSection: React.FC<FormSectionProps> = ({
         <InputText
           id="subject"
           label={t("form.subject.label")}
+          autoComplete="off"
           {...register("subject")}
           errorMessage={errors.subject?.message || ""}
           containerClassName={styles["form-section-input"]}

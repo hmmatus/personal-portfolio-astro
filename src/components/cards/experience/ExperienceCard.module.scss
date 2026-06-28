@@ -3,16 +3,54 @@
 .experience-card {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.4rem;
+  height: 100%;
+  background: main.$black-3;
+  border-left: 2px solid main.$indigo;
+  padding: 16px 18px;
+  border-radius: 0 3px 3px 0;
+  overflow: hidden;
 }
 
 .flex-row-between {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
-.experience-title {}
+.experience-title {
+  font-family: main.$font-display;
+  font-size: 15px;
+  font-weight: 700;
+  color: main.$white;
+  letter-spacing: -0.01em;
+}
+
+.date {
+  flex-shrink: 0;
+  margin: 0;
+  font-size: 12px;
+  color: main.$text-muted;
+  white-space: nowrap;
+}
 
 .experience-subtitle {
-  color: main.$secondary;
+  flex-shrink: 0;
+  font-family: main.$font-mono;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: main.$indigo;
+}
+
+.description {
+  flex: 1;
+  min-height: 0;
+  margin: 0;
+  font-size: main.$font-size-body;
+  line-height: 1.5;
+  color: main.$text-muted;
+  overflow: hidden;
 }

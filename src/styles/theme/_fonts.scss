@@ -1,23 +1,37 @@
-@font-face {
-  font-family: 'Bevas Neue';
-  src: url('/fonts/BebasNeue-Regular.ttf') format('ttf');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+// src/styles/theme/_fonts.scss
 
-$font-stack: 'Bevas Neue', sans-serif;
+// === FONT FAMILIES ===
+$font-display: 'Syne', sans-serif;
+$font-body:    'Cabinet Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$font-mono:    'DM Mono', monospace;
+
+// Legacy alias
+$font-stack: $font-body;
+
+// === TYPE SCALE ===
 $font-size-base: 16px;
-$font-size-body-mobile: 16px;
-$font-size-body-desktop: 18px;
-$font-size-h1-mobile: 57px;
-$font-size-h1-desktop: 101px;
-$font-size-h2-mobile: 43px;
-$font-size-h2-desktop: 76px;
-$font-size-medium-mobile: 24px;
-$font-size-medium-desktop: 32px;
 
-$font-size-body-responsive: clamp(#{$font-size-body-mobile}, 1em, #{$font-size-body-desktop});
-$font-size-h1-responsive: clamp(#{$font-size-h1-mobile}, 3.5625rem, #{$font-size-h1-desktop});
-$font-size-h2-responsive: clamp(#{$font-size-h2-mobile}, 2.6875rem, #{$font-size-h2-desktop});
-$font-size-medium-responsive: clamp(#{$font-size-medium-mobile}, 1.5em, #{$font-size-medium-desktop});
+$font-size-hero: clamp(40px, 7vw, 76px);
+
+$font-size-h1: clamp(32px, 5vw, 56px);
+$font-size-h2: clamp(24px, 3.5vw, 36px);
+$font-size-h3: 18px;
+
+$font-size-body: 15px;
+
+$font-size-label: 10px;
+$font-size-mono:  13px;
+
+// === LEGACY ALIASES (backward compat with existing SCSS references) ===
+$font-size-body-responsive:  $font-size-body;
+$font-size-h1-responsive:    $font-size-h1;
+$font-size-h2-responsive:    $font-size-h2;
+$font-size-medium-responsive: clamp(20px, 2.5vw, 32px);
+$font-size-body-mobile:   14px;
+$font-size-body-desktop:  16px;
+$font-size-h1-mobile:  40px;
+$font-size-h1-desktop: 76px;
+$font-size-h2-mobile:  28px;
+$font-size-h2-desktop: 48px;
+$font-size-medium-mobile:  20px;
+$font-size-medium-desktop: 32px;

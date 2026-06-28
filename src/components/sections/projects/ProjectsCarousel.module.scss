@@ -1,0 +1,9 @@
+.wrapper {
+  --carousel-card-height: 520px;
+  margin-top: 48px;
+
+  @media screen and (min-width: 1024px) {
+    --carousel-card-height: 580px;
+    margin-top: 64px;
+  }
+}

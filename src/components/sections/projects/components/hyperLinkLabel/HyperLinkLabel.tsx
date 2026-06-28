@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./HyperLinkLabel.module.scss";
+
 export interface Props {
   label: string;
   url: string;
@@ -7,13 +8,24 @@ export interface Props {
 }
 
 export const HyperLinkLabel: React.FC<Props> = ({ label, url, icon }) => {
-  const onClick = () => {
-    window.open(url, "_blank");
-  };
   return (
-    <button onClick={onClick} className={styles["hyperlink-label"]}>
+    <a
+      href={url}
+      target="_blank"
+      rel="noreferrer noopener"
+      className={styles["hyperlink-label"]}
+    >
       {label}
-      {icon && <img className={styles.logo} src={icon} />}
-    </button>
+      {icon && (
+        <img
+          className={styles.logo}
+          src={icon}
+          alt=""
+          aria-hidden="true"
+          width={16}
+          height={16}
+        />
+      )}
+    </a>
   );
 };

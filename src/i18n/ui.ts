@@ -9,9 +9,17 @@ export const showDefaultLang = false;
 export const ui = {
   en: {
     // Hero section
-    "hero.title": "HI, I AM HECTOR MATUS.",
-    "hero.description":
+    "hero.seo.title":
+      "Building Software That Scales and Integrates with AI",
+    "hero.seo.subtitle":
+      "Full stack developer with 5+ years crafting performant web and mobile experiences from El Salvador.",
+    "hero.seo.cta": "About Me",
+
+    // About section
+    "about.title": "HI, I AM HECTOR MATUS.",
+    "about.description":
       "Full stack developer with 5+ years of experience specialized in React and React Native. I've worked with 10+ applications mobile and web. Improving code quality and efficiency with CI/CD implementations. Expert in optimization of performance and deliver of scalable solutions.",
+    "about.label": "Full Stack Developer · El Salvador 🇸🇻",
 
     // Navigation
     "nav.home": "Home",
@@ -54,6 +62,9 @@ export const ui = {
     "projects.title": "Projects",
     "projects.description":
       "Here are some of the selected projects that showcase my passion for front-end development.",
+    "projects.muellerapp.title": "Mueller App",
+    "projects.muellerapp.description":
+      "Mueller is a website to connect with people and deliver tech solutions.",
     "projects.pizpiretos.title": "Pizpiretos",
     "projects.pizpiretos.description":
       "Pizpiretos is a mobile app that allows pets to find their soulmates. It is a social network for pets. The app is built with React Native and the backend is built with NestJs. The app uses sockets to provide real-time updates. The app also uses Firebase for authentication and storage.",
@@ -68,8 +79,11 @@ export const ui = {
 
     // Capabilities
     "capabilities.title": "Capabilities",
-    "capabilities.description":
-      "Experience developing web and mobile applications, creation of scalable solutions backend services, creation of CI/CD solutions, code quality tests and optimization of performance. I have experience working with people of different countries and cultures. Also used a lot of tools like Microsoft Teams, Trello, Jira, etc.",
+
+    // Carousel
+    "carousel.prev": "Previous slide",
+    "carousel.next": "Next slide",
+    "carousel.slideOf": "Slide {current} of {total}",
 
     // Experience
     "experience.title": "Experience",
@@ -96,9 +110,17 @@ export const ui = {
   },
   es: {
     // Hero section
-    "hero.title": "HOLA, SOY HECTOR MATUS.",
-    "hero.description":
+    "hero.seo.title":
+      "Construyendo Software Escalable que se Integra con IA",
+    "hero.seo.subtitle":
+      "Desarrollador full stack con más de 5 años creando experiencias web y móviles de alto rendimiento desde El Salvador.",
+    "hero.seo.cta": "Acerca de mí",
+
+    // About section
+    "about.title": "HOLA, SOY HECTOR MATUS.",
+    "about.description":
       "Desarrollador full stack con más de 5 años de experiencia especializado en React y React Native. He trabajado con más de 10 aplicaciones móviles y web. Mejorando la calidad del código y eficiencia con implementaciones de CI/CD. Experto en optimización de rendimiento y entrega de soluciones escalables.",
+    "about.label": "Desarrollador Full Stack · El Salvador 🇸🇻",
 
     // Navigation
     "nav.home": "Inicio",
@@ -152,6 +174,9 @@ export const ui = {
     "projects.bankingapp.title": "Aplicación Bancaria",
     "projects.bankingapp.description":
       "La aplicación bancaria es una aplicación móvil que permite a los usuarios gestionar sus cuentas bancarias. La aplicación está construida con React Native.",
+    "projects.muellerapp.title": "Mueller App",
+    "projects.muellerapp.description":
+      "Mueller es un sitio web para conectar con personas y entregar soluciones tecnológicas.",
     "projects.live-demo": "Demo en Vivo",
     "projects.github": "Github",
     "projects.year": "Año",
@@ -160,8 +185,11 @@ export const ui = {
 
     // Capabilities
     "capabilities.title": "Capacidades",
-    "capabilities.description":
-      "Experiencia desarrollando aplicaciones web y móviles, creación de servicios backend de soluciones escalables, creación de soluciones CI/CD, pruebas de calidad de código y optimización de rendimiento. Tengo experiencia trabajando con personas de diferentes países y culturas. También he usado muchas herramientas como Microsoft Teams, Trello, Jira, etc.",
+
+    // Carousel
+    "carousel.prev": "Diapositiva anterior",
+    "carousel.next": "Siguiente diapositiva",
+    "carousel.slideOf": "Diapositiva {current} de {total}",
 
     // Experience
     "experience.title": "Experiencia",

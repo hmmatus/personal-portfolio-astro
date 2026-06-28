@@ -1,0 +1,24 @@
+---
+import { ExperienceCarousel } from "./ExperienceCarousel";
+import styles from "./ExperienceSection.module.scss";
+import type { ExperienceI } from "src/types/experience";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+export interface Props {
+  experienceList: ExperienceI[];
+}
+
+const { experienceList } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="skills-section" class={styles.container} data-reveal>
+  <div class="section-label">03 — Experience</div>
+  <h2>{t("experience.title").toUpperCase()}</h2>
+  <ExperienceCarousel
+    client:visible
+    experienceList={experienceList}
+    lang={lang}
+  />
+</section>

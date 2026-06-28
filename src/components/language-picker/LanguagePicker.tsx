@@ -1,6 +1,7 @@
 import React from "react";
 import { languages } from "../../i18n/ui";
 import { supportedLanguages } from "src/i18n/utils";
+import styles from "./LanguagePicker.module.scss";
 
 interface LanguagePickerProps {
   currentLang: string;
@@ -16,64 +17,30 @@ export const LanguagePicker: React.FC<LanguagePickerProps> = ({
   ) => {
     const newLang = event.target.value;
 
-    // Remove current language from path if it exists
     let path = currentPath;
 
-    // Check if path starts with any supported language prefix
-    const pathSegments = path.split("/").filter(Boolean); // Remove empty strings from split
+    const pathSegments = path.split("/").filter(Boolean);
     const firstSegment = pathSegments[0];
 
     if (firstSegment && supportedLanguages.includes(firstSegment)) {
-      // Remove the language prefix: "/es/" -> "/" or "/es/about" -> "/about"
       path = "/" + pathSegments.slice(1).join("/");
-      if (path === "/") path = "/"; // Keep root path as "/"
+      if (path === "/") path = "/";
     }
 
-    // Add new language prefix (except for default language 'en')
     const newPath =
       newLang === "en" ? path : `/${newLang}${path === "/" ? "" : path}`;
     window.location.href = newPath;
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "0.5rem",
-      }}
-    >
+    <div className={styles.wrapper}>
       <select
         value={currentLang}
         onChange={handleLanguageChange}
-        style={{
-          background: "transparent",
-          border: "1px solid #D3E97A",
-          borderRadius: "6px",
-          padding: "0.5rem",
-          color: "#ffffff",
-          fontSize: "0.875rem",
-          cursor: "pointer",
-          transition: "all 0.2s ease",
-        }}
-        onMouseOver={(e) => {
-          e.currentTarget.style.borderColor = "#E5F066";
-          e.currentTarget.style.background = "rgba(211, 233, 122, 0.1)";
-        }}
-        onMouseOut={(e) => {
-          e.currentTarget.style.borderColor = "#D3E97A";
-          e.currentTarget.style.background = "transparent";
-        }}
+        className={styles.select}
       >
         {Object.entries(languages).map(([langCode, label]) => (
-          <option
-            key={langCode}
-            value={langCode}
-            style={{
-              background: "#1a1a1a",
-              color: "#ffffff",
-            }}
-          >
+          <option key={langCode} value={langCode}>
             {label}
           </option>
         ))}
