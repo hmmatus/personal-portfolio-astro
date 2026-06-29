@@ -3,7 +3,6 @@ import Analytics from "@vercel/analytics/astro";
 import "@styles/global.scss";
 import { Header, Footer } from "../../components";
 import { RevealObserver } from "../../components/animations/RevealObserver";
-import { getLangFromUrl } from "../../i18n/utils";
 
 export type Props = {
   metaDescription: string;
@@ -11,7 +10,7 @@ export type Props = {
 };
 
 const { metaDescription, title } = Astro.props;
-const lang = getLangFromUrl(Astro.url);
+const lang = Astro.locals.lang;
 ---
 
 <!doctype html>

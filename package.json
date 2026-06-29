@@ -30,10 +30,12 @@
     "zod": "^3.25.39"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.9",
     "@svgr/plugin-jsx": "~8.1.0",
     "@svgr/plugin-svgo": "~8.1.0",
     "@types/node": "~22.13.5",
     "tech-stack-icons": "^3.7.1",
+    "typescript": "^5.9.3",
     "vite-plugin-svgr": "4"
   }
 }

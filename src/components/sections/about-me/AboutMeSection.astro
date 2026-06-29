@@ -2,19 +2,20 @@
 import styles from "./AboutMeSection.module.scss";
 import { ContactSection } from "../contact/ContactSection";
 import { ImageWithLoader } from "@components/image-loader/ImageLoader";
-import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+import { useTranslations } from "../../../i18n/utils";
+import { ABOUT_I18N_KEYS } from "./AboutMeSection.const";
 
-const lang = getLangFromUrl(Astro.url);
+const lang = Astro.locals.lang;
 const t = useTranslations(lang);
 ---
 
 <section id="about-section" class={styles["about-section-container"]} data-reveal>
   <div class={styles["about-information"]}>
     <div class="section-label">01 — About</div>
-    <h2>{t("about.title")}</h2>
-    <p class={styles["about-tagline"]}>{t("about.label")}</p>
+    <h2>{t(ABOUT_I18N_KEYS.TITLE)}</h2>
+    <p class={styles["about-tagline"]}>{t(ABOUT_I18N_KEYS.LABEL)}</p>
     <p class={styles["about-description"]}>
-      {t("about.description")}
+      {t(ABOUT_I18N_KEYS.DESCRIPTION)}
     </p>
     <ContactSection client:load />
   </div>

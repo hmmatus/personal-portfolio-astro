@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import HtmlLayout from '@layouts/html/HtmlLayout.astro';
+import BlogListSection from '../../components/sections/blog/BlogListSection.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const lang = Astro.locals.lang;
+const t = useTranslations(lang);
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<HtmlLayout
+  title={t("page.blog.title")}
+  metaDescription={t("page.blog.meta")}
+>
+  <main id="main-content">
+    <BlogListSection posts={posts} lang={lang} />
+  </main>
+</HtmlLayout>

@@ -1,7 +1,7 @@
-# Specification Quality Checklist: i18n JSON Migration & Browser Language Detection
+# Specification Quality Checklist: i18n JSON Locales, Single-URL Detection & Persistence
 
 **Purpose**: Validate specification completeness and quality before proceeding to planning
-**Created**: 2026-06-28
+**Created**: 2026-06-28 (unified from specs 001 + 002)
 **Feature**: [spec.md](../spec.md)
 
 ## Content Quality
@@ -31,4 +31,11 @@
 
 ## Notes
 
-All items pass. Spec is ready for `/speckit-plan`.
+All 16 items pass.
+
+Unified from:
+- spec 001: JSON locale files, key constants per component, build-time gap detection
+- spec 002: single-URL routing (no /es/ prefix), stored preference, switcher re-renders in place
+
+SC-001 ("zero /en/ or /es/ prefixed URLs") is the architectural gate that drives
+removal of existing /es/ page routes.

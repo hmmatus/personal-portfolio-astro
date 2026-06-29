@@ -5,3 +5,4 @@ export { default as AboutMeSection } from "./about-me/AboutMeSection.astro";
 export { default as CapabilitiesSection } from "./capabilities/CapabilitiesSection.astro";
 export * from "./experience";
 export * from "./form";
+export * from "./blog";

@@ -13,9 +13,8 @@ import {
   getProjectsWithTranslations,
   getExperienceWithTranslations,
 } from "@data/i18n-data";
-import { getLangFromUrl } from "../../i18n/utils";
 
-const lang = getLangFromUrl(Astro.url);
+const lang = Astro.locals.lang;
 
 const projectsList = getProjectsWithTranslations(lang);
 const experienceList = getExperienceWithTranslations(lang);

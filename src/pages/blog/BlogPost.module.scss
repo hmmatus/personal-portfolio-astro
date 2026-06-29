@@ -1,0 +1,162 @@
+@use "../../styles/theme/main.scss" as main;
+
+.main {
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 40px 24px 0;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  font-family: main.$font-mono;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: main.$indigo;
+  text-decoration: none;
+  margin-bottom: 40px;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: main.$indigo-bright;
+  }
+}
+
+.banner {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  border: 1px solid main.$black-4;
+}
+
+.banner-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.header {
+  margin-bottom: 48px;
+}
+
+.date {
+  display: block;
+  font-family: main.$font-mono;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: main.$indigo;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: main.$font-display;
+  font-size: main.$font-size-h1;
+  font-weight: 700;
+  color: main.$white;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+
+.description {
+  font-size: clamp(16px, 2vw, 18px);
+  line-height: 1.6;
+  color: main.$text-muted;
+  margin: 0;
+  border-left: 2px solid main.$indigo-border;
+  padding-left: 16px;
+}
+
+.prose {
+  font-size: main.$font-size-body;
+  line-height: 1.8;
+  color: main.$text-muted;
+
+  :global(h2) {
+    font-family: main.$font-display;
+    font-size: main.$font-size-h2;
+    font-weight: 700;
+    color: main.$white;
+    letter-spacing: -0.01em;
+    margin: 48px 0 16px;
+  }
+
+  :global(h3) {
+    font-family: main.$font-display;
+    font-size: main.$font-size-h3;
+    font-weight: 600;
+    color: main.$white;
+    margin: 32px 0 12px;
+  }
+
+  :global(p) {
+    margin: 0 0 20px;
+  }
+
+  :global(ul),
+  :global(ol) {
+    padding-left: 24px;
+    margin: 0 0 20px;
+
+    :global(li) {
+      margin-bottom: 8px;
+    }
+  }
+
+  :global(a) {
+    color: main.$indigo;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:hover {
+      color: main.$indigo-bright;
+    }
+  }
+
+  :global(code) {
+    font-family: main.$font-mono;
+    font-size: 13px;
+    background: main.$black-3;
+    border: 1px solid main.$black-4;
+    border-radius: 4px;
+    padding: 2px 6px;
+    color: main.$indigo-bright;
+  }
+
+  :global(pre) {
+    background: main.$black-3;
+    border: 1px solid main.$black-4;
+    border-radius: 8px;
+    padding: 20px 24px;
+    overflow-x: auto;
+    margin: 0 0 24px;
+
+    :global(code) {
+      background: none;
+      border: none;
+      padding: 0;
+      color: main.$white;
+    }
+  }
+
+  :global(blockquote) {
+    border-left: 2px solid main.$indigo-border;
+    padding-left: 20px;
+    margin: 0 0 24px;
+    color: main.$text-muted;
+    font-style: italic;
+  }
+
+  :global(hr) {
+    border: none;
+    border-top: 1px solid main.$black-4;
+    margin: 48px 0;
+  }
+}

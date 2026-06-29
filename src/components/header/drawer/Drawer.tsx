@@ -9,6 +9,7 @@ type DrawerProps = {
     home: string;
     about: string;
     contact: string;
+    blog: string;
   };
 };
 

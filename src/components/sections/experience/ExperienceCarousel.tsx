@@ -4,6 +4,7 @@ import { useTranslations } from "../../../i18n/utils";
 import { Carousel } from "@components/carousel";
 import { ExperienceCard } from "@components/cards/experience";
 import styles from "./ExperienceCarousel.module.scss";
+import { EXPERIENCE_CAROUSEL_I18N_KEYS } from "./ExperienceCarousel.const";
 
 export interface ExperienceCarouselPropsI {
   experienceList: ExperienceI[];
@@ -17,7 +18,7 @@ export function ExperienceCarousel({
   const t = useTranslations(lang);
 
   const slideLabel = (current: number, total: number) =>
-    t("carousel.slideOf")
+    t(EXPERIENCE_CAROUSEL_I18N_KEYS.CAROUSEL_SLIDE_OF)
       .replace("{current}", String(current))
       .replace("{total}", String(total));
 
@@ -29,9 +30,9 @@ export function ExperienceCarousel({
     <div className={styles.wrapper}>
       <Carousel
         items={items}
-        ariaLabel={t("experience.title")}
-        prevLabel={t("carousel.prev")}
-        nextLabel={t("carousel.next")}
+        ariaLabel={t(EXPERIENCE_CAROUSEL_I18N_KEYS.TITLE)}
+        prevLabel={t(EXPERIENCE_CAROUSEL_I18N_KEYS.CAROUSEL_PREV)}
+        nextLabel={t(EXPERIENCE_CAROUSEL_I18N_KEYS.CAROUSEL_NEXT)}
         slideLabel={slideLabel}
       />
     </div>

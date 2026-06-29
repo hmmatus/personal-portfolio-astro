@@ -7,6 +7,7 @@ type NavLinksProps = {
     home: string;
     about: string;
     contact: string;
+    blog: string;
   };
 };
 
@@ -48,6 +49,11 @@ export const NavLinks = ({
         <li>
           <a href="#form-section" onClick={onClick}>
             {translations.contact}
+          </a>
+        </li>
+        <li>
+          <a href="/blog">
+            {translations.blog}
           </a>
         </li>
       </ul>

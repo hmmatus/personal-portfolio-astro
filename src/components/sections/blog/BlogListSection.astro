@@ -1,0 +1,43 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import styles from "./BlogListSection.module.scss";
+import { BlogCard } from "@components/cards/blog-card";
+import { useTranslations } from "../../../i18n/utils";
+import { ui } from "../../../i18n/ui";
+import { BLOG_I18N_KEYS } from "./BlogListSection.const";
+
+interface Props {
+  posts: CollectionEntry<'blog'>[];
+  lang?: string;
+}
+
+const { posts, lang = "en" } = Astro.props;
+const t = useTranslations(lang as keyof typeof ui);
+---
+
+<section class={styles.section}>
+  <div class={styles.header}>
+    <div class="section-label">Blog</div>
+    <h1 class={styles.title}>{t(BLOG_I18N_KEYS.TITLE)}</h1>
+    <p class={styles.subtitle}>{t(BLOG_I18N_KEYS.SUBTITLE)}</p>
+  </div>
+
+  {posts.length === 0 ? (
+    <p class={styles.empty}>{t(BLOG_I18N_KEYS.EMPTY)}</p>
+  ) : (
+    <ul class={styles.grid} role="list">
+      {posts.map((post) => (
+        <li>
+          <BlogCard
+            slug={post.slug}
+            title={post.data.title}
+            date={post.data.date}
+            banner={post.data.banner}
+            description={post.data.description}
+            lang={lang}
+          />
+        </li>
+      ))}
+    </ul>
+  )}
+</section>
