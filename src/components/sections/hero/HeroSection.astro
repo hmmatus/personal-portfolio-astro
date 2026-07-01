@@ -2,9 +2,10 @@
 import styles from "./HeroSection.module.scss";
 import { HeroAnimation } from "./HeroAnimation";
 import { HeroCta } from "./HeroCta";
-import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+import { useTranslations } from "../../../i18n/utils";
+import { HERO_I18N_KEYS } from "./HeroSection.const";
 
-const lang = getLangFromUrl(Astro.url);
+const lang = Astro.locals.lang;
 const t = useTranslations(lang);
 ---
 
@@ -12,8 +13,8 @@ const t = useTranslations(lang);
   <HeroAnimation client:only="react" />
   <div class={styles["hero-overlay"]} aria-hidden="true"></div>
   <div class={styles["hero-content"]}>
-    <h3 id="hero-heading">{t("hero.seo.title")}</h3>
-    <p class={styles["hero-subtitle"]}>{t("hero.seo.subtitle")}</p>
-    <HeroCta label={t("hero.seo.cta")} client:load />
+    <h3 id="hero-heading">{t(HERO_I18N_KEYS.TITLE)}</h3>
+    <p class={styles["hero-subtitle"]}>{t(HERO_I18N_KEYS.SUBTITLE)}</p>
+    <HeroCta label={t(HERO_I18N_KEYS.CTA)} client:load />
   </div>
 </section>

@@ -13,6 +13,7 @@ import {
 import { showSuccessToast, showErrorToast } from "@utils/react/toast";
 import { useTranslations } from "../../../i18n/utils";
 import { ui } from "../../../i18n/ui";
+import { FORM_I18N_KEYS } from "./FormSection.const";
 
 interface FormSectionProps {
   currentLang?: string;
@@ -50,14 +51,14 @@ export const FormSection: React.FC<FormSectionProps> = ({
       });
 
       if (response.ok) {
-        showSuccessToast(t("toast.form.success"));
+        showSuccessToast(t(FORM_I18N_KEYS.TOAST_SUCCESS));
         reset();
       } else {
         throw response.text();
       }
     } catch (error) {
       console.error("Error:", error);
-      showErrorToast(t("toast.form.network.error"), { duration: 5000 });
+      showErrorToast(t(FORM_I18N_KEYS.TOAST_NETWORK_ERROR), { duration: 5000 });
     }
   };
 
@@ -80,14 +81,14 @@ export const FormSection: React.FC<FormSectionProps> = ({
         }}
       />
       <div className={styles["form-section-header"]}>
-        <h2>{t("form.title")}</h2>
+        <h2>{t(FORM_I18N_KEYS.TITLE)}</h2>
         <div className={styles["form-hyperlink-container"]}>
-          <p>{t("form.greeting")} </p>
+          <p>{t(FORM_I18N_KEYS.GREETING)} </p>
           <FormHyperlink label={EMAIL} href={`mailto:${EMAIL}`} />
         </div>
         <div className={styles["form-hyperlink-container"]}>
-          <p>{t("form.resume")} </p>
-          <FormHyperlink label={t("form.resume.link")} href={RESUME} />
+          <p>{t(FORM_I18N_KEYS.RESUME)} </p>
+          <FormHyperlink label={t(FORM_I18N_KEYS.RESUME_LINK)} href={RESUME} />
         </div>
         <div className={styles["connect-section-container"]}>
           <ConnectSection />
@@ -99,7 +100,7 @@ export const FormSection: React.FC<FormSectionProps> = ({
       >
         <InputText
           id="name"
-          label={t("form.name.label")}
+          label={t(FORM_I18N_KEYS.NAME_LABEL)}
           autoComplete="name"
           {...register("name")}
           errorMessage={errors.name?.message || ""}
@@ -107,7 +108,7 @@ export const FormSection: React.FC<FormSectionProps> = ({
         />
         <InputText
           id="email"
-          label={t("form.email.label")}
+          label={t(FORM_I18N_KEYS.EMAIL_LABEL)}
           type="email"
           autoComplete="email"
           inputMode="email"
@@ -118,7 +119,7 @@ export const FormSection: React.FC<FormSectionProps> = ({
         />
         <InputText
           id="subject"
-          label={t("form.subject.label")}
+          label={t(FORM_I18N_KEYS.SUBJECT_LABEL)}
           autoComplete="off"
           {...register("subject")}
           errorMessage={errors.subject?.message || ""}
@@ -126,13 +127,13 @@ export const FormSection: React.FC<FormSectionProps> = ({
         />
         <InputTextField
           id="message"
-          label={t("form.message.label")}
+          label={t(FORM_I18N_KEYS.MESSAGE_LABEL)}
           {...register("message")}
           errorMessage={errors.message?.message || ""}
           containerClassName={styles["form-section-input"]}
         />
         <CustomButton type="submit" disabled={isSubmitting}>
-          {isSubmitting ? t("form.submitting") : t("form.submit")}
+          {isSubmitting ? t(FORM_I18N_KEYS.SUBMITTING) : t(FORM_I18N_KEYS.SUBMIT)}
         </CustomButton>
       </form>
     </section>

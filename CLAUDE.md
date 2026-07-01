@@ -19,11 +19,15 @@ No lint or test scripts are configured.
 
 ### Routing & i18n
 
-- English is the default locale — no URL prefix (`/`)
-- Spanish uses `/es` prefix
-- Middleware in `src/middleware.ts` redirects unknown locales to default
-- All copy lives in `src/i18n/ui.ts` as flat key-value maps per language
-- Translation helpers: `getLangFromUrl`, `useTranslations`, `useTranslatedPath` from `src/i18n/utils.ts`
+- Every page has one URL — no `/en/` or `/es/` prefixes
+- Middleware (`src/middleware.ts`) resolves language per request: (1) `lang` cookie, (2) `Accept-Language` header, (3) `'en'` default — no redirects
+- Resolved lang stored in `Astro.locals.lang` (`'en' | 'es'`) — typed via `App.Locals` in `src/types/env.d.ts`
+- All copy lives in `src/i18n/en.json` and `src/i18n/es.json` (flat key-value maps)
+- `src/i18n/ui.ts` wraps JSON imports and re-exports `ui`, `languages`, `defaultLang`
+- Translation helper: `useTranslations(lang)` from `src/i18n/utils.ts`
+- Each component co-locates its i18n keys in a `.const.ts` file (e.g., `Header.const.ts` exports `HEADER_I18N_KEYS`)
+- Language switcher sets `lang` cookie + `window.location.reload()` — URL never changes
+- Blog post body content renders as authored (no translation); only UI chrome follows `Astro.locals.lang`
 
 ### Component hierarchy (atomic design)
 
@@ -74,3 +78,11 @@ Built with `react-hook-form` + `zod` (schema in `src/schemas/contact-form.ts`) +
 Use strategically to control hydration:
 - `client:load` — critical interactive components
 - `client:visible` — below-fold components (performance)
+
+<!-- SPECKIT START -->
+## Active Feature Plan
+
+**Current feature**: i18n JSON Migration & Browser Language Detection
+**Plan**: [specs/001-i18n-json-migration/plan.md](specs/001-i18n-json-migration/plan.md)
+**Spec**: [specs/001-i18n-json-migration/spec.md](specs/001-i18n-json-migration/spec.md)
+<!-- SPECKIT END -->

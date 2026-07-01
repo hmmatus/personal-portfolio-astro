@@ -5,18 +5,19 @@ export type Props = {
 import type { ProjectI } from "src/types/project";
 import { ProjectsCarousel } from "./ProjectsCarousel";
 import styles from "./ProjectsSection.module.scss";
-import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+import { useTranslations } from "../../../i18n/utils";
+import { PROJECTS_I18N_KEYS } from "./ProjectsSection.const";
 
 const { projectsList } = Astro.props;
-const lang = getLangFromUrl(Astro.url);
+const lang = Astro.locals.lang;
 const t = useTranslations(lang);
 ---
 
 <section class={styles["projects-section-container"]} id="projects" data-reveal>
   <div class="section-label">04 — Projects</div>
-  <h2>{t("projects.title")}</h2>
+  <h2>{t(PROJECTS_I18N_KEYS.TITLE)}</h2>
   <p>
-    {t("projects.description")}
+    {t(PROJECTS_I18N_KEYS.DESCRIPTION)}
   </p>
   <ProjectsCarousel
     client:visible

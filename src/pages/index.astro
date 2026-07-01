@@ -2,11 +2,15 @@
 import HeroLayout from "../layouts/hero/HeroLayout.astro";
 import "@styles/global.scss";
 import HtmlLayout from "@layouts/html/HtmlLayout.astro";
+import { useTranslations } from "../i18n/utils";
+
+const lang = Astro.locals.lang;
+const t = useTranslations(lang);
 ---
 
 <HtmlLayout
-  title="Hector Matus | Full Stack Developer — Scalable Software & AI Integrations"
-  metaDescription="Full stack developer with 5+ years building scalable web and mobile software with AI integrations. Specialized in React, React Native, and TypeScript."
+  title={t("page.home.title")}
+  metaDescription={t("page.home.meta")}
 >
   <HeroLayout />
 </HtmlLayout>

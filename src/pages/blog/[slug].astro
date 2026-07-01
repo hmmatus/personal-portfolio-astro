@@ -1,0 +1,50 @@
+---
+import { getCollection, render } from 'astro:content';
+import HtmlLayout from '@layouts/html/HtmlLayout.astro';
+import styles from './BlogPost.module.scss';
+
+const { slug } = Astro.params;
+const posts = await getCollection('blog');
+const post = posts.find((p) => p.slug === slug);
+
+if (!post) {
+  return Astro.redirect('/blog');
+}
+
+const { Content } = await render(post);
+---
+
+<HtmlLayout
+  title={`${post.data.title} | Hector Matus`}
+  metaDescription={post.data.description}
+>
+  <main id="main-content" class={styles.main}>
+    <div class={styles.container}>
+      <a href="/blog" class={styles.back}>← Back to Blog</a>
+
+      <div class={styles.banner}>
+        <img
+          src={post.data.banner}
+          alt={post.data.title}
+          class={styles["banner-img"]}
+        />
+      </div>
+
+      <header class={styles.header}>
+        <time class={styles.date} datetime={post.data.date.toISOString()}>
+          {post.data.date.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
+        </time>
+        <h1 class={styles.title}>{post.data.title}</h1>
+        <p class={styles.description}>{post.data.description}</p>
+      </header>
+
+      <div class={styles.prose}>
+        <Content />
+      </div>
+    </div>
+  </main>
+</HtmlLayout>

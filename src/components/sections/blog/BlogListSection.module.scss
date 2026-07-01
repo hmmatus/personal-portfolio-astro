@@ -1,0 +1,53 @@
+@use "../../../styles/theme/main.scss" as main;
+
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+.header {
+  margin-bottom: 56px;
+}
+
+.title {
+  font-family: main.$font-display;
+  font-size: main.$font-size-h1;
+  font-weight: 700;
+  color: main.$white;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 12px 0 16px;
+}
+
+.subtitle {
+  font-size: main.$font-size-body;
+  color: main.$text-muted;
+  line-height: 1.6;
+  max-width: 480px;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.empty {
+  font-size: main.$font-size-body;
+  color: main.$text-muted;
+  text-align: center;
+  padding: 80px 0;
+}

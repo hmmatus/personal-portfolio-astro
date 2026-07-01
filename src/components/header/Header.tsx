@@ -7,6 +7,7 @@ import { LanguagePicker } from "../language-picker/LanguagePicker";
 import { useTranslations } from "../../i18n/utils";
 import { ui } from "../../i18n/ui";
 import { useIsMobile } from "../../utils/react/useWindowSize";
+import { HEADER_I18N_KEYS } from "./Header.const";
 
 interface HeaderProps {
   currentLang?: string;
@@ -22,9 +23,10 @@ export const Header: React.FC<HeaderProps> = ({
   const t = useTranslations(currentLang as keyof typeof ui);
 
   const translations = {
-    home: t("nav.home"),
-    about: t("nav.about"),
-    contact: t("nav.contact"),
+    home: t(HEADER_I18N_KEYS.NAV_HOME),
+    about: t(HEADER_I18N_KEYS.NAV_ABOUT),
+    contact: t(HEADER_I18N_KEYS.NAV_CONTACT),
+    blog: t(HEADER_I18N_KEYS.NAV_BLOG),
   };
 
   const onPressDrawer = () => {

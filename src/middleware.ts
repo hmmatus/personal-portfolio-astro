@@ -1,21 +1,38 @@
 import { defineMiddleware } from "astro:middleware";
-import { defaultLang } from "./i18n/ui";
-import { supportedLanguages } from "./i18n/utils";
+
+const SUPPORTED_LANGS = ['en', 'es'] as const;
+
+function parseLangFromHeader(header: string | null): 'en' | 'es' | null {
+  if (!header) return null;
+  const tags = header.split(',');
+  for (const tag of tags) {
+    const base = tag.split(';')[0].trim().split('-')[0].toLowerCase();
+    if (SUPPORTED_LANGS.includes(base as 'en' | 'es')) {
+      return base as 'en' | 'es';
+    }
+  }
+  return null;
+}
 
 export const onRequest = defineMiddleware((context, next) => {
-  // Get the pathname from the request
-  const pathname = context.url.pathname;
+  const cookieHeader = context.request.headers.get('cookie') ?? '';
+  const langCookie = cookieHeader
+    .split(';')
+    .map((c) => c.trim())
+    .find((c) => c.startsWith('lang='))
+    ?.split('=')?.[1]
+    ?.trim();
 
-  // Check if the pathname starts with a language code
-  const pathnameIsMissingLocale = supportedLanguages.every(
-    (locale) => !pathname.startsWith(`/${locale}`)
+  const fromCookie =
+    langCookie && SUPPORTED_LANGS.includes(langCookie as 'en' | 'es')
+      ? (langCookie as 'en' | 'es')
+      : null;
+
+  const fromHeader = parseLangFromHeader(
+    context.request.headers.get('accept-language')
   );
 
-  // If the pathname doesn't start with a language code and it's not the root
-  // redirect to the default language
-  if (pathnameIsMissingLocale && pathname !== "/" && !pathname.startsWith("/api/")) {
-    return context.redirect(`/${defaultLang}${pathname}`);
-  }
+  context.locals.lang = fromCookie ?? fromHeader ?? 'en';
 
   return next();
 });
