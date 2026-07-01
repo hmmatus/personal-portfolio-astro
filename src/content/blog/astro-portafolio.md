@@ -1,6 +1,6 @@
 ---
-title: "Building with Astro 5: Why I Rebuilt My Portfolio"
-date: 2025-03-10
+title: "Building with Astro: Why I Rebuilt My Portfolio"
+date: 2026-06-30
 banner: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=80"
 description: "Why I migrated my portfolio to Astro 5 and what I learned about islands architecture, SSR, and content collections along the way."
 ---
@@ -19,7 +19,7 @@ Astro 5 introduced a stable Content Collections API that I used for this blog. Y
 
 ```ts
 const blog = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
