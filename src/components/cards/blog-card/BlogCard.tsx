@@ -10,8 +10,8 @@ export interface BlogCardPropsI {
 }
 
 export function BlogCard({ slug, title, date, banner, description, lang }: BlogCardPropsI) {
-  const href = lang && lang !== "en" ? `/${lang}/blog/${slug}` : `/blog/${slug}`;
-  const formattedDate = date.toLocaleDateString("en-US", {
+  const href = `/blog/${slug}`;
+  const formattedDate = date.toLocaleDateString(lang === "es" ? "es-ES" : "en-US", {
     year: "numeric",
     month: "short",
     day: "numeric",
