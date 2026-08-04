@@ -3703,6 +3703,13 @@ svgo@^3.0.2:
     csso "^5.0.5"
     picocolors "^1.0.0"
 
+svix@^1.99.1:
+  version "1.99.1"
+  resolved "https://registry.npmjs.org/svix/-/svix-1.99.1.tgz"
+  integrity sha512-JfpvbAg5iT5NagDAfOq3e6Ci6NbOMbMm6C3DnfDBB60m2JDK+Z2hXPE9XNAmutb53DCdPoih1V70IbklZnX09A==
+  dependencies:
+    standardwebhooks "1.0.0"
+
 svix@1.90.0:
   version "1.90.0"
   resolved "https://registry.npmjs.org/svix/-/svix-1.90.0.tgz"
