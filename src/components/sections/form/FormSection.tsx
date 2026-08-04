@@ -38,9 +38,9 @@ export const FormSection: React.FC<FormSectionProps> = ({
   const onSubmit = async (data: ContactFormData) => {
     try {
       const options = {
-        from: EMAIL,
-        to: EMAIL,
-        subject: `${data.email} - ${data.subject}`,
+        name: data.name,
+        email: data.email,
+        subject: data.subject,
         message: data.message,
       };
 

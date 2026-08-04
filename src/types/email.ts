@@ -1,6 +1,6 @@
 export interface EmailProps {
-  from: string;
-  to: string;
+  name: string;
+  email: string;
   subject: string;
   message: string;
 }
