@@ -1,4 +1,5 @@
 slug: pizpiretos
+order: 2
 image: /images/projects/pizpiretos.webp
 tags:
   - React Native

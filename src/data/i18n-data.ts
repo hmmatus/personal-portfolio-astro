@@ -25,7 +25,9 @@ export async function getProjectsWithTranslations<L extends keyof typeof ui>(
   const t = useTranslations(lang);
   const projects = await getCollection("projects");
 
-  return projects.map(({ data: project }) => ({
+  return projects
+    .sort((a, b) => a.data.order - b.data.order)
+    .map(({ data: project }) => ({
     title: project.title[lang],
     description: project.description[lang],
     image: project.image,

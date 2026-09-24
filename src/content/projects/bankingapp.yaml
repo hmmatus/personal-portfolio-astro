@@ -1,4 +1,5 @@
 slug: bankingapp
+order: 3
 image: /images/projects/bankingapp.webp
 tags:
   - React Native

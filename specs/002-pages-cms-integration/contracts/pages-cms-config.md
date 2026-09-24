@@ -11,7 +11,27 @@ Lives at the repo root as `.pages.yml`. Implementation phase creates the real fi
 this contract — shown here in full since the field list *is* the interface.
 
 ```yaml
-media: public/images
+media:
+  input: public/images
+  output: /images
+
+components:
+  bilingual-text: &bilingual-text-fields
+    - name: en
+      label: English
+      type: text
+    - name: es
+      label: Español
+      type: text
+  bilingual-text-required: &bilingual-text-fields-required
+    - name: en
+      label: English
+      type: text
+      required: true
+    - name: es
+      label: Español
+      type: text
+      required: true
 
 content:
   - name: projects
@@ -23,10 +43,17 @@ content:
       - name: slug
         label: Slug
         type: string
+        required: true
         description: Stable identifier, used as the filename. Do not change after creation.
+      - name: order
+        label: Display order
+        type: number
+        required: true
+        description: Lower numbers render first.
       - name: image
         label: Image
         type: image
+        required: true
       - name: tags
         label: Tags
         type: string
@@ -39,14 +66,17 @@ content:
           - name: type
             label: Link type
             type: select
+            required: true
             options:
               values: [live-demo, github]
           - name: url
             label: URL
             type: string
+            required: true
       - name: year
         label: Year
         type: string
+        required: true
       - name: role
         label: Role
         type: object
@@ -54,14 +84,14 @@ content:
       - name: title
         label: Title
         type: object
-        fields: *bilingual-text-fields
+        fields: *bilingual-text-fields-required
       - name: description
         label: Description
         type: object
-        fields: *bilingual-text-fields
+        fields: *bilingual-text-fields-required
     view:
       primary: title.en
-      fields: [image, year, tags]
+      fields: [image, order, year, tags]
 
   - name: experience
     label: Experience
@@ -72,27 +102,30 @@ content:
       - name: slug
         label: Slug
         type: string
+        required: true
       - name: startDate
         label: Start date
         type: date
+        required: true
       - name: endDate
         label: End date
         type: date
+        description: Required unless "Current role" is checked.
       - name: isCurrent
         label: Current role
         type: boolean
       - name: title
         label: Title
         type: object
-        fields: *bilingual-text-fields
+        fields: *bilingual-text-fields-required
       - name: company
         label: Company
         type: object
-        fields: *bilingual-text-fields
+        fields: *bilingual-text-fields-required
       - name: description
         label: Description
         type: object
-        fields: *bilingual-text-fields
+        fields: *bilingual-text-fields-required
     view:
       primary: company.en
       sort: startDate
@@ -107,27 +140,22 @@ content:
       - name: title
         label: Title
         type: string
+        required: true
       - name: date
         label: Date
         type: date
+        required: true
       - name: banner
         label: Banner image
         type: image
+        required: true
       - name: description
         label: Description
         type: text
+        required: true
       - name: body
         label: Body
         type: rich-text
-
-components:
-  bilingual-text: &bilingual-text-fields
-    - name: en
-      label: English
-      type: text
-    - name: es
-      label: Español
-      type: text
 
 settings:
   merge: direct   # see research.md R6 — revisit if a second editor joins
