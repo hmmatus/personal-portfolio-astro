@@ -1,0 +1,152 @@
+media: public/images
+
+content:
+  - name: projects
+    label: Projects
+    type: collection
+    path: src/content/projects
+    filename: "{fields.slug}.yaml"
+    fields:
+      - name: slug
+        label: Slug
+        type: string
+        description: Stable identifier, used as the filename. Do not change after creation.
+      - name: image
+        label: Image
+        type: image
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: links
+        label: Links
+        type: object
+        list: true
+        fields:
+          - name: type
+            label: Link type
+            type: select
+            options:
+              values: [live-demo, github]
+          - name: url
+            label: URL
+            type: string
+      - name: year
+        label: Year
+        type: string
+      - name: role
+        label: Role
+        type: object
+        fields:
+          - name: en
+            label: English
+            type: text
+          - name: es
+            label: Español
+            type: text
+      - name: title
+        label: Title
+        type: object
+        fields:
+          - name: en
+            label: English
+            type: text
+          - name: es
+            label: Español
+            type: text
+      - name: description
+        label: Description
+        type: object
+        fields:
+          - name: en
+            label: English
+            type: text
+          - name: es
+            label: Español
+            type: text
+    view:
+      primary: title.en
+      fields: [image, year, tags]
+
+  - name: experience
+    label: Experience
+    type: collection
+    path: src/content/experience
+    filename: "{fields.slug}.yaml"
+    fields:
+      - name: slug
+        label: Slug
+        type: string
+        description: Stable identifier, used as the filename. Do not change after creation.
+      - name: startDate
+        label: Start date
+        type: date
+      - name: endDate
+        label: End date
+        type: date
+      - name: isCurrent
+        label: Current role
+        type: boolean
+      - name: title
+        label: Title
+        type: object
+        fields:
+          - name: en
+            label: English
+            type: text
+          - name: es
+            label: Español
+            type: text
+      - name: company
+        label: Company
+        type: object
+        fields:
+          - name: en
+            label: English
+            type: text
+          - name: es
+            label: Español
+            type: text
+      - name: description
+        label: Description
+        type: object
+        fields:
+          - name: en
+            label: English
+            type: text
+          - name: es
+            label: Español
+            type: text
+    view:
+      primary: company.en
+      sort: startDate
+      fields: [title.en, startDate, endDate]
+
+  - name: blog
+    label: Blog Posts
+    type: collection
+    path: src/content/blog
+    filename: "{fields.title}.md"
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: date
+        label: Date
+        type: date
+      - name: banner
+        label: Banner image
+        type: image
+      - name: description
+        label: Description
+        type: text
+      - name: body
+        label: Body
+        type: rich-text
+    view:
+      primary: title
+      sort: date
+      fields: [date, description]
+
+settings:
+  merge: direct

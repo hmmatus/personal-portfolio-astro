@@ -82,7 +82,7 @@ Use strategically to control hydration:
 <!-- SPECKIT START -->
 ## Active Feature Plan
 
-**Current feature**: i18n JSON Migration & Browser Language Detection
-**Plan**: [specs/001-i18n-json-migration/plan.md](specs/001-i18n-json-migration/plan.md)
-**Spec**: [specs/001-i18n-json-migration/spec.md](specs/001-i18n-json-migration/spec.md)
+**Current feature**: Pages CMS for Project Catalog, Experience & Blog
+**Plan**: [specs/002-pages-cms-integration/plan.md](specs/002-pages-cms-integration/plan.md)
+**Spec**: [specs/002-pages-cms-integration/spec.md](specs/002-pages-cms-integration/spec.md)
 <!-- SPECKIT END -->

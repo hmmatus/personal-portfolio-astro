@@ -1,0 +1,21 @@
+slug: muellerapp
+image: /images/projects/mueller_app.png
+tags:
+  - React Native
+  - React Native Paper
+  - NestJS
+  - Sockets
+  - Firebase
+links:
+  - type: live-demo
+    url: https://mueller-react-6gfgm0g4x.vercel.app/
+year: "2026"
+role:
+  en: Full stack Developer
+  es: Desarrollador Full Stack
+title:
+  en: Mueller App
+  es: Mueller App
+description:
+  en: Mueller is a website to connect with people and deliver tech solutions.
+  es: Mueller es un sitio web para conectar con personas y entregar soluciones tecnológicas.

@@ -16,8 +16,8 @@ import {
 
 const lang = Astro.locals.lang;
 
-const projectsList = getProjectsWithTranslations(lang);
-const experienceList = getExperienceWithTranslations(lang);
+const projectsList = await getProjectsWithTranslations(lang);
+const experienceList = await getExperienceWithTranslations(lang);
 ---
 
 <main id="main-content" class={styles.container}>

@@ -1,3 +1,4 @@
+import { getCollection } from "astro:content";
 import type { ProjectI } from "../types/project";
 import type { ExperienceI } from "../types/experience";
 import { useTranslations } from "../i18n/utils";
@@ -6,140 +7,61 @@ import type { ui, defaultLang } from "../i18n/ui";
 // Type alias for translation keys
 type TranslationKey = keyof (typeof ui)[typeof defaultLang];
 
-export const heroData = {
-  projectsList: [
-    {
-      id: "muellerapp",
-      image: "/images/projects/mueller_app.png",
-      hyperlinks: [
-        {
-          labelKey: "projects.live-demo",
-          url: "https://mueller-react-6gfgm0g4x.vercel.app/",
-        },
-      ],
-      projectInformation: [
-        {
-          labelKey: "projects.year",
-          value: "2026",
-        },
-        {
-          labelKey: "projects.role",
-          valueKey: "projects.full-stack-developer",
-        },
-      ],
-      tags: [
-        "React Native",
-        "React Native Paper",
-        "NestJS",
-        "Sockets",
-        "Firebase",
-      ],
-    },
-    {
-      id: "pizpiretos",
-      image: "/images/projects/pizpiretos.webp",
-      hyperlinks: [
-        {
-          labelKey: "projects.live-demo",
-          url: "https://expo.dev/accounts/hmmatus/projects/pizpiretos-app/builds",
-        },
-      ],
-      projectInformation: [
-        {
-          labelKey: "projects.year",
-          value: "2024",
-        },
-        {
-          labelKey: "projects.role",
-          valueKey: "projects.full-stack-developer",
-        },
-      ],
-      tags: [
-        "React Native",
-        "React Native Paper",
-        "NestJS",
-        "Sockets",
-        "Firebase",
-      ],
-    },
-    {
-      id: "bankingapp",
-      image: "/images/projects/bankingapp.webp",
-      hyperlinks: [
-        {
-          labelKey: "projects.github",
-          url: "https://github.com/hmmatus/BankingApp",
-        },
-      ],
-      projectInformation: [
-        {
-          labelKey: "projects.year",
-          value: "2024",
-        },
-      ],
-      tags: ["React Native", "React Native Paper", "Firebase"],
-    },
-  ],
-  experience: {
-    experienceList: [
-      {
-        id: "coderland",
-        startDate: "06/2024",
-        endDate: "01/2025",
-      },
-      {
-        id: "koibanx",
-        startDate: "05/2021",
-        endDate: "10/2023",
-      },
-      {
-        id: "applaudo",
-        startDate: "09/2020",
-        endDate: "04/2021",
-      },
-      {
-        id: "vincu",
-        startDate: "05/2019",
-        endDate: "09/2020",
-      },
-    ],
-  },
+const LINK_LABEL_KEYS: Record<string, TranslationKey> = {
+  "live-demo": "projects.live-demo" as TranslationKey,
+  github: "projects.github" as TranslationKey,
 };
 
-// Utility functions to convert i18n data to component-expected types
-export function getProjectsWithTranslations<L extends keyof typeof ui>(
-  lang: L
-): ProjectI[] {
-  const t = useTranslations(lang);
+function formatExperienceDate(date: Date): string {
+  const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+  const year = date.getUTCFullYear();
+  return `${month}/${year}`;
+}
 
-  return heroData.projectsList.map((project) => ({
-    title: t(`projects.${project.id}.title` as TranslationKey),
-    description: t(`projects.${project.id}.description` as TranslationKey),
+// Utility functions to convert content-collection entries to component-expected types
+export async function getProjectsWithTranslations<L extends keyof typeof ui>(
+  lang: L
+): Promise<ProjectI[]> {
+  const t = useTranslations(lang);
+  const projects = await getCollection("projects");
+
+  return projects.map(({ data: project }) => ({
+    title: project.title[lang],
+    description: project.description[lang],
     image: project.image,
     tags: project.tags,
-    hyperlinks: project.hyperlinks.map((link) => ({
-      label: t(link.labelKey as TranslationKey),
+    hyperlinks: (project.links ?? []).map((link) => ({
+      label: t(LINK_LABEL_KEYS[link.type]),
       url: link.url,
     })),
-    projectInformation: project.projectInformation.map((info) => ({
-      label: t(info.labelKey as TranslationKey),
-      value: info.valueKey
-        ? t(info.valueKey as TranslationKey)
-        : info.value || "",
-    })),
+    projectInformation: [
+      { label: t("projects.year" as TranslationKey), value: project.year },
+      ...(project.role
+        ? [
+            {
+              label: t("projects.role" as TranslationKey),
+              value: project.role[lang],
+            },
+          ]
+        : []),
+    ],
   }));
 }
 
-export function getExperienceWithTranslations<L extends keyof typeof ui>(
+export async function getExperienceWithTranslations<L extends keyof typeof ui>(
   lang: L
-): ExperienceI[] {
-  const t = useTranslations(lang);
+): Promise<ExperienceI[]> {
+  const experience = await getCollection("experience");
 
-  return heroData.experience.experienceList.map((exp) => ({
-    title: t(`experience.${exp.id}.title` as TranslationKey),
-    company: t(`experience.${exp.id}.company` as TranslationKey),
-    description: t(`experience.${exp.id}.description` as TranslationKey),
-    startDate: exp.startDate,
-    endDate: exp.endDate,
-  }));
+  return experience
+    .sort((a, b) => b.data.startDate.getTime() - a.data.startDate.getTime())
+    .map(({ data: exp }) => ({
+      title: exp.title[lang],
+      company: exp.company[lang],
+      description: exp.description[lang],
+      startDate: formatExperienceDate(exp.startDate),
+      endDate: exp.isCurrent
+        ? useTranslations(lang)("experience.present" as TranslationKey)
+        : formatExperienceDate(exp.endDate as Date),
+    }));
 }

@@ -1,0 +1,13 @@
+slug: coderland
+startDate: 2024-06-01
+endDate: 2025-01-01
+isCurrent: false
+title:
+  en: Full Stack Developer
+  es: Desarrollador Full Stack
+company:
+  en: Coderland By Dominion Global
+  es: Coderland By Dominion Global
+description:
+  en: Designed and developed solutions using frontend and backend technologies. For the frontend used react native with cli and expo with typescript and React for web implementations. NodeJs with typescript for the backend, also worked with .net 6 and 8 creating migrations and services to SOAP and REST apis. Gave maintenance to multiple services using graphQL queries and mutations, resolvers, federations, codegen command creations, etc. Worked using environment variables using K8 and pipelines yaml files creation. I acquired experience using Azure environment like creating logic apps, the use of blob storage and pipelines config. Handling multiple repo using NX monorepo technologies and applying code coverage and unit testing for nodejs using jest. Worked with agile technologies, being moderator in dailys, plannings and review, using tools like azure boards, Microsoft teams and miro for meetings. Also Managed using tools for database management like dbeaver, redis cache manager, mongodb, lens, etc.
+  es: Diseñé y desarrollé soluciones usando tecnologías frontend y backend. Para el frontend usé react native con cli y expo con typescript y React para implementaciones web. NodeJs con typescript para el backend, también trabajé con .net 6 y 8 creando migraciones y servicios para apis SOAP y REST. Di mantenimiento a múltiples servicios usando consultas y mutaciones de graphQL, resolvers, federaciones, creaciones de comandos codegen, etc. Trabajé usando variables de entorno usando K8 y creación de archivos yaml de pipelines. Adquirí experiencia usando el entorno de Azure como crear logic apps, el uso de blob storage y configuración de pipelines. Manejo de múltiples repositorios usando tecnologías NX monorepo y aplicando cobertura de código y pruebas unitarias para nodejs usando jest. Trabajé con tecnologías ágiles, siendo moderador en dailys, plannings y review, usando herramientas como azure boards, Microsoft teams y miro para reuniones. También manejé usando herramientas para gestión de base de datos como dbeaver, redis cache manager, mongodb, lens, etc.

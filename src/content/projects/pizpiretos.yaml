@@ -1,0 +1,21 @@
+slug: pizpiretos
+image: /images/projects/pizpiretos.webp
+tags:
+  - React Native
+  - React Native Paper
+  - NestJS
+  - Sockets
+  - Firebase
+links:
+  - type: live-demo
+    url: https://expo.dev/accounts/hmmatus/projects/pizpiretos-app/builds
+year: "2024"
+role:
+  en: Full stack Developer
+  es: Desarrollador Full Stack
+title:
+  en: Pizpiretos
+  es: Pizpiretos
+description:
+  en: Pizpiretos is a mobile app that allows pets to find their soulmates. It is a social network for pets. The app is built with React Native and the backend is built with NestJs. The app uses sockets to provide real-time updates. The app also uses Firebase for authentication and storage.
+  es: Pizpiretos es una aplicación móvil que permite a las mascotas encontrar sus almas gemelas. Es una red social para mascotas. La aplicación está construida con React Native y el backend está construido con NestJs. La aplicación usa sockets para proporcionar actualizaciones en tiempo real. La aplicación también usa Firebase para autenticación y almacenamiento.

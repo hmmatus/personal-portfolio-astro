@@ -1,0 +1,16 @@
+slug: bankingapp
+image: /images/projects/bankingapp.webp
+tags:
+  - React Native
+  - React Native Paper
+  - Firebase
+links:
+  - type: github
+    url: https://github.com/hmmatus/BankingApp
+year: "2024"
+title:
+  en: Banking App
+  es: Aplicación Bancaria
+description:
+  en: Banking app is a mobile app that allows users to manage their bank accounts. The app is built with React Native.
+  es: La aplicación bancaria es una aplicación móvil que permite a los usuarios gestionar sus cuentas bancarias. La aplicación está construida con React Native.
