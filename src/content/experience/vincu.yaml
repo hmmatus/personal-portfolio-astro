@@ -1,0 +1,13 @@
+slug: vincu
+startDate: 2019-05-01
+endDate: 2020-09-01
+isCurrent: false
+title:
+  en: Frontend Developer
+  es: Desarrollador Frontend
+company:
+  en: Vincu Hub
+  es: Vincu Hub
+description:
+  en: Developed frontend pages and mobile apps using JavaScript framework (React Native, React and Vue.js) Integration with services (Authentication, database, push notifications) from Google's Firebase Consumptionand management of information provided by APIS. Delivered production rollouts and control versions for IOSand Android. Repository Management (Git/Gitlab).
+  es: Desarrollé páginas frontend y aplicaciones móviles usando framework JavaScript (React Native, React y Vue.js) Integración con servicios (Autenticación, base de datos, notificaciones push) desde Firebase de Google. Consumo y gestión de información proporcionada por APIS. Entregué lanzamientos de producción y control de versiones para IOS y Android. Gestión de repositorios (Git/Gitlab).

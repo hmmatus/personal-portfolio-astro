@@ -42,21 +42,57 @@ Personal portfolio site for Hector Matus — full stack developer from El Salvad
 
 ```
 src/
-├── assets/          # SVG icons, Lottie animation
-├── components/      # Atomic design: buttons → cards → sections
+├── assets/              # SVG icons, Lottie animation
+├── components/          # Atomic design: buttons → cards → sections
 │   ├── buttons/
 │   ├── cards/
-│   ├── sections/    # Page sections (Hero, About, Experience, etc.)
+│   ├── sections/        # Page sections (Hero, About, Experience, etc.)
 │   └── ...
-├── content/blog/    # Markdown blog posts
-├── data/            # Static data (hero, tech stack)
-├── i18n/            # Locale JSON files + translation utils
-├── layouts/         # HtmlLayout, HeroLayout
-├── pages/           # Astro pages + API route
-├── schemas/         # Zod schemas (contact form)
-├── styles/          # Global styles + theme (colors, fonts, mixins)
-└── types/           # TypeScript interfaces
+├── content/
+│   ├── blog/            # Markdown blog posts
+│   ├── projects/        # Project catalog entries (YAML, one per project)
+│   └── experience/      # Work experience entries (YAML, one per role)
+├── data/                # Static data (tech stack) + i18n-data mapping helpers
+├── i18n/                # Locale JSON files + translation utils
+├── layouts/             # HtmlLayout, HeroLayout
+├── pages/               # Astro pages + API route
+├── schemas/             # Zod schemas (contact form)
+├── styles/              # Global styles + theme (colors, fonts, mixins)
+└── types/               # TypeScript interfaces
 ```
+
+## Content Management (Pages CMS)
+
+Projects, work experience, and blog posts are editable through [Pages CMS](https://pagescms.org) — a
+no-backend, GitHub-backed CMS. It reads its config from `.pages.yml` at the repo root and edits land as
+commits to this repo — no separate database, no manual redeploy step (Vercel picks up the commit like any
+other push).
+
+### Editing content
+
+1. Go to [app.pagescms.org](https://app.pagescms.org) and sign in with GitHub (needs push access to this repo).
+2. Select this repository (install the Pages CMS GitHub App on it the first time, if prompted) and pick the
+   branch to edit.
+3. Pick a collection:
+   - **Projects** — image, tags, links (live demo / GitHub), year, role, and English/Spanish title +
+     description. Each entry is its own file under `src/content/projects/`.
+   - **Experience** — start/end date (or "current role"), and English/Spanish title, company, description.
+     Each entry is its own file under `src/content/experience/`.
+   - **Blog Posts** — title, date, banner image, description, and body. Files live under `src/content/blog/`.
+     Body content is written once (not translated), same as before.
+4. Create, edit, or delete entries from the UI. Both the English and Spanish fields on a Projects/Experience
+   entry are edited independently — updating one language never touches the other.
+5. Saving commits directly to the selected branch (`settings.merge: direct` in `.pages.yml`); merge/push to
+   `main` as usual to publish.
+
+### Changing the schema
+
+If a field needs to be added/renamed for Projects or Experience, update **both** sides together or the CMS
+and the build will disagree on the shape of an entry:
+- `.pages.yml` — the field the CMS UI shows/edits
+- `src/content/config.ts` — the Zod schema Astro validates that field against
+
+See `specs/002-pages-cms-integration/` for the full design (`data-model.md`, `contracts/pages-cms-config.md`).
 
 ## Getting Started
 

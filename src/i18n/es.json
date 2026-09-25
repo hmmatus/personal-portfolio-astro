@@ -47,17 +47,10 @@
 
   "projects.title": "Proyectos",
   "projects.description": "Aquí están algunos de los proyectos seleccionados que muestran mi pasión por el desarrollo front-end.",
-  "projects.muellerapp.title": "Mueller App",
-  "projects.muellerapp.description": "Mueller es un sitio web para conectar con personas y entregar soluciones tecnológicas.",
-  "projects.pizpiretos.title": "Pizpiretos",
-  "projects.pizpiretos.description": "Pizpiretos es una aplicación móvil que permite a las mascotas encontrar sus almas gemelas. Es una red social para mascotas. La aplicación está construida con React Native y el backend está construido con NestJs. La aplicación usa sockets para proporcionar actualizaciones en tiempo real. La aplicación también usa Firebase para autenticación y almacenamiento.",
-  "projects.bankingapp.title": "Aplicación Bancaria",
-  "projects.bankingapp.description": "La aplicación bancaria es una aplicación móvil que permite a los usuarios gestionar sus cuentas bancarias. La aplicación está construida con React Native.",
   "projects.live-demo": "Demo en Vivo",
   "projects.github": "Github",
   "projects.year": "Año",
   "projects.role": "Rol",
-  "projects.full-stack-developer": "Desarrollador Full Stack",
 
   "capabilities.title": "Capacidades",
 
@@ -66,18 +59,7 @@
   "carousel.slideOf": "Diapositiva {current} de {total}",
 
   "experience.title": "Experiencia",
-  "experience.coderland.title": "Desarrollador Full Stack",
-  "experience.coderland.company": "Coderland By Dominion Global",
-  "experience.coderland.description": "Diseñé y desarrollé soluciones usando tecnologías frontend y backend. Para el frontend usé react native con cli y expo con typescript y React para implementaciones web. NodeJs con typescript para el backend, también trabajé con .net 6 y 8 creando migraciones y servicios para apis SOAP y REST. Di mantenimiento a múltiples servicios usando consultas y mutaciones de graphQL, resolvers, federaciones, creaciones de comandos codegen, etc. Trabajé usando variables de entorno usando K8 y creación de archivos yaml de pipelines. Adquirí experiencia usando el entorno de Azure como crear logic apps, el uso de blob storage y configuración de pipelines. Manejo de múltiples repositorios usando tecnologías NX monorepo y aplicando cobertura de código y pruebas unitarias para nodejs usando jest. Trabajé con tecnologías ágiles, siendo moderador en dailys, plannings y review, usando herramientas como azure boards, Microsoft teams y miro para reuniones. También manejé usando herramientas para gestión de base de datos como dbeaver, redis cache manager, mongodb, lens, etc.",
-  "experience.koibanx.title": "Desarrollador Frontend",
-  "experience.koibanx.company": "Koibanx",
-  "experience.koibanx.description": "Desarrollé soluciones frontend (aplicaciones web y móviles) para aplicaciones web3 usando frameworks JS: Web y PWA usando NextJs con Typescript. Desarrollé aplicaciones móviles usando React Native con JavaScript y Typescript. Integraciones con componentes web3 como bitso usando endpoints de API REST. Monté aplicaciones basadas en diseños de figma. Entregué lanzamientos de producción y control de versiones para tiendas IOS y Android. Implementación de buenas prácticas con reglas Eslint, formateador de código prettier y commits husky. Administré las tareas usando metodologías Ágiles (SCRUM), experiencia con la herramienta JIRA. Integraciones de API REST (Axios) Gestión de repositorios (Git/Gitlab).",
-  "experience.applaudo.title": "Desarrollador React Native",
-  "experience.applaudo.company": "Applaudo Studios",
-  "experience.applaudo.description": "Colaboré con la implementación de características para la aplicación Multimoney Android y IOS. Integración con endpoints crypto Paxos Gold. Aplicaciones móviles desarrolladas usando el Framework JavaScript React Native. Manejé despliegues críticos y finalización de características en tiempos programados. Gestión de tareas usando metodologías ágiles SCRUM con JIRA. Implementé y manejé información proporcionada por APIS usando fetch y Axios. Desplegué lanzamientos de producción y control de versiones para IOS y Android. Gestión de repositorios (Git/Gitlab). Lanzamientos CI/CD para aplicaciones React Native con Bitrise.",
-  "experience.vincu.title": "Desarrollador Frontend",
-  "experience.vincu.company": "Vincu Hub",
-  "experience.vincu.description": "Desarrollé páginas frontend y aplicaciones móviles usando framework JavaScript (React Native, React y Vue.js) Integración con servicios (Autenticación, base de datos, notificaciones push) desde Firebase de Google. Consumo y gestión de información proporcionada por APIS. Entregué lanzamientos de producción y control de versiones para IOS y Android. Gestión de repositorios (Git/Gitlab).",
+  "experience.present": "Presente",
 
   "common.contact": "Contacto",
   "common.download-cv": "Descargar CV",

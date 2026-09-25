@@ -1,0 +1,13 @@
+slug: koibanx
+startDate: 2021-05-01
+endDate: 2023-10-01
+isCurrent: false
+title:
+  en: Frontend Developer
+  es: Desarrollador Frontend
+company:
+  en: Koibanx
+  es: Koibanx
+description:
+  en: "Developed frontend solutions (Web and mobile apps) for web3 applications using JS frameworks: Web and PWA usingNextJs with Typescript. Developed Mobile applications using React Native with JavaScript and Typescript. Integrationswith web3 components like bitso using API REST endpoints. Mounted applications based on designs by figma.Delivered production rollouts and control versions for IOS and Android stores. Good Practice implementation withEslint rules, prettier code formatter and husky commits. Administered the tasks using Agile methodologies (SCRUM),experience with JIRA tool. REST API integrations(Axios) Repository Management (Git/Gitlab)."
+  es: "Desarrollé soluciones frontend (aplicaciones web y móviles) para aplicaciones web3 usando frameworks JS: Web y PWA usando NextJs con Typescript. Desarrollé aplicaciones móviles usando React Native con JavaScript y Typescript. Integraciones con componentes web3 como bitso usando endpoints de API REST. Monté aplicaciones basadas en diseños de figma. Entregué lanzamientos de producción y control de versiones para tiendas IOS y Android. Implementación de buenas prácticas con reglas Eslint, formateador de código prettier y commits husky. Administré las tareas usando metodologías Ágiles (SCRUM), experiencia con la herramienta JIRA. Integraciones de API REST (Axios) Gestión de repositorios (Git/Gitlab)."
