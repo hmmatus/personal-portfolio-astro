@@ -12,15 +12,9 @@
 }
 
 .footer-logo {
-  font-family: main.$font-display;
-  font-size: 22px;
-  font-weight: 800;
-  color: main.$white;
-  letter-spacing: -0.03em;
-
-  span {
-    color: main.$indigo;
-  }
+  height: 22px;
+  width: auto;
+  display: block;
 }
 
 .footer-info {
