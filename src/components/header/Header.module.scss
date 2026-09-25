@@ -53,16 +53,18 @@
 }
 
 .header-logo {
-  font-family: main.$font-display;
-  font-size: clamp(16px, 1.5em, 22px);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  color: main.$white;
-  text-decoration: none;
-  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+
+  img {
+    height: clamp(20px, 3vw, 28px);
+    width: auto;
+    display: block;
+  }
 
   &:hover {
-    color: main.$indigo;
+    opacity: 0.85;
   }
 }
 

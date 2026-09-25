@@ -3,6 +3,7 @@ import styles from "./Header.module.scss";
 import { NavLinks } from "./nav-links/NavLinks";
 import Menu from "../../assets/icons/menu.svg?react"; // Based on solution https://doray.me/articles/use-svgs-as-react-components-in-astro-MNUvh
 import Close from "../../assets/icons/close.svg?react";
+import logo from "../../assets/logo/logo.png";
 import { Drawer } from "./drawer/Drawer";
 import { LanguagePicker } from "../language-picker/LanguagePicker";
 import { useTranslations } from "../../i18n/utils";
@@ -47,8 +48,8 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className={styles.headerContainer}>
-      <a className={styles["header-logo"]} href="/">
-        HM
+      <a className={styles["header-logo"]} href="/" aria-label="HM home">
+        <img src={logo.src} alt="HM" />
       </a>
       <div className={styles.headerRight}>
         {!isMobile && <NavLinks isMobile={false} translations={translations} />}
