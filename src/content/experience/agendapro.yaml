@@ -1,0 +1,51 @@
+slug: agendapro
+startDate: 2025-05-05
+endDate: 2026-05-29
+isCurrent: false
+title:
+  en: FullStack Developer
+  es: Desarrollador FullStack Developer
+company:
+  en: AgendaPro
+  es: AgendaPro
+description:
+  en: >-
+    Applied unit testing and code coverage for Node.js and React Native apps,
+    achieving >90% coverage on new features
+
+    and maintaining 80% overall, reducing production bugs.
+
+    Ran migrations from a monolith to microservices through a
+    Backend-for-Frontend (BFF) architecture.
+
+    Designed, developed, and deployed features for the AgendaPro mobile
+    application, including bug fixes and
+
+    full-module refactors.
+
+    Delivered end-to-end functionality integrating backend services with
+    frontend infrastructure.
+
+    Migrated React Native versions to meet current Android/iOS requirements.
+
+    Applied observability practices using Sentry, New Relic, and Grafana to
+    monitor and resolve production errors.
+  es: >-
+    Aplicó pruebas unitarias y coverage para apps Node.js y React Native,
+    logrando >90% coverage en features nuevas y manteniendo 80% general,
+    reduciendo bugs en producción.
+
+    Ejecutó migraciones de monolito a microservicios mediante arquitectura
+    Backend-for-Frontend (BFF).
+
+    Diseñó, desarrolló y desplegó features para app móvil AgendaPro, incluyendo
+    bug fixes y refactors completos de módulos.
+
+    Entregó funcionalidad end-to-end integrando servicios backend con
+    infraestructura frontend.
+
+    Migró versiones de React Native para cumplir requerimientos actuales
+    Android/iOS.
+
+    Aplicó prácticas de observabilidad con Sentry, New Relic y Grafana para
+    monitorear y resolver errores en producción.
