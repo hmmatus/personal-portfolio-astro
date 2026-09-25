@@ -1,0 +1,37 @@
+slug: teamswell
+startDate: 2026-05-25
+endDate: 2026-09-25
+isCurrent: true
+title:
+  en: Full Stack Developer
+  es: Desarrollador Full Stack
+company:
+  en: Teamswell
+  es: Teamswell
+description:
+  en: >-
+    Generated E2E code coverage >90% for new features, reducing post-launch
+    fixes.
+
+    Delivered new features end-to-end for a storefront marketplace, from
+    definition through full implementation.
+
+    Improved automation of processes by migrating from legacy FileMaker software
+    into a custom in-house ERP.
+
+    Automated processes with AI, accelerating weekly deployment of new features
+    and without the need of post launch hotfixes.
+  es: >-
+    Generé cobertura de código E2E superior al 90% para nuevas funcionalidades,
+    lo que redujo las correcciones posteriores al lanzamiento.
+
+    Desarrollé de principio a fin nuevas funcionalidades para un marketplace de
+    tiendas en línea, desde su definición hasta su implementación completa.
+
+    Automaticé procesos al migrar de un software heredado en FileMaker a un ERP
+    propio a la medida. Esto reduce el costo operativo al depender de un
+    servicio externo lo cual ahorra un estimado de 2k solo de licencias de
+    software ajeno. 
+
+    Automaticé procesos con IA, lo que aceleró el despliegue semanal de nuevas
+    funcionalidades manteniendo la calidad del software sin incidentes.
