@@ -24,8 +24,16 @@ export const Drawer = ({ isOpen, onClick, translations }: DrawerProps) => {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, onClick]);
 
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   return (
     <div
+      id="mobile-nav-drawer"
       className={`${styles["overlay"]} ${isOpen ? styles.open : styles.close}`}
       role="dialog"
       aria-modal="true"

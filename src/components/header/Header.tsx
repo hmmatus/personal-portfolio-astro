@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./Header.module.scss";
 import { NavLinks } from "./nav-links/NavLinks";
 import Menu from "../../assets/icons/menu.svg?react"; // Based on solution https://doray.me/articles/use-svgs-as-react-components-in-astro-MNUvh
+import Close from "../../assets/icons/close.svg?react";
 import { Drawer } from "./drawer/Drawer";
 import { LanguagePicker } from "../language-picker/LanguagePicker";
 import { useTranslations } from "../../i18n/utils";
@@ -55,10 +56,12 @@ export const Header: React.FC<HeaderProps> = ({
         {isMobile && (
           <button
             aria-label="Drawer menu"
+            aria-expanded={isOpen}
+            aria-controls="mobile-nav-drawer"
             className={styles.menuButton}
             onClick={onPressDrawer}
           >
-            <Menu aria-hidden="true" />
+            {isOpen ? <Close aria-hidden="true" /> : <Menu aria-hidden="true" />}
           </button>
         )}
       </div>

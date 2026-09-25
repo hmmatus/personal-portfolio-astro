@@ -19,6 +19,8 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  position: relative;
+  z-index: 2;
 }
 
 .headerContainer {
@@ -97,6 +99,11 @@
 
   .header-logo {
     font-size: clamp(16px, 5vw, 20px);
+  }
+
+  .headerContainer nav ul li {
+    margin: 0;
+    padding: 0.75rem clamp(16px, 4vw, 20px);
   }
 }
 
