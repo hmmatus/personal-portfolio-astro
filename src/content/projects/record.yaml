@@ -1,0 +1,19 @@
+slug: record
+order: 1
+image: /images/Screenshot 2026-10-07 at 4.50.56 PM.png
+tags:
+  - Astro
+  - React Native
+  - Supabase
+links:
+  - type: live-demo
+    url: https://record-landing-sage.vercel.app/
+year: "2026"
+title:
+  en: Record money tracker app
+  es: Record aplicación para dinero
+description:
+  en: Personal project to help track finances, stablish goals and have real time
+    of financial goals
+  es: Proyecto personal para el manejo de finanzas, establecer metas y tener
+    diagramas sobre estado actual de la meta financiera
