@@ -98,7 +98,7 @@ See `specs/002-pages-cms-integration/` for the full design (`data-model.md`, `co
 
 ### Prerequisites
 
-Node.js 18+.
+Node.js 24 (see `.nvmrc`).
 
 ### Environment Variables
 

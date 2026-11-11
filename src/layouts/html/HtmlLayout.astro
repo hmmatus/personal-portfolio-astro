@@ -1,9 +1,8 @@
 ---
 import Analytics from "@vercel/analytics/astro";
+import "@styles/tailwind.css";
 import "@styles/global.scss";
 import { Header, Footer } from "../../components";
-import { RevealObserver } from "../../components/animations/RevealObserver";
-
 export type Props = {
   metaDescription: string;
   title: string;
@@ -43,9 +42,84 @@ const lang = Astro.locals.lang;
   <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
     <Header client:only currentLang={lang} currentPath={Astro.url.pathname} />
-    <RevealObserver client:idle />
     <slot />
     <Footer />
     <Analytics />
+    <script is:inline>
+      (function () {
+        var observer;
+
+        function revealElement(el) {
+          el.classList.add("is-revealed");
+          if (observer) observer.unobserve(el);
+        }
+
+        function isInViewport(el) {
+          var rect = el.getBoundingClientRect();
+          return (
+            rect.bottom > 0 &&
+            rect.top < window.innerHeight &&
+            rect.width > 0 &&
+            rect.height > 0
+          );
+        }
+
+        var prefersReduced = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        function observeElements(elements) {
+          if (!elements.length) return;
+
+          if (prefersReduced) {
+            elements.forEach(revealElement);
+            return;
+          }
+
+          if (!observer) {
+            observer = new IntersectionObserver(
+              function (entries) {
+                entries.forEach(function (entry) {
+                  if (!entry.isIntersecting) return;
+                  revealElement(entry.target);
+                });
+              },
+              { threshold: 0.15, rootMargin: "0px 0px -5% 0px" }
+            );
+          }
+
+          elements.forEach(function (el) {
+            if (el.classList.contains("is-revealed")) return;
+            if (isInViewport(el)) {
+              revealElement(el);
+              return;
+            }
+            observer.observe(el);
+          });
+        }
+
+        function scan() {
+          observeElements(
+            document.querySelectorAll("[data-reveal]:not(.is-revealed)")
+          );
+        }
+
+        function init() {
+          scan();
+          new MutationObserver(scan).observe(document.body, {
+            childList: true,
+            subtree: true,
+          });
+          window.addEventListener("scroll", scan, { passive: true });
+          window.addEventListener("resize", scan, { passive: true });
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", init);
+        } else {
+          init();
+        }
+      })();
+    </script>
   </body>
 </html>

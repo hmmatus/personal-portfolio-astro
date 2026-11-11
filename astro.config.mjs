@@ -16,24 +16,13 @@ export default defineConfig({
   output: "server",
   adapter,
   integrations: [react()],
-  experimental: {
-    svg: true,
-  },
   vite: {
     plugins: [
       svgr({
         include: "**/*.svg?react",
         svgrOptions: {
-          plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],
-          svgoConfig: {
-            plugins: [
-              "preset-default",
-              "removeTitle",
-              "removeDesc",
-              "removeDoctype",
-              "cleanupIds",
-            ],
-          },
+          plugins: ["@svgr/plugin-jsx"],
+          svgo: false,
         },
       }),
       tailwindcss(),
