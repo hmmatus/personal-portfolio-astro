@@ -16,9 +16,6 @@ export default defineConfig({
   output: "server",
   adapter,
   integrations: [react()],
-  experimental: {
-    svg: true,
-  },
   vite: {
     plugins: [
       svgr({
