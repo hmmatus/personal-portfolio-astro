@@ -1,5 +1,6 @@
-import { defineCollection, z } from 'astro:content';
-import { glob } from 'astro/loaders';
+import { defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
+import { z } from "astro/zod";
 
 const bilingualText = z.object({
   en: z.string().trim().min(1),
@@ -7,7 +8,7 @@ const bilingualText = z.object({
 });
 
 const blog = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog" }),
   schema: z.object({
     title: z.string().trim().min(1),
     date: z.coerce.date(),
@@ -17,7 +18,7 @@ const blog = defineCollection({
 });
 
 const projects = defineCollection({
-  loader: glob({ pattern: '**/*.yaml', base: './src/content/projects' }),
+  loader: glob({ pattern: "**/*.yaml", base: "./src/content/projects" }),
   schema: z.object({
     slug: z.string(),
     order: z.number(),
@@ -26,9 +27,9 @@ const projects = defineCollection({
     links: z
       .array(
         z.object({
-          type: z.enum(['live-demo', 'github']),
+          type: z.enum(["live-demo", "github"]),
           url: z.string().url(),
-        })
+        }),
       )
       .optional(),
     year: z.string(),
@@ -39,7 +40,7 @@ const projects = defineCollection({
 });
 
 const experience = defineCollection({
-  loader: glob({ pattern: '**/*.yaml', base: './src/content/experience' }),
+  loader: glob({ pattern: "**/*.yaml", base: "./src/content/experience" }),
   schema: z
     .object({
       slug: z.string(),
@@ -51,13 +52,17 @@ const experience = defineCollection({
       description: bilingualText,
     })
     .refine((data) => data.isCurrent || !!data.endDate, {
-      message: 'endDate is required unless isCurrent is true',
-      path: ['endDate'],
+      message: "endDate is required unless isCurrent is true",
+      path: ["endDate"],
     })
-    .refine((data) => data.isCurrent || !data.endDate || data.endDate >= data.startDate, {
-      message: 'endDate must not be earlier than startDate',
-      path: ['endDate'],
-    }),
+    .refine(
+      (data) =>
+        data.isCurrent || !data.endDate || data.endDate >= data.startDate,
+      {
+        message: "endDate must not be earlier than startDate",
+        path: ["endDate"],
+      },
+    ),
 });
 
 export const collections = { blog, projects, experience };

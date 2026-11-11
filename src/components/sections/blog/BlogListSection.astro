@@ -29,7 +29,7 @@ const t = useTranslations(lang as keyof typeof ui);
       {posts.map((post) => (
         <li>
           <BlogCard
-            slug={post.slug}
+            slug={post.id}
             title={post.data.title}
             date={post.data.date}
             banner={post.data.banner}
